@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER CRM PRO | Alchemist Atelier v8.0 | The iOS for Physical Reality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --matrix-green: #00ff41;
+            --matrix-green-dark: #008f11;
+            --matrix-green-glow: #39ff14;
+            --matrix-bright: #7fff00;
+            --matrix-dim: #003b00;
+            --matrix-bg: #0d0208;
+            --matrix-bg-light: #0a1a0a;
+            --matrix-cyan: #00ffff;
+            --matrix-gold: #ffd700;
+            --aether-purple: #667eea;
+            --aether-pink: #f093fb;
+            --text-primary: #00ff41;
+            --text-secondary: #008f11;
+            --text-dim: #004d00;
+            --glass-bg: rgba(0, 255, 65, 0.05);
+            --glass-border: rgba(0, 255, 65, 0.2);
+            --stage-cold: #6b7280;
+            --stage-contacted: #3b82f6;
+            --stage-warm: #f59e0b;
+            --stage-hot: #ef4444;
+            --stage-closed: #10b981;
+        }
+        
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background: var(--matrix-bg);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            padding-bottom: 50px;
+        }
+        
+        #matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.12;
+        }
+        
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header */
+        .logo-header {
+            text-align: center;
+            padding: 25px 20px;
+            margin-bottom: 15px;
+        }
+        
+        .aether-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .aether-logo svg {
+            width: 70px;
+            height: 70px;
+            filter: drop-shadow(0 0 20px var(--matrix-green)) drop-shadow(0 0 40px var(--matrix-green-dark));
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoPulse {
+            0%, 100% { filter: drop-shadow(0 0 20px var(--matrix-green)) drop-shadow(0 0 40px var(--matrix-green-dark)); }
+            50% { filter: drop-shadow(0 0 30px var(--matrix-green-glow)) drop-shadow(0 0 60px var(--matrix-green)); }
+        }
+        
+        .logo-text h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: var(--matrix-green);
+            text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green-dark);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text .tagline {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        
+        .matrix-subtitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            color: var(--matrix-green-dark);
+            letter-spacing: 6px;
+            margin-top: 12px;
+            animation: textFlicker 4s ease-in-out infinite;
+        }
+        
+        @keyframes textFlicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.3; }
+            94% { opacity: 1; }
+            96% { opacity: 0.5; }
+            97% { opacity: 1; }
+        }
+        
+        /* Window */
+        .window {
+            background: linear-gradient(180deg, rgba(0, 20, 0, 0.95), rgba(0, 10, 0, 0.98));
+            border: 2px solid var(--matrix-green);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), inset 0 0 50px rgba(0, 255, 65, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .window-header {
+            background: linear-gradient(90deg, var(--matrix-dim), var(--matrix-green-dark), var(--matrix-dim));
+            color: var(--matrix-green);
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 13px;
+            border-bottom: 1px solid var(--matrix-green);
+            text-shadow: 0 0 10px var(--matrix-green);
+        }
+        
+        .window-title { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        .window-controls { display: flex; gap: 8px; }
+        .window-btn {
+            width: 12px;
+            height: 12px;
+            background: var(--matrix-bg);
+            border: 1px solid var(--matrix-green);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .window-btn:hover {
+            background: var(--matrix-green);
+            box-shadow: 0 0 10px var(--matrix-green);
+        }
+        
+        .window-content {
+            padding: 20px;
+            background: rgba(0, 5, 0, 0.9);
+        }
+        
+        /* Tabs */
+        .tabs-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 12px 25px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+        }
+        
+        .tab-button:hover {
+            color: var(--matrix-green);
+            background: rgba(0, 255, 65, 0.1);
+        }
+        
+        .tab-button.active {
+            color: var(--matrix-green);
+            border-bottom-color: var(--matrix-green);
+            background: rgba(0, 255, 65, 0.15);
+            text-shadow: 0 0 15px var(--matrix-green);
+        }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        /* Pipeline Overview */
+        .pipeline-overview {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .pipeline-stage {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pipeline-stage:hover {
+            border-color: var(--matrix-green);
+            transform: translateY(-2px);
+        }
+        
+        .pipeline-stage.active {
+            border-color: var(--matrix-green);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        
+        .pipeline-stage-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .pipeline-stage-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .pipeline-stage-count {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .stage-cold .pipeline-stage-count { color: var(--stage-cold); text-shadow: 0 0 10px var(--stage-cold); }
+        .stage-contacted .pipeline-stage-count { color: var(--stage-contacted); text-shadow: 0 0 10px var(--stage-contacted); }
+        .stage-warm .pipeline-stage-count { color: var(--stage-warm); text-shadow: 0 0 10px var(--stage-warm); }
+        .stage-hot .pipeline-stage-count { color: var(--stage-hot); text-shadow: 0 0 10px var(--stage-hot); }
+        .stage-closed .pipeline-stage-count { color: var(--stage-closed); text-shadow: 0 0 10px var(--stage-closed); }
+        
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            border-color: var(--matrix-green);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+        }
+        
+        .stat-label {
+            font-size: 9px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--matrix-green);
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px var(--matrix-green);
+        }
+        
+        .stat-sublabel {
+            font-size: 10px;
+            color: var(--text-dim);
+            margin-top: 3px;
+        }
+        
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px 14px;
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid var(--matrix-green-dark);
+            color: var(--matrix-green);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+        }
+        
+        .search-box::placeholder { color: var(--text-dim); }
+        .search-box:focus { 
+            outline: none; 
+            border-color: var(--matrix-green); 
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+        }
+        
+        .filter-select {
+            padding: 10px 12px;
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid var(--matrix-green-dark);
+            color: var(--matrix-green);
+            font-size: 11px;
+            cursor: pointer;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--matrix-green);
+        }
+        
+        .filter-select option {
+            background: var(--matrix-bg);
+            color: var(--matrix-green);
+        }
+        
+        .btn {
+            padding: 10px 16px;
+            background: transparent;
+            border: 1px solid var(--matrix-green);
+            color: var(--matrix-green);
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .btn:hover {
+            background: var(--matrix-green);
+            color: var(--matrix-bg);
+            box-shadow: 0 0 15px var(--matrix-green);
+        }
+        
+        .btn-primary {
+            background: var(--matrix-green);
+            color: var(--matrix-bg);
+        }
+        
+        .btn-sm {
+            padding: 6px 10px;
+            font-size: 9px;
+        }
+        
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 15px;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, rgba(0, 30, 0, 0.9), rgba(0, 15, 0, 0.95));
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-card:hover::before {
+            opacity: 1;
+        }
+        
+        .contact-card[data-stage="cold"]::before { background: var(--stage-cold); }
+        .contact-card[data-stage="contacted"]::before { background: var(--stage-contacted); }
+        .contact-card[data-stage="warm"]::before { background: var(--stage-warm); }
+        .contact-card[data-stage="hot"]::before { background: var(--stage-hot); }
+        .contact-card[data-stage="closed"]::before { background: var(--stage-closed); }
+        
+        .contact-card:hover {
+            border-color: var(--matrix-green);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .card-header {
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+            gap: 10px;
+        }
+        
+        .company-info { flex: 1; }
+        
+        .company-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--matrix-green);
+            margin-bottom: 4px;
+            text-shadow: 0 0 10px var(--matrix-green-dark);
+            letter-spacing: 1px;
+        }
+        
+        .company-type {
+            font-size: 10px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+        
+        .card-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-end;
+        }
+        
+        .tier-badge {
+            padding: 4px 10px;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            border: 1px solid;
+        }
+        
+        .tier-1 { background: rgba(255, 215, 0, 0.2); border-color: #ffd700; color: #ffd700; }
+        .tier-2 { background: rgba(0, 255, 65, 0.2); border-color: var(--matrix-green); color: var(--matrix-green); }
+        .tier-3 { background: rgba(0, 143, 17, 0.2); border-color: var(--matrix-green-dark); color: var(--matrix-green-dark); }
+        .tier-impact { background: rgba(0, 255, 255, 0.2); border-color: var(--matrix-cyan); color: var(--matrix-cyan); }
+        .tier-s { background: rgba(102, 126, 234, 0.2); border-color: var(--aether-purple); color: var(--aether-purple); }
+        
+        .stage-badge {
+            padding: 3px 8px;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .stage-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        .stage-cold { background: rgba(107, 114, 128, 0.2); border-color: var(--stage-cold); color: var(--stage-cold); }
+        .stage-contacted { background: rgba(59, 130, 246, 0.2); border-color: var(--stage-contacted); color: var(--stage-contacted); }
+        .stage-warm { background: rgba(245, 158, 11, 0.2); border-color: var(--stage-warm); color: var(--stage-warm); }
+        .stage-hot { background: rgba(239, 68, 68, 0.2); border-color: var(--stage-hot); color: var(--stage-hot); }
+        .stage-closed { background: rgba(16, 185, 129, 0.2); border-color: var(--stage-closed); color: var(--stage-closed); }
+        
+        .segment-tags {
+            padding: 8px 15px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .segment-tag {
+            padding: 3px 8px;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid;
+        }
+        
+        .segment-investment { border-color: #ffd700; color: #ffd700; background: rgba(255, 215, 0, 0.1); }
+        .segment-b2b { border-color: var(--matrix-green); color: var(--matrix-green); background: rgba(0, 255, 65, 0.1); }
+        .segment-creative { border-color: #00ffff; color: #00ffff; background: rgba(0, 255, 255, 0.1); }
+        .segment-strategic { border-color: var(--aether-purple); color: var(--aether-purple); background: rgba(102, 126, 234, 0.1); }
+        .segment-vendor { border-color: #ff6b6b; color: #ff6b6b; background: rgba(255, 107, 107, 0.1); }
+        .segment-other { border-color: var(--text-secondary); color: var(--text-secondary); background: rgba(0, 143, 17, 0.1); }
+        
+        .contacts-list {
+            padding: 10px 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.05);
+        }
+        
+        .contact-item:last-child { border-bottom: none; }
+        
+        .contact-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--matrix-green-dark), var(--matrix-dim));
+            border: 1px solid var(--matrix-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--matrix-green);
+            font-family: 'Orbitron', sans-serif;
+            flex-shrink: 0;
+        }
+        
+        .contact-details { flex: 1; min-width: 0; }
+        
+        .contact-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--matrix-green);
+            margin-bottom: 2px;
+        }
+        
+        .contact-role {
+            font-size: 10px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        
+        .contact-email-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-email {
+            font-size: 10px;
+            color: var(--matrix-cyan);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .contact-email:hover { 
+            color: var(--matrix-green-glow);
+        }
+        
+        .icon-btn {
+            background: transparent;
+            border: 1px solid var(--matrix-green-dark);
+            color: var(--matrix-green);
+            padding: 2px 5px;
+            cursor: pointer;
+            font-size: 9px;
+            transition: all 0.3s;
+        }
+        
+        .icon-btn:hover {
+            background: var(--matrix-green);
+            color: var(--matrix-bg);
+        }
+        
+        .card-notes {
+            padding: 8px 15px;
+            font-size: 10px;
+            color: var(--text-dim);
+            border-top: 1px solid rgba(0, 255, 65, 0.05);
+            font-style: italic;
+        }
+        
+        .card-footer {
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 30, 0, 0.5);
+            border-top: 1px solid rgba(0, 255, 65, 0.1);
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .action-btns {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 5px 10px;
+            font-size: 9px;
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: 'Share Tech Mono', monospace;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .action-btn:hover {
+            border-color: var(--matrix-green);
+            color: var(--matrix-green);
+        }
+        
+        .action-btn.primary {
+            border-color: var(--aether-purple);
+            color: var(--aether-purple);
+        }
+        
+        .action-btn.primary:hover {
+            background: var(--aether-purple);
+            color: var(--matrix-bg);
+        }
+        
+        .research-links {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .research-link {
+            font-size: 14px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        
+        .research-link:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        
+        /* Charts */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .chart-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+        }
+        
+        .chart-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--matrix-green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* Email Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal {
+            background: linear-gradient(180deg, rgba(0, 20, 0, 0.98), rgba(0, 10, 0, 0.99));
+            border: 2px solid var(--matrix-green);
+            box-shadow: 0 0 50px rgba(0, 255, 65, 0.4);
+            width: 100%;
+            max-width: 950px;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .modal-header {
+            background: linear-gradient(90deg, var(--matrix-dim), var(--matrix-green-dark), var(--matrix-dim));
+            color: var(--matrix-green);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--matrix-green);
+        }
+        
+        .modal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modal-badge {
+            padding: 3px 8px;
+            font-size: 9px;
+            border: 1px solid;
+            letter-spacing: 1px;
+        }
+        
+        .modal-close {
+            background: transparent;
+            border: 1px solid var(--matrix-green);
+            color: var(--matrix-green);
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .modal-close:hover {
+            background: var(--matrix-green);
+            color: var(--matrix-bg);
+        }
+        
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        
+        .email-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .email-option-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .email-option-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .email-field {
+            margin-bottom: 15px;
+        }
+        
+        .email-field-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        
+        .email-field-input {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid var(--matrix-green-dark);
+            color: var(--matrix-green);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+        }
+        
+        .email-field-input:focus {
+            outline: none;
+            border-color: var(--matrix-green);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+        }
+        
+        .email-body-textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 12px;
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid var(--matrix-green-dark);
+            color: var(--matrix-green);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            resize: vertical;
+        }
+        
+        .email-body-textarea:focus {
+            outline: none;
+            border-color: var(--matrix-green);
+        }
+        
+        .modal-footer {
+            padding: 12px 20px;
+            background: rgba(0, 30, 0, 0.5);
+            border-top: 1px solid rgba(0, 255, 65, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .modal-status {
+            font-size: 10px;
+            color: var(--text-secondary);
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        /* Activity Modal */
+        .activity-log {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .activity-item {
+            padding: 10px;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .activity-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            font-size: 14px;
+        }
+        
+        .activity-content { flex: 1; }
+        
+        .activity-text {
+            font-size: 11px;
+            color: var(--matrix-green);
+            margin-bottom: 3px;
+        }
+        
+        .activity-date {
+            font-size: 9px;
+            color: var(--text-dim);
+        }
+        
+        .add-activity {
+            display: flex;
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 255, 65, 0.1);
+            margin-top: 15px;
+        }
+        
+        .add-activity input {
+            flex: 1;
+        }
+        
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-secondary);
+            display: none;
+        }
+        
+        .no-results-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            opacity: 0.3;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 10px;
+        }
+        
+        .about-hero {
+            background: linear-gradient(135deg, rgba(0, 40, 0, 0.6), rgba(0, 20, 0, 0.8));
+            border: 1px solid var(--matrix-green);
+            padding: 40px 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.03) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite;
+        }
+        
+        @keyframes heroGlow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* System Status */
+        .system-status {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 10, 0, 0.95);
+            border-top: 1px solid var(--matrix-green-dark);
+            padding: 6px 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--text-secondary);
+            z-index: 100;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .status-indicator {
+            width: 6px;
+            height: 6px;
+            background: var(--matrix-green);
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-text h1 { font-size: 28px; letter-spacing: 6px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .pipeline-overview { grid-template-columns: repeat(3, 1fr); }
+            .toolbar { flex-direction: column; }
+            .search-box { min-width: 100%; }
+        }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--matrix-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--matrix-green-dark); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--matrix-green); }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-rain"></canvas>
+    <div class="scanlines"></div>
+    
+    <div class="container">
+        <div class="logo-header">
+            <div class="aether-logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="matrixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00ff41" />
+                            <stop offset="50%" style="stop-color:#39ff14" />
+                            <stop offset="100%" style="stop-color:#008f11" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="none" stroke="url(#matrixGrad)" stroke-width="2" filter="url(#glow)"/>
+                    <path d="M50,15 L75,75 L65,75 L57,55 L43,55 L35,75 L25,75 L50,15 Z M50,30 L42,50 L58,50 L50,30 Z" fill="url(#matrixGrad)" filter="url(#glow)"/>
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="url(#matrixGrad)" stroke-width="1" opacity="0.5"/>
+                </svg>
+                <div class="logo-text">
+                    <h1>AETHER</h1>
+                    <div class="tagline">Phygital Experiential Brand :: Deep-Tech Atelier</div>
+                </div>
+            </div>
+            <div class="matrix-subtitle">[ ALCHEMIST ATELIER v8.0 ] :: CRM PRO :: THE iOS FOR PHYSICAL REALITY</div>
+        </div>
+        
+        <div class="window">
+            <div class="window-header">
+                <div class="window-title">
+                    <span>⬡</span>
+                    AETHER_CRM_PRO.exe :: Strategic Partner Pipeline
+                </div>
+                <div class="window-controls">
+                    <div class="window-btn"></div>
+                    <div class="window-btn"></div>
+                    <div class="window-btn"></div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="tabs-container">
+                    <button class="tab-button active" onclick="switchTab('pipeline')">Pipeline</button>
+                    <button class="tab-button" onclick="switchTab('partners')">All Partners</button>
+                    <button class="tab-button" onclick="switchTab('analytics')">Analytics</button>
+                    <button class="tab-button" onclick="switchTab('templates')">Email Templates</button>
+                    <button class="tab-button" onclick="switchTab('about')">About AETHER</button>
+                </div>
+                
+                <!-- Pipeline Tab -->
+                <div id="pipeline-tab" class="tab-content active">
+                    <div class="pipeline-overview">
+                        <div class="pipeline-stage stage-cold" onclick="filterByStage('cold')">
+                            <div class="pipeline-stage-icon">❄️</div>
+                            <div class="pipeline-stage-name">COLD</div>
+                            <div class="pipeline-stage-count" id="coldCount">0</div>
+                        </div>
+                        <div class="pipeline-stage stage-contacted" onclick="filterByStage('contacted')">
+                            <div class="pipeline-stage-icon">📧</div>
+                            <div class="pipeline-stage-name">CONTACTED</div>
+                            <div class="pipeline-stage-count" id="contactedCount">0</div>
+                        </div>
+                        <div class="pipeline-stage stage-warm" onclick="filterByStage('warm')">
+                            <div class="pipeline-stage-icon">🔥</div>
+                            <div class="pipeline-stage-name">WARM</div>
+                            <div class="pipeline-stage-count" id="warmCount">0</div>
+                        </div>
+                        <div class="pipeline-stage stage-hot" onclick="filterByStage('hot')">
+                            <div class="pipeline-stage-icon">⚡</div>
+                            <div class="pipeline-stage-name">HOT</div>
+                            <div class="pipeline-stage-count" id="hotCount">0</div>
+                        </div>
+                        <div class="pipeline-stage stage-closed" onclick="filterByStage('closed')">
+                            <div class="pipeline-stage-icon">✅</div>
+                            <div class="pipeline-stage-name">CLOSED</div>
+                            <div class="pipeline-stage-count" id="closedCount">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Pipeline</div>
+                            <div class="stat-value" id="totalPartners">0</div>
+                            <div class="stat-sublabel">Active partners</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Email Ready</div>
+                            <div class="stat-value" id="emailReady">0</div>
+                            <div class="stat-sublabel">With contacts</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">T1 Priority</div>
+                            <div class="stat-value" id="t1Count">0</div>
+                            <div class="stat-sublabel">High value</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Pipeline Value</div>
+                            <div class="stat-value">$12B</div>
+                            <div class="stat-sublabel">Aggregate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Follow-ups Due</div>
+                            <div class="stat-value" id="followupsDue">0</div>
+                            <div class="stat-sublabel">This week</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Conversion Rate</div>
+                            <div class="stat-value">--</div>
+                            <div class="stat-sublabel">Tracking</div>
+                        </div>
+                    </div>
+                    
+                    <div class="toolbar">
+                        <input type="text" id="pipelineSearch" class="search-box" placeholder=">> SEARCH PIPELINE...">
+                        <select id="pipelineTierFilter" class="filter-select">
+                            <option value="">[ ALL TIERS ]</option>
+                            <option value="tier-1">T1 PRIORITY</option>
+                            <option value="tier-2">T2 STANDARD</option>
+                            <option value="tier-3">T3 EMERGING</option>
+                            <option value="tier-impact">IMPACT</option>
+                            <option value="tier-s">SOVEREIGN</option>
+                        </select>
+                        <select id="pipelineSegmentFilter" class="filter-select">
+                            <option value="">[ ALL SEGMENTS ]</option>
+                            <option value="investment">INVESTMENT</option>
+                            <option value="b2b">B2B</option>
+                            <option value="creative">CREATIVE</option>
+                            <option value="vendor">VENDOR</option>
+                            <option value="other">OTHER</option>
+                        </select>
+                        <button class="btn" onclick="resetPipelineFilters()">RESET</button>
+                        <button class="btn btn-primary" onclick="exportPipeline()">EXPORT</button>
+                    </div>
+                    
+                    <div id="pipelineGrid" class="contact-grid"></div>
+                    <div id="pipelineNoResults" class="no-results">
+                        <div class="no-results-icon">⌀</div>
+                        <p>NO MATCHING PARTNERS</p>
+                    </div>
+                </div>
+                
+                <!-- Partners Tab -->
+                <div id="partners-tab" class="tab-content">
+                    <div class="toolbar">
+                        <input type="text" id="partnerSearch" class="search-box" placeholder=">> SEARCH ALL PARTNERS...">
+                        <select id="partnerTierFilter" class="filter-select">
+                            <option value="">[ ALL TIERS ]</option>
+                            <option value="tier-1">T1 PRIORITY</option>
+                            <option value="tier-2">T2 STANDARD</option>
+                            <option value="tier-3">T3 EMERGING</option>
+                            <option value="tier-impact">IMPACT</option>
+                            <option value="tier-s">SOVEREIGN</option>
+                        </select>
+                        <select id="partnerSegmentFilter" class="filter-select">
+                            <option value="">[ ALL SEGMENTS ]</option>
+                            <option value="investment">INVESTMENT</option>
+                            <option value="b2b">B2B</option>
+                            <option value="creative">CREATIVE</option>
+                            <option value="vendor">VENDOR</option>
+                            <option value="other">OTHER</option>
+                        </select>
+                        <select id="partnerStageFilter" class="filter-select">
+                            <option value="">[ ALL STAGES ]</option>
+                            <option value="cold">❄️ COLD</option>
+                            <option value="contacted">📧 CONTACTED</option>
+                            <option value="warm">🔥 WARM</option>
+                            <option value="hot">⚡ HOT</option>
+                            <option value="closed">✅ CLOSED</option>
+                        </select>
+                        <button class="btn" onclick="resetPartnerFilters()">RESET</button>
+                    </div>
+                    
+                    <div id="partnerGrid" class="contact-grid"></div>
+                    <div id="partnerNoResults" class="no-results">
+                        <div class="no-results-icon">⌀</div>
+                        <p>NO MATCHING PARTNERS</p>
+                    </div>
+                </div>
+                
+                <!-- Analytics Tab -->
+                <div id="analytics-tab" class="tab-content">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Pipeline Coverage</div>
+                            <div class="stat-value">95%</div>
+                            <div class="stat-sublabel">T1 contacts</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Outreach Rate</div>
+                            <div class="stat-value" id="outreachRate">0%</div>
+                            <div class="stat-sublabel">Contacted</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Warm+ Rate</div>
+                            <div class="stat-value" id="warmRate">0%</div>
+                            <div class="stat-sublabel">Engaged</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Email Templates</div>
+                            <div class="stat-value">8</div>
+                            <div class="stat-sublabel">Available</div>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <div class="chart-title">Pipeline by Stage</div>
+                            <canvas id="stageChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-title">Partners by Tier</div>
+                            <canvas id="tierChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-title">Segment Distribution</div>
+                            <canvas id="segmentChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-title">Pipeline Value ($B)</div>
+                            <canvas id="valueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Templates Tab -->
+                <div id="templates-tab" class="tab-content">
+                    <div class="stats-grid" style="margin-bottom: 20px;">
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('investment')">
+                            <div class="stat-label">Investment</div>
+                            <div class="stat-value" style="font-size: 20px;">💰</div>
+                            <div class="stat-sublabel">Pitch deck intro</div>
+                        </div>
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('b2b')">
+                            <div class="stat-label">B2B Collab</div>
+                            <div class="stat-value" style="font-size: 20px;">🤝</div>
+                            <div class="stat-sublabel">Partnership inquiry</div>
+                        </div>
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('vendor')">
+                            <div class="stat-label">Vendor</div>
+                            <div class="stat-value" style="font-size: 20px;">🔧</div>
+                            <div class="stat-sublabel">Procurement</div>
+                        </div>
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('creative')">
+                            <div class="stat-label">Creative</div>
+                            <div class="stat-value" style="font-size: 20px;">🎨</div>
+                            <div class="stat-sublabel">Collaboration</div>
+                        </div>
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('followup1')">
+                            <div class="stat-label">Follow-up #1</div>
+                            <div class="stat-value" style="font-size: 20px;">📬</div>
+                            <div class="stat-sublabel">7 days</div>
+                        </div>
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('followup2')">
+                            <div class="stat-label">Follow-up #2</div>
+                            <div class="stat-value" style="font-size: 20px;">📫</div>
+                            <div class="stat-sublabel">14 days</div>
+                        </div>
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('followup3')">
+                            <div class="stat-label">Final Follow-up</div>
+                            <div class="stat-value" style="font-size: 20px;">📭</div>
+                            <div class="stat-sublabel">Break-up</div>
+                        </div>
+                        <div class="stat-card" style="cursor: pointer;" onclick="previewTemplate('meeting')">
+                            <div class="stat-label">Meeting Request</div>
+                            <div class="stat-value" style="font-size: 20px;">📅</div>
+                            <div class="stat-sublabel">Schedule call</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-title" id="templatePreviewTitle">SELECT A TEMPLATE TO PREVIEW</div>
+                        <div id="templatePreview" style="background: rgba(0,20,0,0.5); padding: 15px; font-size: 12px; line-height: 1.6; white-space: pre-wrap; max-height: 400px; overflow-y: auto; color: var(--matrix-green);">Click any template above to preview its content...</div>
+                    </div>
+                </div>
+                
+                <!-- About Tab -->
+                <div id="about-tab" class="tab-content">
+                    <div class="about-section">
+                        <div class="about-hero">
+                            <div class="about-hero-content">
+                                <h2 style="font-family: 'Orbitron', sans-serif; font-size: 28px; color: var(--matrix-green); text-shadow: 0 0 20px var(--matrix-green); margin-bottom: 15px; letter-spacing: 4px;">ALCHEMIST ATELIER</h2>
+                                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.8; max-width: 900px; margin: 0 auto;">A whimsical fusion of the tangible and digital where reality and fantasy blur in a dance of phygital experiential hospitality, commerce, and spectacle. Imagine storytelling leaping off the page, retail becoming an adventure, and avant-garde theatricality merging with groundbreaking tech to redefine engagement.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-mission" style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 25px; margin: 20px 0;">
+                            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 14px; color: var(--matrix-gold); letter-spacing: 3px; margin-bottom: 15px;">⬡ MISSION</h3>
+                            <p style="font-size: 13px; color: var(--matrix-green); line-height: 1.8;">Enable any organization—retail, hospitality, entertainment, healthcare, education, corporate—to transform its brand into responsive, emotionally intelligent phygital experiences that were previously impossible, and to do so in half the development time.</p>
+                        </div>
+                        
+                        <div class="platform-section" style="margin: 30px 0;">
+                            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 16px; color: var(--matrix-green); letter-spacing: 3px; margin-bottom: 20px; text-shadow: 0 0 10px var(--matrix-green);">⬡ AETHER PXR — THE PLATFORM</h3>
+                            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 20px;">Built on our proprietary Theater-of-Things (ToT) architecture, AETHER PXR is the "iOS for physical reality." Five integrated modules power the full experience lifecycle:</p>
+                            
+                            <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                                <div class="stat-card" style="border-color: var(--matrix-cyan);">
+                                    <div class="stat-label" style="color: var(--matrix-cyan);">AetherDream</div>
+                                    <div class="stat-value" style="font-size: 18px; color: var(--matrix-cyan);">30-60×</div>
+                                    <div class="stat-sublabel">AI-accelerated design faster concept-to-model</div>
+                                </div>
+                                <div class="stat-card" style="border-color: var(--matrix-gold);">
+                                    <div class="stat-label" style="color: var(--matrix-gold);">AetherPay</div>
+                                    <div class="stat-value" style="font-size: 18px; color: var(--matrix-gold);">$36-$396</div>
+                                    <div class="stat-sublabel">Dynamic story-selling & equitable payment</div>
+                                </div>
+                                <div class="stat-card" style="border-color: var(--aether-purple);">
+                                    <div class="stat-label" style="color: var(--aether-purple);">Indigo Ops</div>
+                                    <div class="stat-value" style="font-size: 18px; color: var(--aether-purple);">99.7%</div>
+                                    <div class="stat-sublabel">Predictive manufacturing accuracy</div>
+                                </div>
+                                <div class="stat-card" style="border-color: var(--matrix-green-glow);">
+                                    <div class="stat-label" style="color: var(--matrix-green-glow);">AetherOS</div>
+                                    <div class="stat-value" style="font-size: 18px; color: var(--matrix-green-glow);">10¹⁸</div>
+                                    <div class="stat-sublabel">Quantum-classical compute core ops/sec</div>
+                                </div>
+                                <div class="stat-card" style="border-color: var(--aether-pink);">
+                                    <div class="stat-label" style="color: var(--aether-pink);">AetherWare</div>
+                                    <div class="stat-value" style="font-size: 18px; color: var(--aether-pink);">⚡</div>
+                                    <div class="stat-sublabel">Specialized hardware suite</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="business-model" style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 25px; margin: 20px 0;">
+                            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 14px; color: var(--matrix-green); letter-spacing: 3px; margin-bottom: 20px;">⬡ DUAL BUSINESS MODEL</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
+                                <div style="background: rgba(0,20,0,0.5); padding: 20px; border-left: 3px solid var(--matrix-gold);">
+                                    <h4 style="font-family: 'Orbitron', sans-serif; font-size: 12px; color: var(--matrix-gold); margin-bottom: 10px;">B2B — PHYGITAVERSE COLLABORATORY</h4>
+                                    <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">Platform access from US $27k/mo up to US $10M+/yr, targeting 144 strategic partners with > 3× ROI.</p>
+                                </div>
+                                <div style="background: rgba(0,20,0,0.5); padding: 20px; border-left: 3px solid var(--matrix-cyan);">
+                                    <h4 style="font-family: 'Orbitron', sans-serif; font-size: 12px; color: var(--matrix-cyan); margin-bottom: 10px;">B2C — PHYGITAL REALITY BRANDS</h4>
+                                    <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">Generates cash flow while serving as living showrooms for enterprise clients.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 style="font-family: 'Orbitron', sans-serif; font-size: 16px; color: var(--matrix-green); letter-spacing: 3px; margin: 30px 0 20px; text-shadow: 0 0 10px var(--matrix-green);">⬡ LEADERSHIP & ADVISORY TEAM</h3>
+                        
+                        <div class="contact-grid" style="margin-bottom: 30px;">
+                            <!-- Founder -->
+                            <div class="contact-card" style="border-color: var(--matrix-gold);">
+                                <div class="card-header">
+                                    <div class="company-info">
+                                        <div class="company-name" style="color: var(--matrix-gold);">Christían Harris</div>
+                                        <div class="company-type">Founder & CEO</div>
+                                    </div>
+                                    <span class="tier-badge tier-1">FOUNDER</span>
+                                </div>
+                                <div style="padding: 15px; font-size: 11px; color: var(--text-secondary); line-height: 1.7;">
+                                    Art director, strategist, technologist, and creative producer. A versatile leader who pioneers the future of Experiential Entertainment—a seamless blend of tangible experiences, digital platforms, cutting-edge tech, avant-garde theatricality, and interactive storytelling.
+                                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,255,65,0.1);">
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• LDInnovations League member (2022-2024)</div>
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• Pat Mackay Diversity in Design Award scholar (2022)</div>
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• Arizoni Award winner for Kill. Move. Paradise</div>
+                                        <div style="color: var(--matrix-cyan);">• 36,000+ hours building phygital reality infrastructure</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- CRO -->
+                            <div class="contact-card" style="border-color: var(--aether-purple);">
+                                <div class="card-header">
+                                    <div class="company-info">
+                                        <div class="company-name" style="color: var(--aether-purple);">Dr. Sha Xin Wei</div>
+                                        <div class="company-type">Chief Research Officer (CRO)</div>
+                                    </div>
+                                    <span class="tier-badge" style="background: rgba(102, 126, 234, 0.2); border-color: var(--aether-purple); color: var(--aether-purple);">CRO</span>
+                                </div>
+                                <div style="padding: 15px; font-size: 11px; color: var(--text-secondary); line-height: 1.7;">
+                                    The Alchemical Architect of Synthesis.
+                                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,255,65,0.1);">
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• PhD, Stanford University (2001) — Mathematics, Computer Science, History & Philosophy of Science</div>
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• AB, Mathematics, Harvard University (cum laude)</div>
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• Professor, School of Arts, Media Engineering & School of Complex Adaptive Systems, ASU</div>
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• Director, Synthesis Center, ASU (since 2014)</div>
+                                        <div style="color: var(--matrix-cyan);">• 1,344+ citations; MIT Press author</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- CIO -->
+                            <div class="contact-card" style="border-color: var(--matrix-cyan);">
+                                <div class="card-header">
+                                    <div class="company-info">
+                                        <div class="company-name" style="color: var(--matrix-cyan);">Dr. Vangelis Lympouridis</div>
+                                        <div class="company-type">Chief Innovation Officer (CIO)</div>
+                                    </div>
+                                    <span class="tier-badge" style="background: rgba(0, 255, 255, 0.2); border-color: var(--matrix-cyan); color: var(--matrix-cyan);">CIO</span>
+                                </div>
+                                <div style="padding: 15px; font-size: 11px; color: var(--text-secondary); line-height: 1.7;">
+                                    The Alchemical Virtuoso of Immersive Transformation.
+                                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,255,65,0.1);">
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• Chief Design Officer, AppliedVR (2017-2020)</div>
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• Led development of RelieVRx — first FDA-authorized VR therapeutic (Class II, 2021)</div>
+                                        <div style="color: var(--matrix-cyan); margin-bottom: 5px;">• 60,000+ patients treated across 200% of global healthcare systems</div>
+                                        <div style="color: var(--matrix-cyan);">• CMS Reimbursement Code E1905 — valued at US $1,888.98 per three-month treatment</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 style="font-family: 'Orbitron', sans-serif; font-size: 14px; color: var(--matrix-green-dark); letter-spacing: 3px; margin: 25px 0 15px;">⬡ ADVISORY BOARD</h3>
+                        
+                        <div class="contact-grid">
+                            <!-- John Featherstone -->
+                            <div class="contact-card">
+                                <div class="card-header">
+                                    <div class="company-info">
+                                        <div class="company-name">John Featherstone</div>
+                                        <div class="company-type">Master of Illumination</div>
+                                    </div>
+                                    <span class="tier-badge tier-2">ADVISOR</span>
+                                </div>
+                                <div style="padding: 15px; font-size: 11px; color: var(--text-secondary); line-height: 1.7;">
+                                    Principal & Managing Director, Lightswitch. 35 years of lighting design; tours for Janet Jackson, Hans Zimmer, Journey, Van Halen; IES Illumination Award winner; work viewed by > 200 million people.
+                                </div>
+                            </div>
+                            
+                            <!-- Colleen Jennings-Roggensack -->
+                            <div class="contact-card">
+                                <div class="card-header">
+                                    <div class="company-info">
+                                        <div class="company-name">Colleen Jennings-Roggensack</div>
+                                        <div class="company-type">Champion of Equity</div>
+                                    </div>
+                                    <span class="tier-badge tier-2">ADVISOR</span>
+                                </div>
+                                <div style="padding: 15px; font-size: 11px; color: var(--text-secondary); line-height: 1.7;">
+                                    Executive Director, ASU Gammage; Vice President for Cultural Affairs, Arizona State University. President, Association of Performing Arts Presenters; Vice-Chair, Broadway League's RoadMaster initiative.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-footer" style="background: linear-gradient(135deg, rgba(0,30,0,0.9), rgba(0,15,0,0.95)); border: 1px solid var(--glass-border); padding: 30px; margin-top: 30px; text-align: center;">
+                            <p style="font-size: 13px; color: var(--matrix-green); font-style: italic; line-height: 1.8; max-width: 800px; margin: 0 auto 15px;">
+                                "Growing up in the shadow of Disneyland, the moment I heard Linda Gary narrate Fantasmic! sparked a revelation: technology and narrative, woven together, can physically transform space & commerce. Brands become places, in any Reality."
+                            </p>
+                            <p style="font-size: 11px; color: var(--text-secondary);">— Christian Charles-Harris, Founder & CEO</p>
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0,255,65,0.1);">
+                                <a href="https://alchemistatelier.univer.se" target="_blank" style="color: var(--matrix-cyan); text-decoration: none; font-size: 12px; letter-spacing: 2px;">ALCHEMISTATELIER.UNIVER.SE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Email Modal -->
+    <div id="emailModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">
+                    ✉ EMAIL COMPOSER
+                    <span id="emailModalBadge" class="modal-badge"></span>
+                </div>
+                <button class="modal-close" onclick="closeModal('emailModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="email-options">
+                    <div class="email-option-group">
+                        <span class="email-option-label">Template:</span>
+                        <select id="emailTemplateSelect" class="filter-select" onchange="changeEmailTemplate()">
+                            <option value="auto">Auto (Segment)</option>
+                            <option value="investment">Investment Pitch</option>
+                            <option value="b2b">B2B Collaboration</option>
+                            <option value="vendor">Vendor Inquiry</option>
+                            <option value="creative">Creative Collab</option>
+                            <option value="followup1">Follow-up #1</option>
+                            <option value="followup2">Follow-up #2</option>
+                            <option value="followup3">Final Follow-up</option>
+                            <option value="meeting">Meeting Request</option>
+                        </select>
+                    </div>
+                    <div class="email-option-group">
+                        <span class="email-option-label">Tone:</span>
+                        <select id="emailToneSelect" class="filter-select" onchange="adjustEmailTone()">
+                            <option value="professional">Professional</option>
+                            <option value="warm">Warm</option>
+                            <option value="direct">Direct</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="email-field">
+                    <div class="email-field-label">To</div>
+                    <input type="text" id="emailTo" class="email-field-input" readonly>
+                </div>
+                <div class="email-field">
+                    <div class="email-field-label">Subject</div>
+                    <input type="text" id="emailSubject" class="email-field-input">
+                </div>
+                <div class="email-field">
+                    <div class="email-field-label">Body</div>
+                    <textarea id="emailBody" class="email-body-textarea"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-status" id="emailStatus">Ready to send</div>
+                <div class="modal-actions">
+                    <button class="btn" onclick="copyEmailToClipboard()">📋 COPY</button>
+                    <button class="btn" onclick="openInMailClient()">📧 MAIL APP</button>
+                    <button class="btn btn-primary" onclick="markAsSent()">✓ MARK SENT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Activity Modal -->
+    <div id="activityModal" class="modal-overlay">
+        <div class="modal" style="max-width: 600px;">
+            <div class="modal-header">
+                <div class="modal-title">
+                    📋 ACTIVITY LOG
+                    <span id="activityPartnerName" class="modal-badge"></span>
+                </div>
+                <button class="modal-close" onclick="closeModal('activityModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="activity-log" id="activityLog"></div>
+                <div class="add-activity">
+                    <input type="text" id="newActivityInput" class="email-field-input" placeholder="Add a note...">
+                    <button class="btn btn-primary" onclick="addActivity()">ADD</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-status">Activity tracking enabled</div>
+                <div class="modal-actions">
+                    <button class="btn" onclick="closeModal('activityModal')">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stage Change Modal -->
+    <div id="stageModal" class="modal-overlay">
+        <div class="modal" style="max-width: 400px;">
+            <div class="modal-header">
+                <div class="modal-title">🔄 CHANGE STAGE</div>
+                <button class="modal-close" onclick="closeModal('stageModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 15px; font-size: 12px;">Select new pipeline stage for <strong id="stagePartnerName"></strong>:</p>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button class="btn" onclick="setStage('cold')" style="border-color: var(--stage-cold); color: var(--stage-cold);">❄️ COLD</button>
+                    <button class="btn" onclick="setStage('contacted')" style="border-color: var(--stage-contacted); color: var(--stage-contacted);">📧 CONTACTED</button>
+                    <button class="btn" onclick="setStage('warm')" style="border-color: var(--stage-warm); color: var(--stage-warm);">🔥 WARM</button>
+                    <button class="btn" onclick="setStage('hot')" style="border-color: var(--stage-hot); color: var(--stage-hot);">⚡ HOT</button>
+                    <button class="btn" onclick="setStage('closed')" style="border-color: var(--stage-closed); color: var(--stage-closed);">✅ CLOSED</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- System Status -->
+    <div class="system-status">
+        <div class="status-item">
+            <div class="status-indicator"></div>
+            <span>PIPELINE ACTIVE</span>
+        </div>
+        <div class="status-item">
+            <span id="statusPartners">0 PARTNERS</span>
+        </div>
+        <div class="status-item">
+            <span>v8.0 PRO</span>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain
+        const canvas = document.getElementById('matrix-rain');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const chars = 'AETHERPXR01アイウエオカキクケコ';
+        const charArray = chars.split('');
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        for (let i = 0; i < columns; i++) drops[i] = 1;
+        
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(13, 2, 8, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff41';
+            ctx.font = fontSize + 'px Share Tech Mono';
+            for (let i = 0; i < drops.length; i++) {
+                const char = charArray[Math.floor(Math.random() * charArray.length)];
+                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 35);
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+        
+        // Partner Data with Pipeline State
+        let partnersData = [
+            {"id": 1, "name": "Apple Vision Pro", "type": "Technology • XR Platform", "tier": "tier-1", "segment": "b2b", "verified": "verified", "stage": "warm", "contacts": [{"name": "Mike Rockwell", "role": "VP Vision Products Group", "email": "mrockwell@apple.com"}], "notes": "visionOS headset platform. Spatial computing leader.", "flatter": "Your pioneering work on Vision Pro has fundamentally redefined spatial computing - the dual-chip architecture combining M2 with the revolutionary R1 processor achieves sub-12ms photon-to-photon latency that makes mixed reality feel native for the first time in history. The micro-OLED displays delivering 23 million pixels with 4K resolution per eye, combined with your groundbreaking EyeSight feature that allows others to see your eyes through the display, represents engineering that borders on magic. visionOS's Personas and SharePlay spatial experiences demonstrate that Apple hasn't just built a headset - you've architected the foundation for how humanity will work, create, and connect in three-dimensional space. The recent introduction of visionOS 2 with spatial photos and the enterprise-focused Vision Pro configurations shows a roadmap that validates our belief that spatial computing will be the dominant computing paradigm of the next decade.", "activities": [{"type": "email", "text": "Sent initial intro", "date": "2025-12-15"}]},
+            {"id": 2, "name": "Anthropic Claude", "type": "AI • LLM Partner", "tier": "tier-1", "segment": "b2b", "verified": "verified", "stage": "hot", "contacts": [{"name": "Dario Amodei", "role": "CEO", "email": "dario@anthropic.com"}, {"name": "Daniela Amodei", "role": "President", "email": "daniela@anthropic.com"}], "notes": "L.I.L.L.I.A.N. framework. AETHER AI backbone.", "flatter": "Anthropic's Constitutional AI methodology and Claude's RLHF-refined reasoning represent the most significant advancement in AI alignment since the field's inception. Your recent release of Claude 3.5 Sonnet with its unprecedented 200K context window and Artifacts feature demonstrates that safety research accelerates rather than constrains capability development. The technical achievements are staggering - Claude's ability to maintain coherent reasoning across book-length documents while exhibiting genuine intellectual honesty about uncertainty sets a new standard for AI trustworthiness. Your research on interpretability, particularly the work on understanding neural network internals and the breakthrough papers on sleeper agents and deceptive alignment, provides the scientific foundation for AI systems that can be genuinely trusted with consequential decisions. Anthropic's Model Spec and the principled approach to refusing harmful requests while remaining maximally helpful shows philosophical sophistication matched by engineering excellence.", "activities": [{"type": "meeting", "text": "Discovery call scheduled", "date": "2025-12-18"}]},
+            {"id": 3, "name": "Bad Robot", "type": "Entertainment • Production", "tier": "tier-1", "segment": "creative", "verified": "verified", "stage": "contacted", "contacts": [{"name": "J.J. Abrams", "role": "Co-CEO & Founder", "email": "jj@badrobot.com"}, {"name": "Katie McGrath", "role": "Co-CEO", "email": "katie@badrobot.com"}], "notes": "Multiple IPs: Star Wars, Star Trek, Westworld.", "flatter": "Bad Robot's legacy of franchise resurrection - breathing new life into Star Trek's theatrical future, launching the Kelvin Timeline, and producing Westworld's meditation on artificial consciousness - demonstrates an unparalleled ability to honor beloved IP while pushing into genuinely new territory. J.J.'s mystery-box methodology, codified in Super 8 and Cloverfield's viral ARG marketing, invented an entirely new grammar for audience engagement that the industry is still learning from. Your commitment to practical creature effects and in-camera photography, evident in the Star Wars sequel trilogy's practical droids and puppets, creates tactile authenticity that pure CGI cannot replicate. The recent Demimonde series and your expanded gaming initiatives with Bad Robot Games show a studio that understands transmedia isn't a buzzword - it's the future architecture of storytelling. Katie McGrath's operational leadership has transformed Bad Robot into a content engine that maintains creative integrity while scaling production ambition.", "activities": []},
+            {"id": 4, "name": "PASQAL Quantum Computing", "type": "Strategic • Exclusive", "tier": "tier-1", "segment": "b2b", "verified": "verified", "stage": "closed", "contacts": [{"name": "Loïc Henriet", "role": "CEO", "email": "loic.henriet@pasqal.com"}, {"name": "Georges-Olivier Reymond", "role": "Co-Founder", "email": "georges-olivier.reymond@pasqal.com"}], "notes": "Partners: Microsoft Azure, Capgemini, IBM. 10^18 ops/sec.", "flatter": "PASQAL's neutral atom quantum computing architecture represents the most commercially viable path to quantum advantage - your proprietary control systems achieve qubit counts exceeding 300 atoms while maintaining the individual addressability that gate-based competitors cannot match at scale. The partnership portfolio speaks volumes: Microsoft Azure Quantum integration, the Capgemini quantum-classical hybrid solutions, and the BASF materials science collaboration demonstrate that PASQAL has solved the enterprise integration challenge that has kept quantum computing in the laboratory. Your recent work on variational quantum algorithms for combinatorial optimization achieved results on graph problems that classical solvers cannot match - the 10^18 operations per second capability isn't theoretical, it's deployed. Georges-Olivier Reymond and Loïc Henriet's decision to pursue analog quantum processing as a near-term advantage while building toward universal fault-tolerant computing shows strategic sophistication that distinguishes PASQAL from the quantum hype cycle.", "activities": [{"type": "deal", "text": "Partnership agreement signed", "date": "2025-11-01"}]},
+            {"id": 5, "name": "Cross Culture Ventures", "type": "Investment • Consumer VC", "tier": "tier-1", "segment": "investment", "verified": "pattern", "stage": "cold", "contacts": [{"name": "Troy Carter", "role": "Founder & GP", "email": "troy@crossculture.vc"}, {"name": "Marlon Nichols", "role": "Co-Founder & GP", "email": "marlon@crossculture.vc"}], "notes": "Lady Gaga manager. Cultural shift. Lyft, Spotify, theSkimm.", "flatter": "Cross Culture's investment thesis - that cultural fluency is investable alpha - has been validated by a portfolio that reads like a map of how commerce and culture now intersect. Troy Carter's trajectory from managing Lady Gaga's Haus of Gaga brand innovation to backing Spotify before the streaming revolution to engineering Atom Factory's creator economy infrastructure demonstrates pattern recognition that operates several years ahead of consensus. The fund's early positions in Lyft, Gimlet, theSkimm, and Thrive Market weren't lucky bets - they were precise readings of how underserved communities would shape mainstream adoption curves. Marlon Nichols' analytical framework for identifying 'cultural arbitrage' opportunities - moments when emerging community behaviors signal mass-market shifts - has created a reproducible investment edge. Your thesis that diverse founding teams see opportunities that homogeneous teams miss isn't social commentary; it's a competitive moat validated by returns.", "activities": []},
+            {"id": 6, "name": "Blume Equity (Kapor)", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "stage": "cold", "contacts": [{"name": "Freada Kapor Klein", "role": "Partner", "email": "freada@kaporcapital.com"}], "notes": "Distance traveled. Gap-closing tech.", "flatter": "Kapor Capital's 'distance traveled' framework fundamentally disrupted how venture capital evaluates founder potential - recognizing that a first-generation college graduate who built a company from nothing demonstrates more predictive signal than a Stanford MBA with family connections. Freada Kapor Klein's three decades of research on workplace inclusion, crystallized in the Kapor Center's groundbreaking studies on tech diversity pipeline failures, provides scientific rigor to what others treat as platitudes. Your portfolio companies - from ClassDojo transforming parent-teacher communication to Pigeonly disrupting the predatory prison communications industry - demonstrate that gap-closing technology creates massive markets, not niche ones. Mitch Kapor's legacy as Lotus 1-2-3's architect gives the fund technical credibility that complements Freada's social science foundation. The Kapor Capital playbook - investing at the intersection of underserved communities and emerging technology - has produced returns that silence anyone who claims impact investing requires accepting lower returns.", "activities": []},
+            {"id": 7, "name": "MIT Media Lab", "type": "Academic • Research", "tier": "tier-1", "segment": "b2b", "verified": "verified", "stage": "warm", "contacts": [{"name": "Dava Newman", "role": "Director", "email": "dnewman@media.mit.edu"}, {"name": "Rosalind Picard", "role": "Faculty", "email": "picard@media.mit.edu"}], "notes": "Affective computing pioneer.", "flatter": "MIT Media Lab has invented more fields than most institutions have departments - affective computing (Rosalind Picard), tangible user interfaces (Hiroshi Ishii), wearable computing (Steve Mann), and the entire discipline of digital humanities trace directly to your corridors. Dr. Picard's foundational work on emotion recognition - now commercialized through Affectiva and embedded in automotive safety systems worldwide - established that computers can and should respond to human emotional states. Dr. Dava Newman's revolutionary BioSuit, a mechanical counterpressure spacesuit that moves with astronauts rather than constraining them, represents the future of human space exploration and has spawned terrestrial applications in athletics and rehabilitation. The Lab's anti-disciplinary structure - deliberately refusing to organize research into traditional departments - creates intellectual collisions that produce breakthrough innovations like E Ink (now in every e-reader) and Scratch (teaching millions of children to code). The Media Lab's corporate consortium model pioneered academic-industry collaboration that has been replicated worldwide but never equaled.", "activities": []},
+            {"id": 8, "name": "Six Flags Entertainment", "type": "Entertainment • Theme Parks", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "stage": "contacted", "contacts": [{"name": "John Reilly", "role": "CEO", "email": "john.reilly@sixflags.com"}, {"name": "Christian Dieckmann", "role": "CCO", "email": "christian.dieckmann@sixflags.com"}], "notes": "Merged with Cedar Fair 2024. SIXXTHRILL target.", "flatter": "The Six Flags + Cedar Fair merger has created an unprecedented regional theme park powerhouse - 42 parks, 27 water parks, and a geographic footprint that reaches 95% of Americans within a day's drive. Your ability to deliver world-class thrills at accessible price points, with annual passes starting under $100 in most markets, demonstrates that premium entertainment experiences shouldn't be gated by economic privilege. The SIXXTHRILL brand evolution and recent technology investments in queue virtualization and dynamic pricing show a leadership team that understands the future of regional entertainment. What particularly excites us is your development pipeline: the new record-breaking coasters at Magic Mountain, the IP integration strategies bringing DC, Looney Tunes, and Peanuts to life, and the renewed focus on food and merchandise that transforms day guests into season pass evangelists. John Reilly's operational expertise combined with Christian Dieckmann's creative vision positions the combined entity to redefine what regional theme parks can deliver.", "activities": []},
+            {"id": 9, "name": "Legendary Entertainment", "type": "Entertainment • Film Studio", "tier": "tier-1", "segment": "creative", "verified": "verified", "stage": "cold", "contacts": [{"name": "Joshua Grode", "role": "CEO", "email": "jgrode@legendary.com"}], "notes": "Dune, Godzilla, Pacific Rim IPs.", "flatter": "Legendary's stewardship of cinema's most visually ambitious franchises demonstrates an unwavering commitment to the kind of epic, world-building storytelling that theaters were built for. Denis Villeneuve's Dune adaptations, produced under your banner, achieved what the industry considered impossible - translating Herbert's philosophically dense universe into a sensory masterpiece that honored the source while creating something cinematically unprecedented. The MonsterVerse architecture - building Godzilla, Kong, and their kaiju ecosystem across eight films - proves that Legendary understands franchise development as long-term world-building rather than sequel manufacturing. Pacific Rim's mecha aesthetic influence on everything from gaming to fashion demonstrates how your projects become cultural artifacts that transcend their theatrical runs. Your recent expansion into television with Dune: Prophecy and the commitment to practical effects enhanced by Framestore and DNEG's digital artistry shows a studio that refuses to let spectacle overwhelm story. Joshua Grode's leadership has positioned Legendary at the exact intersection of prestige filmmaking and blockbuster scale.", "activities": []},
+            {"id": 10, "name": "Meow Wolf", "type": "Entertainment • Immersive", "tier": "tier-1", "segment": "creative", "verified": "pattern", "stage": "cold", "contacts": [{"name": "Jose Tolosa", "role": "CEO", "email": "jose@meowwolf.com"}], "notes": "Immersive art installations. 6 locations.", "flatter": "Meow Wolf has fundamentally expanded the boundaries of what art can be - creating living, explorable universes that millions inhabit rather than merely observe. The House of Eternal Return in Santa Fe achieved something unprecedented: a 20,000-square-foot narrative environment that generates annual attendance rivaling major museums while remaining deeply weird and uncompromising. Omega Mart in Las Vegas transformed the Strip's entertainment landscape, proving that immersive art can command real estate alongside Cirque du Soleil and Blue Man Group. Your artist-collective DNA - over 200 collaborating artists per installation, compensation structures that have distributed tens of millions to working artists - demonstrates that Meow Wolf didn't just create a business; you built economic infrastructure for an entire creative community. The multiverse narrative connecting all installations, discoverable through hidden portals and ARG-style investigation, creates the kind of deep engagement that transforms visitors into evangelists. Convergence Station in Denver and your Houston and upcoming Phoenix installations show that this model scales without losing the radical creative spirit that makes Meow Wolf irreplaceable.", "activities": []},
+            {"id": 11, "name": "Harlem Capital", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "pattern", "stage": "cold", "contacts": [{"name": "Henri Pierre-Jacques", "role": "Co-Founder", "email": "henri@harlem.capital"}], "notes": "Diverse founders. 1000 founders goal.", "flatter": "Harlem Capital's audacious mission - investing in 1,000 diverse founders over 20 years - has evolved from aspirational statement to systematic execution that's reshaping the venture capital landscape. Your portfolio now spans over 140 companies across fintech, consumer, healthcare, and enterprise software, with portfolio company outcomes including multiple acquisitions and continued growth rounds that validate the thesis with returns, not just rhetoric. Henri Pierre-Jacques' Goldman Sachs operational background combined with Jarrid Tingle's Palantir and IVP investment experience creates a founder support system that accelerates companies through the scaling challenges that destroy promising startups. Your Summer Associates Program and Winter Fellows Program have created a pipeline of diverse investors who will compound the Harlem Capital thesis across the industry for generations. The fund's thesis that diverse founding teams see opportunities invisible to homogeneous teams isn't charity - it's alpha generated by systematic access to overlooked markets and underestimated founders.", "activities": []},
+            {"id": 12, "name": "MAC Ventures", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "pattern", "stage": "cold", "contacts": [{"name": "Marlon Nichols", "role": "Managing GP", "email": "marlon@mac.vc"}, {"name": "Adrian Fenty", "role": "GP", "email": "adrian@mac.vc"}], "notes": "Former DC Mayor. Underrepresented founders.", "flatter": "MaC Venture Capital has built something genuinely differentiated - a fund where cultural fluency isn't an add-on but the core investment thesis, validated by consistent outperformance and a portfolio of category-defining companies. Marlon Nichols' track record includes seed investments in Gimlet Media (acquired by Spotify for $230M), Blavity (reaching 100M+ monthly users), PlayVS (becoming the infrastructure for high school esports), and Thrive Market (disrupting organic grocery with a membership model). Adrian Fenty's experience governing Washington D.C. during the Great Recession and leading education reform provides policy foresight and executive operating experience that transforms portfolio company advisory sessions. Charles King's MACRO studio integration creates natural deal flow and co-investment opportunities at the intersection of media and technology. Your thesis that companies serving diverse communities will define the next generation of consumer behavior isn't prediction - it's already validated by portfolio exits and the demographic reality of American commerce.", "activities": []},
+            {"id": 13, "name": "Christie Digital", "type": "Vendor • Projection", "tier": "tier-2", "segment": "vendor", "verified": "pattern", "stage": "cold", "contacts": [{"name": "Jack Kline", "role": "CEO", "email": "jack.kline@christiedigital.com"}], "notes": "Theme park projection, immersive.", "flatter": "Christie's RGB laser projection technology has become the undisputed industry standard for immersive experiences that demand absolute reliability and visual fidelity. Your CP4440-RGB and Griffyn 4K32-RGB systems power attractions at Disney Imagineering projects, Universal Creative dark rides, and virtually every major planetarium and museum installation worldwide - a deployment footprint that speaks louder than any spec sheet. The D4K40-RGB projector's 45,000-lumen output with 6P laser phosphor technology enables the kind of massive-scale projection mapping that defines modern experiential entertainment. Christie's MicroTiles LED technology created an entirely new product category that competitors are still trying to replicate a decade later. Your Mystique automated camera-based alignment system solves the multi-projector blending challenge that has plagued live events for years. The 20+ year service life of laser phosphor systems and Christie's global 24/7 support infrastructure means specifying Christie isn't just a technical decision - it's risk mitigation for installations where downtime is unacceptable.", "activities": []},
+            {"id": 14, "name": "Robe Lighting", "type": "Vendor • Lighting", "tier": "tier-2", "segment": "vendor", "verified": "verified", "stage": "contacted", "contacts": [{"name": "Bob Schacherl", "role": "CEO USA", "email": "bob.schacherl@robe.cz"}, {"name": "Craig Burross", "role": "CSO", "email": "craig.burross@robe.cz"}], "notes": "US Office: Davie, FL", "flatter": "Robe's trajectory from Czech innovator to global lighting leader represents one of the most remarkable industrial achievements in professional entertainment technology. The ESPRITE moving head with its patented Transferable Engine technology delivers 19,000 lumens while maintaining the color rendering index that discerning LDs demand - it's become the workhorse of arena touring worldwide. The MegaPointe's revolutionary dual-gobo system creates projection effects that previously required multiple fixtures, while the T1 Profile has redefined what theatrical designers expect from a profile spot. Your R&D velocity is extraordinary: the iFORTE, FORTE, and TETRA series demonstrate that Robe isn't just competing with legacy manufacturers - you're setting the agenda. The recent iSeries with their focus on sustainable LED technology and reduced power consumption shows environmental consciousness that major venues increasingly require. Craig Burross's technical leadership combined with Bob Schacherl's understanding of the American market has created distribution and support infrastructure that makes Robe specification a confident choice for installations where fixture failure simply cannot happen.", "activities": []},
+            {"id": 15, "name": "Boston Dynamics", "type": "Robotics • Mobile Robots", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "stage": "cold", "contacts": [{"name": "Robert Playter", "role": "CEO", "email": "rplayter@bostondynamics.com"}], "notes": "Hyundai subsidiary. Spot, Atlas.", "flatter": "Boston Dynamics represents 30+ years of fundamental robotics research that no competitor has been willing to invest in - and the results speak for themselves. Atlas's recent demonstrations of fully autonomous parkour, backflips, and object manipulation represent the most advanced humanoid locomotion ever achieved, built on decades of proprietary research in dynamic balance, model-predictive control, and force-sensing actuation. Spot has transitioned from viral sensation to genuine industrial deployment: Pomerleau Construction uses Spot for autonomous site inspection, National Grid deploys fleets for substation monitoring, and NASA JPL collaborates on planetary exploration prototypes. The Stretch warehouse robot demonstrates that Boston Dynamics has solved the last-mile manipulation problem that has stymied logistics automation. Under Hyundai's ownership, the combination of Boston Dynamics' innovation with automotive-grade manufacturing discipline creates a path to volume production that pure research labs cannot achieve. Robert Playter's leadership has navigated the company from defense research through Google/Alphabet to its current commercial trajectory without compromising the fundamental science that makes Boston Dynamics irreplaceable.", "activities": []},
+            {"id": 16, "name": "Public Investment Fund (PIF)", "type": "Sovereign Wealth • Saudi", "tier": "tier-s", "segment": "other", "verified": "verified", "stage": "cold", "contacts": [{"name": "Yasir Al-Rumayyan", "role": "Governor", "email": "info@pif.gov.sa"}], "notes": "$941B AUM. World's largest SWF.", "flatter": "PIF's Vision 2030 execution represents the most ambitious sovereign wealth transformation in modern history - deploying $941B in assets to reshape an entire nation's economy from hydrocarbon dependence to knowledge-economy leadership. The giga-projects portfolio is staggering in scope: NEOM's $500B commitment to building a new kind of city, the Red Sea Project's regenerative tourism model, Qiddiya's entertainment city designed to rival Orlando, and Diriyah Gate's restoration of Saudi Arabia's cultural heartland. Your entertainment investments - including majority stakes in Lucid Motors, significant positions in gaming companies, and the Saudi Entertainment Ventures portfolio - demonstrate a thesis on experience economy infrastructure that directly parallels our platform vision. The recent Sports+ investments in professional golf, soccer, and motorsport have accelerated PIF's global entertainment footprint dramatically. Yasir Al-Rumayyan's leadership has transformed PIF from a passive sovereign wealth repository into an active portfolio shaper with the conviction and capital to move markets. Your investment in immersive entertainment venues and experience infrastructure aligns precisely with AETHER's mission.", "activities": []},
+            {"id": 17, "name": "Silver Lake Partners", "type": "PE • Technology", "tier": "tier-s", "segment": "other", "verified": "verified", "stage": "cold", "contacts": [{"name": "Matt Benson", "role": "Media Contact", "email": "matthew.benson@silverlake.com"}], "notes": "Acquired Endeavor March 2025", "flatter": "Silver Lake's technology-focused private equity approach has consistently identified the moments when exceptional companies need growth capital to achieve escape velocity - and the March 2025 Endeavor acquisition represents the firm's most consequential bet on the convergence of live entertainment, talent representation, and technology infrastructure. Your $67B portfolio includes defining positions in Dell's transformation from PC manufacturer to enterprise infrastructure leader, Alibaba's global expansion, and Airbnb's path to profitability. The Endeavor deal consolidates WME, UFC, Professional Bull Riders, and the IMG sports properties under technology-oriented private ownership that can execute multi-year value creation without quarterly earnings pressure. Silver Lake's operational playbook - deploying technology leadership to identify efficiency gains while investing in growth initiatives - has generated returns that validate the thesis across market cycles. Matt Benson's media relations demonstrate the firm's sophisticated understanding of how perception shapes enterprise value. The convergence of Silver Lake's technology thesis with the experience economy is precisely what AETHER's platform was built to serve.", "activities": []},
+            {"id": 18, "name": "Colorwave Founders Program", "type": "Investment • Impact VC", "tier": "tier-impact", "segment": "investment", "verified": "pattern", "stage": "warm", "contacts": [{"name": "Sasha Mack", "role": "Director of Partnerships", "email": "sasha@thecolorwave.org"}], "notes": "BIPOC founders focus program.", "flatter": "The Colorwave Founders Program has engineered one of the most effective pipelines for transforming BIPOC founders from ideation to fundable company - addressing the 'warm introduction gap' that systematically excludes exceptional talent from traditional venture capital access. Your cohort model provides structured curriculum on fundraising mechanics, financial modeling, and pitch refinement that accelerates founders through the learning curve that privileged networks provide informally. The mentor network you've assembled - combining operating experience from scaled companies with investor perspectives from top-tier funds - creates feedback loops that compound founder development. Colorwave's infrastructure approach recognizes that diversity in venture capital isn't about any single investment but about building repeatable systems that change the composition of who gets funded over time. Sasha Mack's partnership leadership has created corporate relationships that extend Colorwave's impact beyond individual cohorts to industry-wide talent pipeline development. The program alumni outcomes - measured in both capital raised and companies built - demonstrate that structured support for underrepresented founders produces results that validate the entire thesis.", "activities": []},
+            {"id": 19, "name": "teamLab", "type": "Creative • Digital Art", "tier": "tier-1", "segment": "creative", "verified": "pattern", "stage": "cold", "contacts": [{"name": "Toshiyuki Inoko", "role": "Founder", "email": "inquiries@pacegallery.com"}], "notes": "World's premier digital art collective. Borderless.", "flatter": "teamLab has fundamentally redefined what art can be in the 21st century - creating living, responsive ecosystems that dissolve the boundary between observer and artwork so completely that visitors become co-creators of experiences that have never existed before and will never exist again. teamLab Borderless in Tokyo attracted over 2.3 million visitors in its first year, making it the world's most-visited single-artist museum and proving that digital art can achieve cultural significance rivaling centuries-old institutions. teamLab Planets' waist-deep wading installations and the recent teamLab Massless demonstrate continuous innovation in how bodies can interact with light, water, and computation. Toshiyuki Inoko's 'ultra-technologists' philosophy - where engineers, programmers, architects, and artists collaborate as equals without hierarchy or discipline boundaries - has produced over 80 permanent installations worldwide, from Singapore's ArtScience Museum to Abu Dhabi's Superblue. Your installations don't just respond to human presence; they remember, adapt, and evolve based on collective visitor behavior, creating genuinely emergent art that exists only in the moment of interaction. This is exactly the kind of emotionally intelligent, responsive experience design that AETHER's platform is architected to enable at scale.", "activities": []},
+        ];
+        
+        // Load saved state
+        const savedData = localStorage.getItem('aetherCrmData');
+        if (savedData) {
+            try {
+                const parsed = JSON.parse(savedData);
+                partnersData = parsed;
+            } catch(e) {}
+        }
+        
+        function saveData() {
+            localStorage.setItem('aetherCrmData', JSON.stringify(partnersData));
+        }
+        
+        // Email Templates
+        const emailTemplates = {
+            investment: {
+                subject: "AETHER PXR: Investment Opportunity — The iOS for Physical Reality",
+                body: `Dear {{CONTACT_NAME}},
+
+I hope this message finds you well. I'm Christian Charles-Harris, Founder & CEO of Alchemist Atelier, reaching out because {{COMPANY_NAME}}'s investment thesis deeply aligns with what we're building.
+
+{{FLATTER}}
+
+Growing up in the shadow of Disneyland, the moment I heard Linda Gary narrate Fantasmic! sparked a revelation: technology and narrative, woven together, can physically transform space & commerce. That insight has driven 36,000+ hours at the intersection of experiential brands, deep technology, and equity.
+
+**AETHER PXR — The Platform:**
+Built on our proprietary Theater-of-Things (ToT) architecture, we've created the "iOS for physical reality" — enabling organizations to transform brands into emotionally intelligent phygital experiences in half the development time.
+
+**Five Integrated Modules:**
+• AetherDream — AI-accelerated design, 30-60× faster concept-to-model
+• AetherPay — Dynamic story-selling & equitable payment processing ($36-$396 range)
+• Indigo Ops — Predictive manufacturing intelligence, 99.7% maintenance accuracy
+• AetherOS — Quantum-classical compute core (10¹⁸ ops/sec via PASQAL partnership)
+• AetherWare — Specialized hardware suite
+
+**Leadership Team:**
+• Dr. Sha Xin Wei (CRO) — Stanford PhD, Harvard AB, Director of ASU Synthesis Center
+• Dr. Vangelis Lympouridis (CIO) — Led development of RelieVRx, first FDA-authorized VR therapeutic; 60,000+ patients treated
+
+**Business Model:**
+• B2B: Phygitaverse Collaboratory — $27K/mo to $10M+/yr per deployment, targeting >3× ROI
+• B2C: Phygital Reality Brands — Living showrooms generating cash flow
+
+Given {{COMPANY_NAME}}'s track record in transformative technology platforms, I believe there's meaningful alignment. We're raising capital to scale platform deployment.
+
+Would you have 30 minutes to discuss?
+
+Phygitally,
+
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier
+https://alchemistatelier.univer.se`,
+                badge: "INVESTMENT"
+            },
+            b2b: {
+                subject: "Partnership Opportunity: AETHER PXR × {{COMPANY_NAME}}",
+                body: `Dear {{CONTACT_NAME}},
+
+I'm Christian Charles-Harris, Founder & CEO of Alchemist Atelier.
+
+{{FLATTER}}
+
+This admiration is precisely why I'm reaching out. We've built the "iOS for physical reality" — and I believe the intersection of AETHER with {{COMPANY_NAME}}'s capabilities could be extraordinary.
+
+**About Alchemist Atelier:**
+A whimsical fusion of the tangible and digital where reality and fantasy blur in a dance of phygital experiential hospitality, commerce, and spectacle. We enable organizations to transform brands into responsive, emotionally intelligent phygital experiences that were previously impossible — in half the development time.
+
+**The AETHER PXR Platform (Theater-of-Things Architecture):**
+• AetherDream — 30-60× faster concept-to-model with AI-accelerated design
+• AetherPay — Dynamic story-selling & equitable payment ($36-$396 range)
+• Indigo Ops — 99.7% predictive maintenance accuracy
+• AetherOS — Quantum-classical compute core (PASQAL: 10¹⁸ ops/sec)
+• AetherWare — Specialized hardware suite
+
+**Leadership:**
+• Dr. Sha Xin Wei (CRO) — Stanford PhD, MIT Press author, ASU Synthesis Center Director
+• Dr. Vangelis Lympouridis (CIO) — Created RelieVRx, first FDA-authorized VR therapeutic
+
+**Advisory Board:**
+• John Featherstone — Lightswitch, tours for Janet Jackson, Hans Zimmer, Journey
+• Colleen Jennings-Roggensack — ASU Gammage, Broadway League VP
+
+I'd love to explore what becomes possible together. Would you be open to a conversation?
+
+Phygitally,
+
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier
+https://alchemistatelier.univer.se`,
+                badge: "B2B"
+            },
+            vendor: {
+                subject: "Vendor Partnership Inquiry: AETHER PXR Platform",
+                body: `Dear {{CONTACT_NAME}},
+
+I'm Christian Charles-Harris, Founder & CEO of Alchemist Atelier.
+
+{{FLATTER}}
+
+Given this excellence, we're exploring how {{COMPANY_NAME}} might become a strategic vendor partner for the AETHER PXR platform.
+
+**About Us:**
+Alchemist Atelier is a phygital experiential brand and deep-tech atelier. We enable organizations to transform brands into responsive, emotionally intelligent phygital experiences across retail, hospitality, entertainment, healthcare, education, and corporate sectors.
+
+**What We're Exploring:**
+• Preferred vendor partnerships for our hardware suite (AetherWare)
+• Volume pricing arrangements for enterprise deployments
+• Technical integration with our Theater-of-Things (ToT) architecture
+• Co-development opportunities for specialized components
+
+**Our Standards:**
+• 99.7%+ reliability requirements (Indigo Ops predictive manufacturing)
+• 85%+ sustainable materials target
+• Half-the-development-time deployment methodology
+
+**Current Partners:**
+Microsoft Azure, Capgemini, PASQAL Quantum, and 140+ strategic collaborators.
+
+We believe {{COMPANY_NAME}}'s quality matches our requirements. Could we schedule a call to discuss specifications?
+
+Phygitally,
+
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier
+https://alchemistatelier.univer.se`,
+                badge: "VENDOR"
+            },
+            creative: {
+                subject: "Creative Collaboration: AETHER × {{COMPANY_NAME}}",
+                body: `Dear {{CONTACT_NAME}},
+
+I'm Christian Charles-Harris, Founder & CEO of Alchemist Atelier.
+
+{{FLATTER}}
+
+**The AETHER Vision:**
+Growing up in the shadow of Disneyland, the moment I heard Linda Gary narrate Fantasmic! sparked a revelation: technology and narrative, woven together, can physically transform space & commerce. Brands become places, in any Reality.
+
+**About Alchemist Atelier:**
+A whimsical fusion of the tangible and digital where reality and fantasy blur in a dance of phygital experiential hospitality, commerce, and spectacle. Imagine storytelling leaping off the page, retail becoming an adventure, and avant-garde theatricality merging with groundbreaking tech to redefine engagement.
+
+**Collaboration Possibilities:**
+• IP integration with Tales of Lucidia transmedia franchise
+• Experience design partnerships using AetherDream (30-60× faster concept-to-model)
+• Technology + craft fusion in our living showrooms
+• Immersive narrative environments powered by AetherOS (10¹⁸ ops/sec quantum-classical compute)
+
+**Our Creative Advisors:**
+• John Featherstone — 35 years of lighting design; Janet Jackson, Hans Zimmer, Journey
+• Colleen Jennings-Roggensack — ASU Gammage, Broadway League's RoadMaster initiative
+
+I would love to explore what becomes possible when AETHER meets {{COMPANY_NAME}}'s creative vision. Let's make the impossible visible.
+
+Phygitally,
+
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier
+https://alchemistatelier.univer.se`,
+                badge: "CREATIVE"
+            },
+            followup1: {
+                subject: "Following up: AETHER × {{COMPANY_NAME}}",
+                body: `Dear {{CONTACT_NAME}},
+
+I wanted to follow up on my previous message about potential collaboration between AETHER and {{COMPANY_NAME}}.
+
+I remain genuinely impressed by your work - {{FLATTER_SHORT}}
+
+We're working with partners like MIT Media Lab and PASQAL Quantum on transformative phygital experiences, and I believe there's genuine alignment.
+
+Would a brief 15-minute call work better for your schedule?
+
+Best regards,
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier`,
+                badge: "FOLLOW-UP"
+            },
+            followup2: {
+                subject: "Quick check-in: AETHER opportunity",
+                body: `Dear {{CONTACT_NAME}},
+
+Just wanted to check if my previous messages reached you regarding AETHER PXR and {{COMPANY_NAME}}.
+
+We've had some exciting developments:
+• New partnership announcement with [Partner]
+• Platform milestone achieved
+• Upcoming demo availability
+
+Happy to share more details whenever convenient.
+
+Best,
+Christian Charles-Harris`,
+                badge: "FOLLOW-UP"
+            },
+            followup3: {
+                subject: "Closing the loop: AETHER × {{COMPANY_NAME}}",
+                body: `Dear {{CONTACT_NAME}},
+
+I've reached out a couple times about AETHER PXR. I don't want to be a bother, so this will be my last message on this.
+
+If the timing isn't right, I completely understand. Our door remains open if {{COMPANY_NAME}} ever wants to explore phygital experience technology.
+
+Wishing you continued success.
+
+Best regards,
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier`,
+                badge: "FINAL"
+            },
+            meeting: {
+                subject: "Meeting Request: AETHER + {{COMPANY_NAME}} Discussion",
+                body: `Dear {{CONTACT_NAME}},
+
+I'd love to schedule a call to discuss how AETHER PXR could complement {{COMPANY_NAME}}'s capabilities.
+
+{{FLATTER_SHORT}}
+
+I believe a conversation would surface meaningful opportunities.
+
+**Proposed Agenda:**
+1. Brief AETHER platform overview (5 min)
+2. {{COMPANY_NAME}}'s current priorities (5 min)
+3. Explore alignment & next steps (10 min)
+
+**Availability:**
+I'm flexible across most time zones. Would any of these work?
+• [Option 1]
+• [Option 2]
+• [Option 3]
+
+Looking forward to connecting.
+
+Best regards,
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier`,
+                badge: "MEETING"
+            },
+            other: {
+                subject: "Introduction: AETHER PXR Platform",
+                body: `Dear {{CONTACT_NAME}},
+
+I'm Christian Charles-Harris, Founder & CEO of Alchemist Atelier. I wanted to introduce AETHER PXR and explore potential synergies with {{COMPANY_NAME}}.
+
+{{FLATTER}}
+
+**About AETHER:**
+The "iOS for physical reality" - enabling emotionally intelligent phygital experiences across multiple sectors.
+
+Would you be open to a brief conversation?
+
+Best regards,
+Christian Charles-Harris
+Founder & CEO, Alchemist Atelier`,
+                badge: "GENERAL"
+            }
+        };
+        
+        let currentPartnerIndex = null;
+        let currentStagePartnerIndex = null;
+        
+        // Render Functions
+        function renderPartnerCard(partner, index) {
+            const hasEmail = partner.contacts && partner.contacts.some(c => c.email);
+            return `
+                <div class="contact-card" data-index="${index}" data-tier="${partner.tier}" data-segment="${partner.segment}" data-stage="${partner.stage}" data-searchable="${partner.name.toLowerCase()} ${partner.type.toLowerCase()} ${partner.notes?.toLowerCase() || ''} ${partner.contacts?.map(c => c.name + ' ' + c.role).join(' ').toLowerCase() || ''}">
+                    <div class="card-header">
+                        <div class="company-info">
+                            <div class="company-name">${partner.name}</div>
+                            <div class="company-type">${partner.type}</div>
+                        </div>
+                        <div class="card-badges">
+                            <span class="tier-badge ${partner.tier}">${partner.tier.replace('tier-', 'T').toUpperCase()}</span>
+                            <span class="stage-badge stage-${partner.stage}" onclick="openStageModal(${index})">${getStageIcon(partner.stage)} ${partner.stage.toUpperCase()}</span>
+                        </div>
+                    </div>
+                    <div class="segment-tags">
+                        <span class="segment-tag segment-${partner.segment}">${partner.segment}</span>
+                    </div>
+                    ${partner.contacts && partner.contacts.length > 0 ? `
+                    <div class="contacts-list">
+                        ${partner.contacts.slice(0, 2).map(contact => `
+                        <div class="contact-item">
+                            <div class="contact-avatar">${contact.name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase()}</div>
+                            <div class="contact-details">
+                                <div class="contact-name">${contact.name}</div>
+                                <div class="contact-role">${contact.role}</div>
+                                ${contact.email ? `
+                                <div class="contact-email-row">
+                                    <a href="mailto:${contact.email}" class="contact-email">${contact.email}</a>
+                                    <button class="icon-btn" onclick="copyEmail(event, '${contact.email}')" title="Copy">📋</button>
+                                </div>` : ''}
+                            </div>
+                        </div>
+                        `).join('')}
+                    </div>
+                    ` : '<div class="contacts-list" style="padding: 15px; color: var(--text-dim); font-size: 11px;">No contacts yet</div>'}
+                    ${partner.notes ? `<div class="card-notes">${partner.notes}</div>` : ''}
+                    <div class="card-footer">
+                        <div class="action-btns">
+                            ${hasEmail ? `<button class="action-btn primary" onclick="openEmailModal(${index})">✉ EMAIL</button>` : ''}
+                            <button class="action-btn" onclick="openActivityModal(${index})">📋 LOG</button>
+                        </div>
+                        <div class="research-links">
+                            <span class="research-link" onclick="openResearch('${encodeURIComponent(partner.name)}', 'linkedin')" title="LinkedIn">🔗</span>
+                            <span class="research-link" onclick="openResearch('${encodeURIComponent(partner.name)}', 'google')" title="Google">🔍</span>
+                            <span class="research-link" onclick="openResearch('${encodeURIComponent(partner.name)}', 'crunchbase')" title="Crunchbase">📊</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function getStageIcon(stage) {
+            const icons = { cold: '❄️', contacted: '📧', warm: '🔥', hot: '⚡', closed: '✅' };
+            return icons[stage] || '❓';
+        }
+        
+        function renderPipeline() {
+            const grid = document.getElementById('pipelineGrid');
+            grid.innerHTML = partnersData.map((p, i) => renderPartnerCard(p, i)).join('');
+            updateCounts();
+            filterPipeline();
+        }
+        
+        function renderPartners() {
+            const grid = document.getElementById('partnerGrid');
+            grid.innerHTML = partnersData.map((p, i) => renderPartnerCard(p, i)).join('');
+            filterPartners();
+        }
+        
+        function updateCounts() {
+            const counts = { cold: 0, contacted: 0, warm: 0, hot: 0, closed: 0 };
+            partnersData.forEach(p => counts[p.stage]++);
+            
+            document.getElementById('coldCount').textContent = counts.cold;
+            document.getElementById('contactedCount').textContent = counts.contacted;
+            document.getElementById('warmCount').textContent = counts.warm;
+            document.getElementById('hotCount').textContent = counts.hot;
+            document.getElementById('closedCount').textContent = counts.closed;
+            
+            document.getElementById('totalPartners').textContent = partnersData.length;
+            document.getElementById('emailReady').textContent = partnersData.filter(p => p.contacts?.some(c => c.email)).length;
+            document.getElementById('t1Count').textContent = partnersData.filter(p => p.tier === 'tier-1').length;
+            document.getElementById('followupsDue').textContent = counts.contacted;
+            document.getElementById('statusPartners').textContent = partnersData.length + ' PARTNERS';
+            
+            const contacted = counts.contacted + counts.warm + counts.hot + counts.closed;
+            document.getElementById('outreachRate').textContent = Math.round((contacted / partnersData.length) * 100) + '%';
+            document.getElementById('warmRate').textContent = Math.round(((counts.warm + counts.hot + counts.closed) / partnersData.length) * 100) + '%';
+        }
+        
+        // Filter Functions
+        function filterPipeline() {
+            const search = document.getElementById('pipelineSearch').value.toLowerCase();
+            const tier = document.getElementById('pipelineTierFilter').value;
+            const segment = document.getElementById('pipelineSegmentFilter').value;
+            
+            const cards = document.querySelectorAll('#pipelineGrid .contact-card');
+            let visible = 0;
+            
+            cards.forEach(card => {
+                const matchSearch = card.dataset.searchable.includes(search);
+                const matchTier = !tier || card.dataset.tier === tier;
+                const matchSegment = !segment || card.dataset.segment === segment;
+                
+                const show = matchSearch && matchTier && matchSegment;
+                card.style.display = show ? 'block' : 'none';
+                if (show) visible++;
+            });
+            
+            document.getElementById('pipelineNoResults').style.display = visible === 0 ? 'block' : 'none';
+        }
+        
+        function filterByStage(stage) {
+            document.querySelectorAll('.pipeline-stage').forEach(s => s.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            const cards = document.querySelectorAll('#pipelineGrid .contact-card');
+            cards.forEach(card => {
+                card.style.display = card.dataset.stage === stage ? 'block' : 'none';
+            });
+            document.getElementById('pipelineNoResults').style.display = 'none';
+        }
+        
+        function filterPartners() {
+            const search = document.getElementById('partnerSearch').value.toLowerCase();
+            const tier = document.getElementById('partnerTierFilter').value;
+            const segment = document.getElementById('partnerSegmentFilter').value;
+            const stage = document.getElementById('partnerStageFilter').value;
+            
+            const cards = document.querySelectorAll('#partnerGrid .contact-card');
+            let visible = 0;
+            
+            cards.forEach(card => {
+                const matchSearch = card.dataset.searchable.includes(search);
+                const matchTier = !tier || card.dataset.tier === tier;
+                const matchSegment = !segment || card.dataset.segment === segment;
+                const matchStage = !stage || card.dataset.stage === stage;
+                
+                const show = matchSearch && matchTier && matchSegment && matchStage;
+                card.style.display = show ? 'block' : 'none';
+                if (show) visible++;
+            });
+            
+            document.getElementById('partnerNoResults').style.display = visible === 0 ? 'block' : 'none';
+        }
+        
+        function resetPipelineFilters() {
+            document.getElementById('pipelineSearch').value = '';
+            document.getElementById('pipelineTierFilter').value = '';
+            document.getElementById('pipelineSegmentFilter').value = '';
+            document.querySelectorAll('.pipeline-stage').forEach(s => s.classList.remove('active'));
+            filterPipeline();
+        }
+        
+        function resetPartnerFilters() {
+            document.getElementById('partnerSearch').value = '';
+            document.getElementById('partnerTierFilter').value = '';
+            document.getElementById('partnerSegmentFilter').value = '';
+            document.getElementById('partnerStageFilter').value = '';
+            filterPartners();
+        }
+        
+        // Event Listeners
+        document.getElementById('pipelineSearch').addEventListener('input', filterPipeline);
+        document.getElementById('pipelineTierFilter').addEventListener('change', filterPipeline);
+        document.getElementById('pipelineSegmentFilter').addEventListener('change', filterPipeline);
+        document.getElementById('partnerSearch').addEventListener('input', filterPartners);
+        document.getElementById('partnerTierFilter').addEventListener('change', filterPartners);
+        document.getElementById('partnerSegmentFilter').addEventListener('change', filterPartners);
+        document.getElementById('partnerStageFilter').addEventListener('change', filterPartners);
+        
+        // Tab Switching
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+            
+            if (tabName === 'partners') renderPartners();
+        }
+        
+        // Modal Functions
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+        
+        function openEmailModal(index) {
+            currentPartnerIndex = index;
+            const partner = partnersData[index];
+            const contact = partner.contacts.find(c => c.email) || partner.contacts[0];
+            const segment = partner.segment;
+            const template = emailTemplates[segment] || emailTemplates.other;
+            
+            // Get flatter text - full version and short version (first sentence)
+            const flatter = partner.flatter || `We've been following ${partner.name}'s innovative work with great interest.`;
+            const flatterShort = flatter.split('. ')[0] + '.';
+            
+            document.getElementById('emailTo').value = contact?.email || '';
+            document.getElementById('emailSubject').value = template.subject.replace(/\{\{COMPANY_NAME\}\}/g, partner.name);
+            document.getElementById('emailBody').value = template.body
+                .replace(/\{\{CONTACT_NAME\}\}/g, contact?.name || 'Team')
+                .replace(/\{\{COMPANY_NAME\}\}/g, partner.name)
+                .replace(/\{\{COMPANY_TYPE\}\}/g, partner.type)
+                .replace(/\{\{COMPANY_FOCUS\}\}/g, partner.notes || partner.type)
+                .replace(/\{\{FLATTER\}\}/g, flatter)
+                .replace(/\{\{FLATTER_SHORT\}\}/g, flatterShort);
+            
+            const badge = document.getElementById('emailModalBadge');
+            badge.textContent = template.badge;
+            badge.className = 'modal-badge';
+            
+            document.getElementById('emailTemplateSelect').value = 'auto';
+            document.getElementById('emailStatus').textContent = `Draft for ${partner.name}`;
+            openModal('emailModal');
+        }
+        
+        function changeEmailTemplate() {
+            if (currentPartnerIndex === null) return;
+            const partner = partnersData[currentPartnerIndex];
+            const contact = partner.contacts?.find(c => c.email) || partner.contacts?.[0];
+            const templateKey = document.getElementById('emailTemplateSelect').value;
+            const template = templateKey === 'auto' ? (emailTemplates[partner.segment] || emailTemplates.other) : emailTemplates[templateKey];
+            
+            // Get flatter text - full version and short version (first sentence)
+            const flatter = partner.flatter || `We've been following ${partner.name}'s innovative work with great interest.`;
+            const flatterShort = flatter.split('. ')[0] + '.';
+            
+            document.getElementById('emailSubject').value = template.subject.replace(/\{\{COMPANY_NAME\}\}/g, partner.name);
+            document.getElementById('emailBody').value = template.body
+                .replace(/\{\{CONTACT_NAME\}\}/g, contact?.name || 'Team')
+                .replace(/\{\{COMPANY_NAME\}\}/g, partner.name)
+                .replace(/\{\{COMPANY_TYPE\}\}/g, partner.type)
+                .replace(/\{\{COMPANY_FOCUS\}\}/g, partner.notes || partner.type)
+                .replace(/\{\{FLATTER\}\}/g, flatter)
+                .replace(/\{\{FLATTER_SHORT\}\}/g, flatterShort);
+            
+            document.getElementById('emailModalBadge').textContent = template.badge;
+        }
+        
+        function adjustEmailTone() {
+            // Placeholder for tone adjustment
+            document.getElementById('emailStatus').textContent = 'Tone adjusted: ' + document.getElementById('emailToneSelect').value;
+        }
+        
+        function copyEmailToClipboard() {
+            const full = `TO: ${document.getElementById('emailTo').value}\nSUBJECT: ${document.getElementById('emailSubject').value}\n\n${document.getElementById('emailBody').value}`;
+            navigator.clipboard.writeText(full).then(() => {
+                document.getElementById('emailStatus').textContent = '✓ Copied to clipboard!';
+                setTimeout(() => { document.getElementById('emailStatus').textContent = 'Ready'; }, 2000);
+            });
+        }
+        
+        function openInMailClient() {
+            const to = document.getElementById('emailTo').value;
+            const subject = encodeURIComponent(document.getElementById('emailSubject').value);
+            const body = encodeURIComponent(document.getElementById('emailBody').value);
+            window.open(`mailto:${to}?subject=${subject}&body=${body}`, '_blank');
+        }
+        
+        function markAsSent() {
+            if (currentPartnerIndex === null) return;
+            partnersData[currentPartnerIndex].stage = 'contacted';
+            partnersData[currentPartnerIndex].activities.unshift({
+                type: 'email',
+                text: 'Email sent: ' + document.getElementById('emailSubject').value.substring(0, 40) + '...',
+                date: new Date().toISOString().split('T')[0]
+            });
+            saveData();
+            renderPipeline();
+            closeModal('emailModal');
+            document.getElementById('emailStatus').textContent = '✓ Marked as sent & stage updated!';
+        }
+        
+        function openActivityModal(index) {
+            currentPartnerIndex = index;
+            const partner = partnersData[index];
+            document.getElementById('activityPartnerName').textContent = partner.name;
+            
+            const log = document.getElementById('activityLog');
+            if (partner.activities && partner.activities.length > 0) {
+                log.innerHTML = partner.activities.map(a => `
+                    <div class="activity-item">
+                        <div class="activity-icon">${a.type === 'email' ? '📧' : a.type === 'meeting' ? '📅' : a.type === 'deal' ? '✅' : '📝'}</div>
+                        <div class="activity-content">
+                            <div class="activity-text">${a.text}</div>
+                            <div class="activity-date">${a.date}</div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                log.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-dim);">No activities yet</div>';
+            }
+            
+            document.getElementById('newActivityInput').value = '';
+            openModal('activityModal');
+        }
+        
+        function addActivity() {
+            if (currentPartnerIndex === null) return;
+            const text = document.getElementById('newActivityInput').value.trim();
+            if (!text) return;
+            
+            partnersData[currentPartnerIndex].activities.unshift({
+                type: 'note',
+                text: text,
+                date: new Date().toISOString().split('T')[0]
+            });
+            saveData();
+            openActivityModal(currentPartnerIndex);
+        }
+        
+        function openStageModal(index) {
+            event.stopPropagation();
+            currentStagePartnerIndex = index;
+            document.getElementById('stagePartnerName').textContent = partnersData[index].name;
+            openModal('stageModal');
+        }
+        
+        function setStage(stage) {
+            if (currentStagePartnerIndex === null) return;
+            partnersData[currentStagePartnerIndex].stage = stage;
+            partnersData[currentStagePartnerIndex].activities.unshift({
+                type: 'stage',
+                text: `Stage changed to ${stage.toUpperCase()}`,
+                date: new Date().toISOString().split('T')[0]
+            });
+            saveData();
+            renderPipeline();
+            renderPartners();
+            closeModal('stageModal');
+        }
+        
+        function openResearch(name, type) {
+            const urls = {
+                linkedin: `https://www.linkedin.com/search/results/companies/?keywords=${name}`,
+                google: `https://www.google.com/search?q=${name}`,
+                crunchbase: `https://www.crunchbase.com/textsearch?q=${name}`
+            };
+            window.open(urls[type], '_blank');
+        }
+        
+        function copyEmail(event, email) {
+            event.preventDefault();
+            event.stopPropagation();
+            navigator.clipboard.writeText(email).then(() => {
+                const btn = event.target;
+                btn.textContent = '✓';
+                setTimeout(() => btn.textContent = '📋', 1500);
+            });
+        }
+        
+        function previewTemplate(key) {
+            const template = emailTemplates[key];
+            if (!template) return;
+            
+            document.getElementById('templatePreviewTitle').textContent = template.badge + ' TEMPLATE';
+            document.getElementById('templatePreview').textContent = `SUBJECT:\n${template.subject}\n\n---\n\nBODY:\n${template.body}`;
+        }
+        
+        function exportPipeline() {
+            let csv = 'Company,Type,Tier,Segment,Stage,Contact,Email,Notes\n';
+            partnersData.forEach(p => {
+                const contact = p.contacts?.[0];
+                csv += `"${p.name}","${p.type}","${p.tier}","${p.segment}","${p.stage}","${contact?.name || ''}","${contact?.email || ''}","${p.notes || ''}"\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `aether_pipeline_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+        }
+        
+        // Close modals on escape/overlay click
+        document.querySelectorAll('.modal-overlay').forEach(m => {
+            m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); });
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+            }
+        });
+        
+        // Charts
+        const chartColors = { green: '#00ff41', gold: '#ffd700', cyan: '#00ffff', purple: '#667eea', red: '#ef4444', blue: '#3b82f6', orange: '#f59e0b', gray: '#6b7280', emerald: '#10b981' };
+        Chart.defaults.color = '#008f11';
+        Chart.defaults.borderColor = 'rgba(0, 255, 65, 0.1)';
+        
+        new Chart(document.getElementById('stageChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Cold', 'Contacted', 'Warm', 'Hot', 'Closed'],
+                datasets: [{ data: [11, 3, 3, 1, 1], backgroundColor: [chartColors.gray, chartColors.blue, chartColors.orange, chartColors.red, chartColors.emerald], borderWidth: 0 }]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: chartColors.green, font: { size: 10 } } } } }
+        });
+        
+        new Chart(document.getElementById('tierChart'), {
+            type: 'bar',
+            data: {
+                labels: ['T1', 'T2', 'T3', 'Impact', 'Sovereign'],
+                datasets: [{ data: [12, 3, 0, 1, 3], backgroundColor: chartColors.green, borderWidth: 0 }]
+            },
+            options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { color: chartColors.green } }, x: { ticks: { color: chartColors.green } } } }
+        });
+        
+        new Chart(document.getElementById('segmentChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Investment', 'B2B', 'Creative', 'Vendor', 'Other'],
+                datasets: [{ data: [6, 7, 4, 2, 2], backgroundColor: [chartColors.gold, chartColors.green, chartColors.cyan, chartColors.red, chartColors.gray], borderWidth: 0 }]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: chartColors.green, font: { size: 10 } } } } }
+        });
+        
+        new Chart(document.getElementById('valueChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Sovereign', 'Investment', 'B2B', 'Creative'],
+                datasets: [{ data: [4.2, 3.1, 1.8, 0.5], backgroundColor: [chartColors.purple, chartColors.gold, chartColors.green, chartColors.cyan], borderWidth: 0 }]
+            },
+            options: { responsive: true, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { ticks: { color: chartColors.green } }, y: { ticks: { color: chartColors.green } } } }
+        });
+        
+        // Initialize
+        renderPipeline();
+    </script>
+</body>
+</html>
