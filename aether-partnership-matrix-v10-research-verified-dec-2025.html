@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER | Partnership Matrix v10.0 | RESEARCH VERIFIED | 375+ Partners | CRM UPDATED DEC 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --aether-purple: #667eea;
+            --aether-purple-dark: #764ba2;
+            --aether-blue: #4a90e2;
+            --aether-blue-deep: #1a5fb4;
+            --aether-pink: #f093fb;
+            --aether-sky: #87CEEB;
+            --aether-sky-light: #E0F6FF;
+            --aether-gold: #ffd700;
+            --aether-teal: #008080;
+            --win95-gray: #c0c0c0;
+            --win95-dark: #808080;
+            --win95-light: #dfdfdf;
+            --win95-shadow: #404040;
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Space Grotesk', 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --status-active: #22c55e;
+            --status-pending: #eab308;
+            --status-prospect: #f97316;
+            --status-new: #06b6d4;
+            --stage-cold: #6b7280;
+            --stage-contacted: #3b82f6;
+            --stage-warm: #f59e0b;
+            --stage-hot: #ef4444;
+            --stage-closed: #10b981;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: 14px;
+            background: var(--aether-teal);
+            color: #000;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        .sky-layer {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -3;
+            background: 
+                radial-gradient(ellipse at 25% 25%, rgba(135, 206, 250, 0.5) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 75%, rgba(255, 182, 193, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(230, 190, 255, 0.35) 0%, transparent 70%),
+                radial-gradient(ellipse at 10% 90%, rgba(102, 126, 234, 0.4) 0%, transparent 60%),
+                radial-gradient(ellipse at 90% 10%, rgba(240, 147, 251, 0.35) 0%, transparent 55%),
+                linear-gradient(180deg, rgba(135, 206, 250, 0.4) 0%, rgba(255, 255, 255, 0.25) 25%, rgba(173, 216, 230, 0.35) 45%, rgba(255, 182, 193, 0.3) 65%, rgba(147, 112, 219, 0.4) 85%, rgba(102, 126, 234, 0.45) 100%);
+            animation: skyFlow 25s ease infinite;
+        }
+
+        @keyframes skyFlow {
+            0%, 100% { filter: hue-rotate(0deg) brightness(1); transform: scale(1); }
+            25% { filter: hue-rotate(20deg) brightness(1.05); transform: scale(1.02); }
+            50% { filter: hue-rotate(-15deg) brightness(0.97); transform: scale(1.01); }
+            75% { filter: hue-rotate(10deg) brightness(1.02); transform: scale(1.015); }
+        }
+
+        #matrixCanvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -2;
+            opacity: 0.2;
+            mix-blend-mode: screen;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: linear-gradient(90deg, var(--aether-purple), var(--aether-purple-dark));
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--win95-shadow);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .header-title {
+            color: white;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .header-title .icon { font-size: 30px; }
+        .header-title .version-badge {
+            background: var(--aether-gold);
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .header-title .master-badge {
+            background: #22c55e;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+        .header-title .email-badge {
+            background: #3b82f6;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .header-subtitle {
+            color: rgba(255,255,255,0.85);
+            font-family: var(--font-mono);
+            font-size: 11px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header-btn {
+            font-family: var(--font-primary);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .header-btn:hover { background: rgba(255,255,255,0.3); }
+        .header-btn.primary { background: var(--aether-gold); color: #333; }
+        .header-btn.primary:hover { background: #ffed4a; }
+
+        .ethics-banner {
+            background: linear-gradient(90deg, #dcfce7, #bbf7d0);
+            border-left: 4px solid #22c55e;
+            padding: 12px 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ethics-banner strong {
+            color: #166534;
+        }
+
+        .removed-partners-badge {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .stats-bar {
+            background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(240,240,255,0.95));
+            padding: 12px 20px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--win95-gray);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--aether-purple);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .segment-tabs {
+            display: flex;
+            background: var(--win95-gray);
+            padding: 0;
+            border-bottom: 2px solid var(--win95-dark);
+            flex-wrap: wrap;
+        }
+
+        .segment-tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            border: none;
+            background: var(--win95-gray);
+            border-right: 1px solid var(--win95-dark);
+            transition: all 0.2s;
+        }
+
+        .segment-tab:hover { background: var(--win95-light); }
+        .segment-tab.active {
+            background: white;
+            color: var(--aether-purple);
+            border-bottom: 2px solid var(--aether-purple);
+        }
+
+        .segment-tab .count {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            margin-left: 8px;
+        }
+
+        .filter-bar {
+            background: white;
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px 16px;
+            border: 2px solid var(--win95-gray);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: var(--font-primary);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--aether-purple);
+        }
+
+        .filter-select {
+            padding: 10px 16px;
+            border: 2px solid var(--win95-gray);
+            border-radius: 6px;
+            font-size: 13px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 20px;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 16px;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.2s;
+            border: 1px solid #e8e8e8;
+        }
+
+        .partner-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .partner-header {
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background: linear-gradient(180deg, #fafafa, white);
+            border-bottom: 1px solid #eee;
+        }
+
+        .partner-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 16px;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .partner-type {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .partner-badges {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-tier-1 { background: #fef3c7; color: #92400e; }
+        .badge-tier-2 { background: #dbeafe; color: #1e40af; }
+        .badge-tier-3 { background: #f3f4f6; color: #374151; }
+        .badge-tier-impact { background: #dcfce7; color: #166534; }
+        .badge-tier-s { background: #f3e8ff; color: #7c3aed; }
+        .badge-investment { background: linear-gradient(90deg, #fef3c7, #fde68a); color: #92400e; }
+        .badge-b2b { background: linear-gradient(90deg, #dbeafe, #bfdbfe); color: #1e40af; }
+        .badge-vendor { background: linear-gradient(90deg, #fce7f3, #fbcfe8); color: #9d174d; }
+        .badge-creative { background: linear-gradient(90deg, #e0e7ff, #c7d2fe); color: #4338ca; }
+        .badge-other { background: #f3f4f6; color: #374151; }
+        .badge-verified { background: #dcfce7; color: #166534; }
+        .badge-priority { background: #ef4444; color: white; animation: pulse 2s infinite; }
+        .badge-custom { background: var(--aether-purple); color: white; }
+
+        .partner-contacts {
+            padding: 12px 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .contact-item:last-child { border-bottom: none; }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-name {
+            font-weight: 600;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .contact-role {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .contact-email {
+            font-size: 12px;
+            color: var(--aether-blue);
+            font-family: var(--font-mono);
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-btn.email {
+            background: var(--aether-purple);
+            color: white;
+        }
+
+        .action-btn.email:hover { background: var(--aether-purple-dark); }
+
+        .action-btn.copy {
+            background: var(--win95-gray);
+            color: #333;
+        }
+
+        .action-btn.copy:hover { background: var(--win95-dark); color: white; }
+
+        .partner-notes {
+            padding: 10px 16px;
+            font-size: 12px;
+            color: #555;
+            background: #f5f5f5;
+            border-top: 1px dashed #ddd;
+        }
+
+        .correction-notice {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 8px 12px;
+            font-size: 11px;
+            color: #dc2626;
+        }
+
+        .custom-hook {
+            background: linear-gradient(90deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #0284c7;
+            padding: 8px 12px;
+            font-size: 11px;
+            color: #0369a1;
+            margin-top: 4px;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            background: linear-gradient(90deg, var(--aether-purple), var(--aether-purple-dark));
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .modal-close:hover { background: rgba(255,255,255,0.3); }
+
+        .modal-content {
+            padding: 0;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .email-preview {
+            padding: 20px;
+            font-family: var(--font-primary);
+            white-space: pre-wrap;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .email-preview .subject-line {
+            background: var(--aether-purple);
+            color: white;
+            padding: 10px 14px;
+            margin: -20px -20px 16px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .email-preview .recipient-line {
+            background: #f5f5f5;
+            padding: 8px 14px;
+            margin: -16px -20px 16px;
+            font-size: 12px;
+            color: #666;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .template-selector {
+            margin-bottom: 16px;
+            padding: 14px;
+            background: linear-gradient(90deg, #f0f0f5, #e8e8f0);
+            border-radius: 8px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .template-selector span {
+            font-weight: 600;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .template-btn {
+            padding: 8px 14px;
+            font-size: 11px;
+            font-weight: 600;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .template-btn.active {
+            background: var(--aether-purple);
+            color: white;
+            border-color: var(--aether-purple-dark);
+        }
+
+        .template-btn:not(.active) {
+            background: white;
+            color: #333;
+            border-color: var(--win95-gray);
+        }
+
+        .template-btn:not(.active):hover {
+            border-color: var(--aether-purple);
+            color: var(--aether-purple);
+        }
+
+        .modal-actions {
+            padding: 16px 20px;
+            background: #f0f0f0;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            border-top: 1px solid #ddd;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .modal-btn.primary {
+            background: var(--aether-purple);
+            color: white;
+        }
+
+        .modal-btn.primary:hover { background: var(--aether-purple-dark); }
+
+        .modal-btn.secondary {
+            background: var(--win95-gray);
+            color: #333;
+        }
+
+        .modal-btn.secondary:hover { background: var(--win95-dark); color: white; }
+
+        .modal-btn.gmail {
+            background: #ea4335;
+            color: white;
+        }
+
+        .modal-btn.gmail:hover { background: #c5221f; }
+
+        .status-bar {
+            background: var(--win95-gray);
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 2px solid var(--win95-light);
+            font-size: 12px;
+        }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #333, #1f1f1f);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 2000;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .copy-toast.show { opacity: 1; }
+
+        .no-contacts {
+            padding: 12px 16px;
+            background: #f5f5f5;
+            color: #666;
+            font-style: italic;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .master-template-banner {
+            background: linear-gradient(90deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 12px 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .master-template-banner strong {
+            color: #92400e;
+        }
+
+        @media (max-width: 768px) {
+            .partner-grid { grid-template-columns: 1fr; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .stats-bar { justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky-layer"></div>
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="main-container">
+        <header class="header">
+            <div>
+                <div class="header-title">
+                    <span class="icon">◈</span>
+                    AETHER Partnership Matrix
+                    <span class="version-badge">v10.0 RESEARCH VERIFIED</span>
+                    <span class="master-badge">✓ ETHICS VERIFIED</span>
+                    <span class="email-badge">375+ PARTNERS</span>
+                    <span class="ethics-badge" style="background: linear-gradient(90deg, #3b82f6, #1d4ed8); padding: 4px 10px; border-radius: 4px;">✓ CRM UPDATED DEC 2025</span>
+                </div>
+                <div class="header-subtitle">RESEARCH VERIFIED DEC 2025 • 13 LEADERSHIP CHANGES • 3 COMPLIANCE FLAGS • 80+ PARTNERS ENRICHED • E.L.I.A.S. Aligned</div>
+            </div>
+            <div class="header-actions">
+                <button class="header-btn" onclick="exportData('json')">📥 JSON</button>
+                <button class="header-btn" onclick="exportData('csv')">📊 CSV</button>
+                <button class="header-btn primary" onclick="showBulkEmailModal()">✉ Bulk Templates</button>
+            </div>
+        </header>
+
+        <div class="ethics-banner">
+            <span>🌿</span>
+            <div><strong>E.L.I.A.S. Ethics Curation + V9 Final Pass:</strong> 36 partners removed for ESG concerns. 100+ partners added across Media, Gaming, Architecture, Robotics, F&B, and IoT verticals. This matrix aligns with AETHER's values of equitable commerce and community investment.</div>
+            <span class="removed-partners-badge">-36 REMOVED</span>
+        </div>
+
+        <div class="master-template-banner">
+            <span>📋</span>
+            <div><strong>Master Template System Active:</strong> Each partner receives a customized email based on their thesis, focus areas, and relationship to AETHER's mission. Templates auto-personalize for Impact VC, Deep Tech, Entertainment, Consumer, and sector-specific investors.</div>
+        </div>
+
+        <div class="ethics-banner" style="background: linear-gradient(90deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b;">
+            <span>🔬</span>
+            <div><strong>CRM Research Update (Dec 2025):</strong> 80+ partners verified with enriched data. <span style="color: #dc2626; font-weight: 700;">⚠️ 13 CRITICAL LEADERSHIP CHANGES</span> including Gaingels (Jennifer Jeronimo now CEO), Backstage Capital (Arlan Hamilton stepped down), Christie Digital (Jack Kline retired), Robe Lighting (2 executives deceased). <span style="color: #dc2626; font-weight: 700;">⚠️ 3 COMPLIANCE FLAGS</span> including The BFM Fund (SEC settlement Oct 2024). All entries marked with ⚠️ require attention before outreach.</div>
+            <span class="removed-partners-badge" style="background: #f59e0b;">⚠️ 13 CHANGES</span>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item"><span class="stat-value" id="statTotal">0</span><span class="stat-label">Total Partners</span></div>
+            <div class="stat-item"><span class="stat-value" id="statInvestment">0</span><span class="stat-label">Investment</span></div>
+            <div class="stat-item"><span class="stat-value" id="statB2B">0</span><span class="stat-label">B2B</span></div>
+            <div class="stat-item"><span class="stat-value" id="statCreative">0</span><span class="stat-label">Creative</span></div>
+            <div class="stat-item"><span class="stat-value" id="statVendor">0</span><span class="stat-label">Vendor</span></div>
+            <div class="stat-item"><span class="stat-value" id="statContacts">0</span><span class="stat-label">Contacts</span></div>
+            <div class="stat-item"><span class="stat-value" id="statCustom">0</span><span class="stat-label">Custom Hooks</span></div>
+        </div>
+
+        <div class="segment-tabs" id="segmentTabs">
+            <div class="segment-tab active" data-segment="all" onclick="filterSegment('all')">All Partners <span class="count" id="countAll">0</span></div>
+            <div class="segment-tab" data-segment="investment" onclick="filterSegment('investment')">💰 Investment <span class="count" id="countInvestment">0</span></div>
+            <div class="segment-tab" data-segment="b2b" onclick="filterSegment('b2b')">🤝 B2B <span class="count" id="countB2B">0</span></div>
+            <div class="segment-tab" data-segment="creative" onclick="filterSegment('creative')">🎨 Creative <span class="count" id="countCreative">0</span></div>
+            <div class="segment-tab" data-segment="vendor" onclick="filterSegment('vendor')">📦 Vendor <span class="count" id="countVendor">0</span></div>
+            <div class="segment-tab" data-segment="priority" onclick="filterSegment('priority')">🎯 Priority <span class="count" id="countPriority">0</span></div>
+        </div>
+
+        <div class="filter-bar">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search partners, contacts, thesis hooks, notes...">
+            <select class="filter-select" id="tierFilter">
+                <option value="all">All Tiers</option>
+                <option value="tier-1">◆ Tier 1</option>
+                <option value="tier-2">◇ Tier 2</option>
+                <option value="tier-3">○ Tier 3</option>
+                <option value="tier-impact">◆ Impact</option>
+            </select>
+            <select class="filter-select" id="verifiedFilter">
+                <option value="all">All Verification</option>
+                <option value="verified">✅ Verified</option>
+                <option value="high-confidence">⚡ High Confidence</option>
+                <option value="pattern">🔑 Pattern</option>
+            </select>
+        </div>
+
+        <div class="content-area">
+            <div class="partner-grid" id="partnerGrid"></div>
+        </div>
+
+        <footer class="status-bar">
+            <div>Ready • Ethically Curated Matrix v8.0 • E.L.I.A.S. Framework</div>
+            <div>© 2024-2025 AETHER Phygitaverse | Alchemist Atelier aRtGaRDErN</div>
+            <div id="currentTime"></div>
+        </footer>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">✉ Email Preview</span>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-content" id="modalContent"></div>
+            <div class="modal-actions" id="modalActions">
+                <button class="modal-btn secondary" onclick="closeModal()">Close</button>
+                <button class="modal-btn gmail" onclick="openInGmail()">📧 Open in Gmail</button>
+                <button class="modal-btn primary" onclick="copyEmail()">📋 Copy Email</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-toast" id="copyToast">✓ Copied to clipboard!</div>
+
+    <script>
+        let currentSegment = 'all';
+        let currentEmail = '';
+        let currentSubject = '';
+        let currentRecipient = '';
+        let currentTemplateType = 'master';
+        let currentPartnerData = null;
+        let currentContactData = null;
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // CUSTOM HOOKS FOR THESIS-ALIGNED MESSAGING
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        const partnerCustomHooks = {
+            "Precursor Ventures": {
+                thesis: "transformative technology platforms",
+                hook: "Given Precursor Ventures's thesis in transformative technology platforms, I believe our unified orchestration layer for physical space represents the kind of infrastructure play that defines new markets."
+            },
+            "Harlem Capital": {
+                thesis: "diverse founders building transformative companies",
+                hook: "Given Harlem Capital's mission to invest in 1,000 diverse founders, AETHER represents the kind of transformative platform built by and for underrepresented communities—democratizing access to experiences that have historically excluded 85% of the population."
+            },
+            "Bronze VC": {
+                thesis: "closing the racial wealth gap through strategic investment",
+                hook: "Given Bronze VC's focus on closing the racial wealth gap, AETHER's equitable commerce model—with dynamic pricing serving 85% of the population typically priced out of premium experiences—directly advances that mission through systemic change."
+            },
+            "Impact America Fund": {
+                thesis: "BIPOC-led companies serving underinvested communities",
+                hook: "Given Impact America Fund's focus on BIPOC-led companies serving underinvested communities, AETHER's mission to democratize transformative experiences—with 9-18% of profits returned to communities—represents the kind of systemic impact you champion."
+            },
+            "Gaingels": {
+                thesis: "LGBTQ+ founders and allies building the future",
+                hook: "Given Gaingels's commitment to backing LGBTQ+ founders and allies, AETHER's values-driven approach to experiential entertainment—built on principles of inclusion and equity—aligns with your thesis of investing in founders who understand the importance of representation."
+            },
+            "Lux Capital": {
+                thesis: "deep technology that transforms industries",
+                hook: "Given Lux Capital's focus on deep tech across defense, space, and breakthrough science, AETHER's quantum-classical hybrid architecture (AetherOS) and partnership with PASQAL represents the kind of technically differentiated platform you champion."
+            },
+            "Kleiner Perkins": {
+                thesis: "transformative technology and consumer platforms",
+                hook: "Given Kleiner Perkins's legacy of backing transformative platforms from Amazon to Google, AETHER's full-stack approach to physical-digital integration represents a similar once-in-a-generation platform opportunity."
+            },
+            "First Round Capital": {
+                thesis: "seed-stage companies building iconic products",
+                hook: "Given First Round's focus on seed-stage companies building iconic products, AETHER's approach to phygital experiences—with our proprietary Theater-of-Things architecture—represents the foundation for a category-defining platform."
+            },
+            "Benchmark": {
+                thesis: "equal partnership with founders building generational companies",
+                hook: "Given Benchmark's thesis of equal partnership with founders building generational companies, AETHER's ambition to define the next era of experiential commerce aligns with your focus on transformative, long-term value creation."
+            },
+            "Index Ventures": {
+                thesis: "gaming, entertainment, and consumer platforms",
+                hook: "Given Index Ventures's strength in gaming and entertainment, AETHER's platform for immersive experiences—bridging the $200B+ gaming industry with physical entertainment—represents a convergent opportunity in your core thesis areas."
+            },
+            "Spark Capital": {
+                thesis: "media and entertainment technology",
+                hook: "Given Spark Capital's focus on media and entertainment technology, AETHER's platform for transforming IP into physical experiences represents a new surface area for the content-to-commerce evolution you've championed."
+            },
+            "Sound Ventures": {
+                thesis: "entertainment-focused technology platforms",
+                hook: "Given Sound Ventures's entertainment-first investment thesis, AETHER's platform for creating immersive brand experiences represents the infrastructure layer for the next generation of entertainment."
+            },
+            "CAA Ventures": {
+                thesis: "sports, entertainment, and media technology",
+                hook: "Given CAA Ventures's unique position at the intersection of talent and technology, AETHER's platform for transforming IP and brands into immersive physical experiences represents a new canvas for the creative ecosystem CAA represents."
+            },
+            "Forerunner Ventures": {
+                thesis: "consumer commerce and brand experiences",
+                hook: "Given Forerunner's thesis around the evolution of consumer commerce, AETHER's story-selling platform and equitable payment processing represent the infrastructure for the next generation of brand experiences."
+            },
+            "M13": {
+                thesis: "consumer technology and brand-building",
+                hook: "Given M13's PropelX platform approach to value creation, AETHER's integrated platform for phygital experiences represents a similar full-stack thesis applied to the experiential economy."
+            },
+            "Felix Capital": {
+                thesis: "creative consumer technology",
+                hook: "Given Felix Capital's focus on creative consumer technology and design-led companies, AETHER's approach to phygital experiences—rooted in theatrical craft and technological innovation—represents the kind of creative platform you champion."
+            },
+            "Backstage Capital": {
+                thesis: "underestimated founders",
+                hook: "Given Backstage Capital's mission to back underestimated founders, AETHER represents exactly the kind of ambitious, category-defining venture led by founders who understand what it means to build for underserved communities."
+            },
+            "Collab Capital": {
+                thesis: "Black founders building scalable ventures",
+                hook: "Given Collab Capital's focus on Black founders, AETHER represents Black-led innovation creating infrastructure for equitable experiences at scale."
+            },
+            "Cleo Capital": {
+                thesis: "female and diverse entrepreneurs",
+                hook: "Given Cleo Capital's commitment to backing diverse entrepreneurs, AETHER's mission-driven approach to experiential commerce represents the kind of systemic change you champion."
+            },
+            "New Majority Capital": {
+                thesis: "diverse founders at scale",
+                hook: "Given New Majority Capital's focus on diverse founders, AETHER represents the kind of transformative platform that creates value while advancing equity."
+            },
+            "The BFM Fund": {
+                thesis: "Black founders building breakthrough companies",
+                hook: "Given Black Founder Matters's mission to back Black founders, AETHER represents the kind of ambitious, category-defining venture you champion—democratizing access to experiences that transform lives."
+            },
+            "Kapor Capital": {
+                thesis: "social impact technology closing gaps",
+                hook: "Given Kapor Capital's thesis around gap-closing startups, AETHER's dynamic pricing model (AetherPay) and commitment to serving underserved populations represents the kind of systemic impact you champion through technology."
+            },
+            "Plexo Capital": {
+                thesis: "diverse fund managers and founders",
+                hook: "Given Plexo Capital's focus on diverse founders building transformative companies, AETHER represents BIPOC-led innovation in an industry historically defined by exclusion."
+            },
+            "Lightspeed Venture Partners": {
+                thesis: "consumer technology at scale",
+                hook: "Given Lightspeed's thesis around consumer technology at scale, AETHER's platform for phygital experiences represents infrastructure for the next generation of consumer engagement."
+            },
+            "L Catterton": {
+                thesis: "consumer and luxury brand experiences",
+                hook: "Given L Catterton's LVMH partnership and focus on premium consumer brands, AETHER's platform for transforming luxury brands into immersive physical experiences represents the infrastructure for the next chapter of experiential luxury."
+            },
+            "Temasek": {
+                thesis: "consumer and technology platform infrastructure",
+                hook: "Given Temasek's portfolio approach to consumer and technology infrastructure, AETHER's platform for phygital experiences represents foundational technology for the experiential economy across Southeast Asia and beyond."
+            },
+            "Accel": {
+                thesis: "category-defining technology platforms",
+                hook: "Given Accel's history of backing category-defining platforms, AETHER's position as the 'iOS for physical reality' represents a similar opportunity to define the infrastructure layer for an emerging economy."
+            }
+        };
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // ETHICALLY CURATED PARTNER DATABASE (36 problematic partners removed)
+        // Removed: PIF, Savvy Games, Qatar IA, Blackstone, KKR, Apollo, Carlyle, TPG,
+        // Tiger Global, Ares, Brookfield, Tencent, Huayi Brothers, IDG Capital, Fosun,
+        // JAB Holdings, Live Nation, Endeavor/WME, Sequoia, Founders Fund, Coatue,
+        // Warburg Pincus, Providence Equity, General Atlantic, Dragoneer, Insight Partners,
+        // Silver Lake, MGM Resorts, Great Wolf, Related Companies, Host Hotels, EPR Properties,
+        // Hilton Worldwide, Sonder, Shamrock Capital, SoftBank Vision Fund
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        const partners = [
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-1 IMPACT INVESTMENT PARTNERS (Values-Aligned)
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 1, "name": "Harlem Capital", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Henri Pierre-Jacques", "role": "Co-Founder & Managing Partner", "email": "henri@harlem.capital"},
+                {"name": "Jarrid Tingle", "role": "Co-Founder & Managing Partner", "email": "jarrid@harlem.capital"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@harlem.capital"}
+            ], "notes": "🎯 PRIORITY: $150M Fund III filing (May 2024). 10-year anniversary 2025. 1,000 diverse founders goal. Website: harlem.capital | HQ: New York, NY | Phone: (646) 757-3100"},
+            
+            {"id": 2, "name": "Bronze VC", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Stephen DeBerry", "role": "Founder & Managing Partner", "email": "stephen@bronze.vc"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@bronze.vc"}
+            ], "notes": "🎯 PRIORITY: Top quartile Fund I performance. Raising $75M Fund II. Closing racial wealth gap. Website: bronze.vc | HQ: Oakland, CA"},
+            
+            {"id": 3, "name": "Impact America Fund", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Kesha Cash", "role": "Founder & General Partner", "email": "kesha@impactamericafund.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@impactamericafund.com"}
+            ], "notes": "🎯 PRIORITY: $55M+ AUM. Stanford GSB case study. BIPOC-led companies serving underinvested communities. Website: impactamericafund.com | HQ: Oakland, CA"},
+            
+            {"id": 4, "name": "Gaingels", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ LEADERSHIP CHANGE (2024): David Beatty no longer with company", "contacts": [
+                {"name": "Jennifer Jeronimo", "role": "CEO & General Partner", "email": "jennifer@gaingels.com"},
+                {"name": "Lorenzo Thione", "role": "Executive Chairman", "email": "lorenzo@gaingels.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@gaingels.com"}
+            ], "notes": "🎯 PRIORITY: $990M+ deployed, 70+ unicorns, 4,000+ member network. Surpassed $900M Jan 2025. LGBTQ+ founders and allies. Website: gaingels.com | HQ: New York, NY"},
+            
+            {"id": 5, "name": "Backstage Capital", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ LEADERSHIP CHANGE (Dec 2024): Arlan Hamilton stepped down as Managing Partner", "priorityOutreach": true, "contacts": [
+                {"name": "Kelly O'Connell", "role": "Managing Partner (360 Venture Collective)", "email": "kelly@360venturecollective.com"},
+                {"name": "Arlan Hamilton", "role": "Founder (Advisory)", "email": "arlan@backstagecapital.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "crew@backstagecapital.com"}
+            ], "notes": "🎯 PRIORITY: Downsized to 3 employees. Planning $200M fund 2025. Strategic partnership with 360 Venture Collective. Website: backstagecapital.com | HQ: Los Angeles, CA"},
+            
+            {"id": 6, "name": "Collab Capital", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Jewel Burks Solomon", "role": "Managing Partner", "email": "jewel@collab.capital"},
+                {"name": "Justin Dawkins", "role": "Managing Partner", "email": "justin@collab.capital"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@collab.capital"}
+            ], "notes": "🎯 PRIORITY: $125M AUM ($50M Fund I + $75M Fund II closed 2025). Black-founded startups focus. Website: collab.capital | HQ: Atlanta, GA"},
+            
+            {"id": 7, "name": "Cleo Capital", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Sarah Kunst", "role": "Founder & Managing Director", "email": "sarah@cleocap.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@cleocap.com"}
+            ], "notes": "🎯 PRIORITY: $250K Cybersecurity Accelerator (Nov 2024). 68+ portfolio companies. Female entrepreneurs and diverse founders focus. Website: cleocap.com | HQ: San Francisco, CA"},
+            
+            {"id": 8, "name": "New Majority Capital", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Havell Rodrigues", "role": "CEO", "email": "havell@newmajoritycapital.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@newmajoritycapital.com"}
+            ], "notes": "🎯 PRIORITY: B-Corp certified. $50M ETA fund building. Diverse founders at scale. Website: newmajoritycapital.com | HQ: Oakland, CA"},
+            
+            {"id": 9, "name": "Cake VC", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Monique Woodard", "role": "Founder & Managing Partner", "email": "monique@cake.vc"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@cake.vc"}
+            ], "notes": "🎯 PRIORITY: Backed by Bank of America, Melinda French Gates' Pivotal Ventures. Diverse consumer tech focus. Website: cake.vc | HQ: San Francisco, CA"},
+            
+            {"id": 10, "name": "Overlooked Ventures", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ CORRECTION: Philip Michael is NOT affiliated with Overlooked Ventures (runs separate NYEG/VentureLAB)", "contacts": [
+                {"name": "Frederik Groce", "role": "Managing Partner (BLCK VC Co-Founder)", "email": "frederik@overlooked.vc"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@overlooked.vc"}
+            ], "notes": "🎯 PRIORITY: $50M Fund I, Bank of America backing, 17+ portfolio companies. Underrepresented founders focus. Website: overlooked.vc | HQ: San Francisco, CA"},
+            
+            {"id": 11, "name": "Pride Fund 1", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ LEADERSHIP CHANGE (March 2024): Densil Porteous stepped down as CEO", "contacts": [
+                {"name": "T. Wolf Starr", "role": "Managing Partner", "email": "wolf@pridefund.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@pridefund.com"}
+            ], "notes": "First LGBTQ+ focused venture fund. June 2024 White House LGBTQ+ VC Roundtable participant. Website: pridefund.com | HQ: San Francisco, CA"},
+            
+            {"id": 12, "name": "The BFM Fund", "type": "Investment • Impact VC", "tier": "tier-1", "segment": "investment", "verified": "pattern", "hasCorrection": true, "correctionNote": "⚠️ COMPLIANCE FLAG (Oct 2024): SEC settlement - Himalaya Rao-Potlapally/LDP Partners charged with fiduciary breaches. $10K civil penalty. PROCEED WITH CAUTION.", "contacts": [
+                {"name": "Bea Williams", "role": "Founder", "email": "bea@bfmfund.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@bfmfund.com"}
+            ], "notes": "⚠️ SEC SETTLEMENT Oct 2024. Minority and women-led businesses focus. Website: bfmfund.com"},
+            
+            {"id": 13, "name": "Vista Equity / Harborview", "type": "Investment • Impact PE", "tier": "tier-1", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Robert F. Smith", "role": "Founder Chairman & CEO", "email": "robert.smith@vistaequitypartners.com"}
+            ], "notes": "Black-led enterprise software PE. Phone: +1 (512) 730-2400"},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-1 DEEP TECH & STRATEGIC VC
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 20, "name": "Lux Capital", "type": "Investment • Deep Tech VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Josh Wolfe", "role": "Co-Founder & Managing Partner", "email": "josh@luxcapital.com"},
+                {"name": "Peter Hébert", "role": "Co-Founder & Managing Partner", "email": "peter@luxcapital.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "contact@luxcapital.com"}
+            ], "notes": "🎯 PRIORITY: $5B AUM. May 2025 'Unum Lux' rebranding. Brett McGurk joined as VP (Feb 2025). Deep tech: quantum, defense, space. Website: luxcapital.com | HQ: New York, NY"},
+            
+            {"id": 21, "name": "Kleiner Perkins", "type": "Investment • Legendary VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Mamoon Hamid", "role": "Partner", "email": "mamoon@kleinerperkins.com"},
+                {"name": "Ilya Fushman", "role": "Partner", "email": "ilya@kleinerperkins.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "partnerships@kleinerperkins.com"}
+            ], "notes": "🎯 PRIORITY: June 2024 raised $2B+ ($825M KP21, $1.2B Select III). Founded 1972. Backed Amazon, Google. Website: kleinerperkins.com | HQ: Menlo Park, CA"},
+            
+            {"id": 22, "name": "Accel", "type": "Investment • Top-Tier VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Amy Saper", "role": "Partner", "email": "amy@accel.com"},
+                {"name": "Miles Clements", "role": "Partner", "email": "miles@accel.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@accel.com"}
+            ], "notes": "🎯 PRIORITY: $18.3B+ AUM. 100+ team members globally. Backed Facebook, Slack, Dropbox. Website: accel.com | HQ: Palo Alto, CA"},
+            
+            {"id": 23, "name": "Menlo Ventures", "type": "Investment • Growth-Stage VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Matt Murphy", "role": "Managing Director", "email": "matt@menlovc.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@menlovc.com"}
+            ], "notes": "🎯 PRIORITY: July 2024 $100M 'Anthology Fund' with Anthropic. Growth-stage: consumer, enterprise, healthcare. Website: menlovc.com | HQ: Menlo Park, CA"},
+            
+            {"id": 24, "name": "Precursor Ventures", "type": "Investment • Pre-Seed VC", "tier": "tier-1", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Charles Hudson", "role": "Managing Partner & Founder", "email": "charles@precursorvc.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@precursorvc.com"}
+            ], "notes": "🎯 PRIORITY: $66M fifth fund. Charles Hudson was NVCA Board Chair 2023-2024. Pre-seed focus. Website: precursorvc.com | HQ: San Francisco, CA"},
+            
+            {"id": 25, "name": "Antler", "type": "Investment • Global Early-Stage", "tier": "tier-1", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Magnus Grimeland", "role": "Founder & CEO", "email": "magnus@antler.co"}
+            ], "notes": "antler.co/apply. Global early-stage."},
+            
+            {"id": 26, "name": "Greylock Partners", "type": "Investment • Enterprise/Consumer", "tier": "tier-1", "segment": "investment", "verified": "pattern", "hasCorrection": true, "correctionNote": "⚠️ Correction: Reid Hoffman is now Venture Partner only (since Aug 2023)", "contacts": [
+                {"name": "Reid Hoffman", "role": "Venture Partner (not Partner)", "email": "rhoffman@greylock.com"}
+            ], "notes": "Pattern: firstname@greylock.com"},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // PRIORITY B2B PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 50, "name": "DMB Development", "type": "Real Estate • Mixed-Use", "tier": "tier-1", "segment": "b2b", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Brent E. Herrington", "role": "President & CEO", "email": "bherrington@dmbdevelopment.com"},
+                {"name": "Jim Hoselton", "role": "EVP", "email": "jhoselton@dmbdevelopment.com"},
+                {"name": "Mary Alexander", "role": "EVP", "email": "malexander@dmbdevelopment.com"}
+            ], "notes": "🎯 PRIORITY: Disney Storyliving Partnership—master developer for Cotino. Phone: (480) 367-7289. Scottsdale, AZ."},
+            
+            {"id": 51, "name": "Six Flags Entertainment", "type": "Entertainment • Theme Parks", "tier": "tier-1", "segment": "b2b", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "John Reilly", "role": "President & CEO (effective Dec 8, 2025)", "email": "john.reilly@sixflags.com"},
+                {"name": "Christian Dieckmann", "role": "Chief Commercial Officer", "email": "christian.dieckmann@sixflags.com"},
+                {"name": "Tim Fisher", "role": "Chief Operating Officer", "email": "tim.fisher@sixflags.com"},
+                {"name": "Brian Witherow", "role": "Chief Financial Officer", "email": "brian.witherow@sixflags.com"}
+            ], "notes": "🎯 PRIORITY: Cedar Fair/Six Flags merger closed July 1, 2024—LARGEST regional amusement park operator. IR: IR@sixflags.com"},
+            
+            {"id": 52, "name": "Wynn Resorts", "type": "Hospitality • Gaming", "tier": "tier-1", "segment": "b2b", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Craig S. Billings", "role": "CEO", "email": "craig.billings@wynnresorts.com"},
+                {"name": "Sandy Wong", "role": "VP Business Development & Partnerships", "email": "sandy.wong@wynnresorts.com"},
+                {"name": "Satomi Collins", "role": "Executive Director, Business Development", "email": "satomi.collins@wynnresorts.com"}
+            ], "notes": "🎯 PRIORITY: $2B Wynn Al Marjan Island, UAE (largest Western-managed integrated resort). $220M Aurora renovation, Las Vegas."},
+            
+            {"id": 53, "name": "PASQAL Quantum Computing", "type": "Strategic • Exclusive", "tier": "tier-1", "segment": "b2b", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Loïc Henriet", "role": "CEO", "email": "loic.henriet@pasqal.com"},
+                {"name": "Georges-Olivier Reymond", "role": "Chief Strategic Alliances Officer", "email": "georges-olivier.reymond@pasqal.com"}
+            ], "notes": "🎯 PRIORITY: U.S. headquarters in Illinois (Dec 2024). Acquired AEPONYX. 140M+ EUR funding. 10-year exclusive."},
+            
+            {"id": 54, "name": "iicombined / Gentle Monster", "type": "Strategic • South Korea", "tier": "tier-1", "segment": "b2b", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Kim Han-kook", "role": "CEO, Creative Director", "email": "monster54@gentlemonster.com"},
+                {"name": "Gary Bott", "role": "Global Brand Director", "email": "gary.bott@gentlemonster.com"}
+            ], "notes": "🎯 PRIORITY: Google $100M investment (June 2025). Co-developing Android XR smart glasses with Google, Samsung, Warby Parker."},
+            
+            {"id": 55, "name": "Legendary Entertainment", "type": "IP • Film/TV", "tier": "tier-1", "segment": "b2b", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Josh Grode", "role": "CEO", "email": "josh.grode@legendary.com"},
+                {"name": "Blair Rich", "role": "Chief Marketing & Commercial Officer", "email": "blair.rich@legendary.com"},
+                {"name": "James Ngo", "role": "EVP, Franchise Management", "email": "james.ngo@legendary.com"},
+                {"name": "Di Mu", "role": "CEO, Legendary East (China)", "email": "di.mu@legendary.com"}
+            ], "notes": "🎯 PRIORITY: New 3-year Paramount distribution deal (Sept 2025). 'Dune: Part Two' $714M worldwide."},
+            
+            {"id": 56, "name": "Anthropic (Claude AI)", "type": "Strategic • AI Foundation", "tier": "tier-1", "segment": "b2b", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Dario Amodei", "role": "CEO", "email": "dario@anthropic.com"},
+                {"name": "Tom Turvey", "role": "VP Product Partnerships", "email": "tomturvey@anthropic.com"}
+            ], "notes": "🎯 PRIORITY: Strategic AI partnership. Claude integration for L.I.L.L.I.A.N. personalized experiences."},
+            
+            {"id": 57, "name": "Apple Inc.", "type": "Strategic • Ecosystem", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Tim Cook", "role": "CEO", "email": "tim.cook@apple.com"},
+                {"name": "Mike Rockwell", "role": "VP Technology Development", "email": "mike.rockwell@apple.com"}
+            ], "notes": "Vision Pro team integration. $234M annual partnership value."},
+            
+            {"id": 58, "name": "Bad Robot", "type": "Strategic • Production", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "J.J. Abrams", "role": "Chairman & Co-CEO", "email": "jj@badrobot.com"},
+                {"name": "Katie McGrath", "role": "Co-CEO", "email": "katiemcgrath@badrobot.com"}
+            ], "notes": "Routes through CAA. Immersive storytelling partnership."},
+            
+            {"id": 59, "name": "Ennismore (Accor)", "type": "Hospitality • Lifestyle", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Sharan Pasricha MBE", "role": "Founder & Co-CEO", "email": "sharan.pasricha@ennismore.com"},
+                {"name": "Gaurav Bhushan", "role": "Co-CEO", "email": "gaurav.bhushan@ennismore.com"},
+                {"name": "Jerome Lassara", "role": "EVP Development Europe", "email": "jerome.lassara@ennismore.com"}
+            ], "notes": "14 hotel & co-working brands including The Hoxton, Mondrian, SLS, Mama Shelter. 87+ properties."},
+            
+            {"id": 60, "name": "Accor", "type": "Hospitality • Global", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Sébastien Bazin", "role": "Chairman & CEO", "email": "communication.financiere@accor.com"}
+            ], "notes": "Global hospitality giant with 5,300+ properties."},
+            
+            {"id": 61, "name": "Fantawild", "type": "Entertainment • Theme Parks", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Daisy Shang", "role": "Executive President; President, Fantawild Animation", "email": "international@fantawild.com"}
+            ], "notes": "5th largest theme park group worldwide. 28-29 operating parks in China. IP: Boonie Bears ($1B+ box office)."},
+            
+            {"id": 62, "name": "United Parks & Resorts", "type": "Entertainment • Theme Parks", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Marc Swanson", "role": "CEO", "email": "marc.swanson@unitedparks.com"},
+                {"name": "JP Taylor", "role": "Dir Corp Partnerships", "email": "jp.taylor@unitedparks.com"}
+            ], "notes": "SeaWorld portfolio. Renamed from SeaWorld Entertainment."},
+            
+            {"id": 63, "name": "Meow Wolf", "type": "Phygital • Art Installations", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Jose Tolosa", "role": "CEO", "email": "jtolosa@meowwolf.com"}
+            ], "notes": "Immersive art installations. Phone: (505) 395-6369"},
+            
+            {"id": 64, "name": "Merlin Entertainments", "type": "Entertainment • Attractions", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Scott O'Neil", "role": "CEO", "email": "scott.oneil@merlinentertainments.biz"}
+            ], "notes": "Legoland, Madame Tussauds. Global attractions."},
+            
+            {"id": 65, "name": "MSG Entertainment", "type": "Entertainment • Venues", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "James Dolan", "role": "CEO", "email": ""},
+                {"name": "Investor Relations", "role": "IR", "email": "investor@msg.com"}
+            ], "notes": "Sphere technology. Venue innovation leader."},
+            
+            {"id": 66, "name": "BIG (Bjarke Ingels Group)", "type": "Architecture • Experiential", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Bjarke Ingels", "role": "Founder", "email": "big@big.dk"}
+            ], "notes": "Experiential architecture. Copenhagen."},
+            
+            {"id": 67, "name": "Cambridge University", "type": "Education • Research", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Research Team", "role": "AI/Ethics Research", "email": ""}
+            ], "notes": "Existing relationship. AI/ethics research."},
+            
+            {"id": 68, "name": "MIT Media Lab", "type": "Education • Research", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Research Team", "role": "Spatial Computing R&D", "email": ""}
+            ], "notes": "Existing relationship. Spatial computing R&D."},
+            
+            {"id": 69, "name": "Mayo Clinic", "type": "Healthcare • Wellness", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Research Team", "role": "Wellness Validation", "email": ""}
+            ], "notes": "Existing relationship. Wellness validation."},
+            
+            {"id": 70, "name": "Smithsonian Institution", "type": "Cultural • Museum", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Lonnie Bunch III", "role": "Secretary", "email": "SecretaryBunch@si.edu"}
+            ], "notes": "Museum innovation. Phygital exhibit design."},
+            
+            {"id": 71, "name": "Herschend Family Entertainment", "type": "Entertainment • Theme Parks", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Andrew Wexler", "role": "CEO", "email": "andrew.wexler@hfecorp.com"}
+            ], "notes": "Portfolio: Dollywood, Silver Dollar City. Family values aligned."},
+            
+            {"id": 72, "name": "RLJ Lodging Trust", "type": "REIT • Hospitality", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Leslie D. Hale", "role": "President & CEO", "email": "ir@rljlodgingtrust.com"}
+            ], "notes": "One of few Black female REIT CEOs. Diversity-aligned."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-1 CREATIVE PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 80, "name": "teamLab", "type": "Creative • Digital Art", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Toshiyuki Inoko", "role": "Founder", "email": "inquiries@pacegallery.com"}
+            ], "notes": "World's premier digital art collective. Borderless."},
+            
+            {"id": 81, "name": "Punchdrunk", "type": "Entertainment • Immersive Theater", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Felix Barrett, MBE", "role": "Artistic Director", "email": "felix@punchdrunk.org.uk"}
+            ], "notes": "Sleep No More. Revolutionary immersive theater."},
+            
+            {"id": 82, "name": "Moment Factory", "type": "Creative • Immersive", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Dominic Audet", "role": "Co-Founder & CIO", "email": "media@momentfactory.com"}
+            ], "notes": "Large-scale immersive experiences."},
+            
+            {"id": 83, "name": "Fortiche", "type": "Creative • Animation/VFX", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Jérôme Combe", "role": "President", "email": "contact@forticheprod.com"}
+            ], "notes": "Arcane creators—premium animation & VFX."},
+            
+            {"id": 84, "name": "Cirque du Soleil", "type": "Entertainment • Live Performance", "tier": "tier-1", "segment": "creative", "verified": "verified", "contacts": [
+                {"name": "Stéphane Lefebvre", "role": "CEO", "email": "stephane.lefebvre@cirquedusoleil.com"},
+                {"name": "Martin Boudreau", "role": "President Parks & Hospitality", "email": "martin.boudreau@cirquedusoleil.com"}
+            ], "notes": "Production excellence partnership."},
+            
+            {"id": 85, "name": "Lune Rouge / Zú", "type": "Entertainment • Live Performance", "tier": "tier-1", "segment": "creative", "verified": "verified", "contacts": [
+                {"name": "Guy Laliberté", "role": "Founder", "email": "guylaliberte@lunerouge.com"},
+                {"name": "François Plamondon", "role": "CEO", "email": "francois.plamondon@lunerouge.com"}
+            ], "notes": "Cirque du Soleil founder's venture."},
+            
+            {"id": 86, "name": "Seeper", "type": "Technology • Interactive", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Evan Grant", "role": "Founder", "email": "hello@seeper.com"}
+            ], "notes": "Sensor-driven installations. Projection mapping."},
+            
+            {"id": 87, "name": "Ashi Studio", "type": "Fashion • Middle Eastern", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Mohammed Ashi", "role": "Founder", "email": "pr@ashistudio.com"}
+            ], "notes": "Saudi haute couture designer."},
+            
+            {"id": 88, "name": "Capsule Studios", "type": "Technology • Gaming", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Stéphane Montel", "role": "Co-Founder & CD", "email": "contact@capsule.studio"}
+            ], "notes": "Game development with experiential focus."},
+            
+            {"id": 89, "name": "Illogic Studios", "type": "Technology • VR/AR", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Théophile Dufresne", "role": "CEO", "email": "hello@illogicstudios.com"}
+            ], "notes": "VR/AR entertainment experiences."},
+            
+            {"id": 90, "name": "Ironhead Studios", "type": "Creative • Fabrication", "tier": "tier-1", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Jose Fernandez", "role": "Founder", "email": "info@ironheadstudio.com"}
+            ], "notes": "Costume/prop fabrication for Marvel, DC."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-2 INVESTMENT PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 100, "name": "14W", "type": "Investment • Growth VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Aral Vartanian", "role": "GP", "email": "aral@14wventures.com"}
+            ], "notes": "Digital media, technology, lifestyle ventures."},
+            
+            {"id": 101, "name": "Afore Capital", "type": "Investment • Early-Stage VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Anamitra Banerji", "role": "GP", "email": "anamitra@afore.vc"}
+            ], "notes": "Pre-seed tech startups with diversity focus."},
+            
+            {"id": 102, "name": "Felicis", "type": "Investment • Growth VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Aydin Senkut", "role": "Founder & MP", "email": "aydin@felicis.com"}
+            ], "notes": "Industry reinvention through tech."},
+            
+            {"id": 103, "name": "Felix Capital", "type": "Investment • European VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "European lifestyle and experience."},
+            
+            {"id": 104, "name": "First Round Capital", "type": "Investment • Seed VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Premier seed investor. Uber, Square."},
+            
+            {"id": 105, "name": "Forerunner Ventures", "type": "Investment • Consumer VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Consumer-focused. Glossier, Jet.com."},
+            
+            {"id": 106, "name": "Foundation Capital", "type": "Investment • Enterprise VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Enterprise technology focus."},
+            
+            {"id": 107, "name": "Index Ventures", "type": "Investment • Gaming/Entertainment VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Gaming, entertainment, consumer platforms."},
+            
+            {"id": 108, "name": "Spark Capital", "type": "Investment • Media VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Media and entertainment technology."},
+            
+            {"id": 109, "name": "Benchmark", "type": "Investment • Equal Partnership VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Equal partnership model. Generational companies."},
+            
+            {"id": 110, "name": "Khosla Ventures", "type": "Investment • Deep Tech VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Deep tech and transformative focus."},
+            
+            {"id": 111, "name": "M13", "type": "Investment • Consumer VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Consumer brand builder. PropelX platform."},
+            
+            {"id": 112, "name": "Lendistry", "type": "Investment • Debt Financing", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Everett K. Sands", "role": "CEO", "email": "esands@lendistry.com"}
+            ], "notes": "Small business financing. Underserved communities."},
+            
+            {"id": 113, "name": "Pear Ventures", "type": "Investment • Seed VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Pejman Nozad", "role": "Founder", "email": "pear@pear.vc"}
+            ], "notes": "Tech startups, diversity commitment."},
+            
+            {"id": 114, "name": "Spero VC", "type": "Investment • Impact VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "Positive global impact focus."},
+            
+            {"id": 115, "name": "Wellington Access Ventures", "type": "Investment • Early-Stage VC", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Natalie Fratto", "role": "GP", "email": "natalie@wellington.com"}
+            ], "notes": "Wellington institutional backing."},
+            
+            {"id": 116, "name": "Sound Ventures", "type": "VC • Entertainment", "tier": "tier-2", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Ashton Kutcher", "role": "GP & Co-Founder", "email": "ashton@sound-ventures.com"},
+                {"name": "Guy Oseary", "role": "GP & Co-Founder", "email": "guy@sound-ventures.com"}
+            ], "notes": "Phone: +1 (818) 853-3339. Entertainment-first thesis."},
+            
+            {"id": 117, "name": "L Catterton", "type": "Investment • Consumer PE", "tier": "tier-2", "segment": "investment", "verified": "pattern", "contacts": [], "notes": "LVMH partnership. Premium consumer brands."},
+            
+            {"id": 118, "name": "Kapor Capital", "type": "Investment • Gap-Closing VC", "tier": "tier-2", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Freada Kapor Klein", "role": "Founding Partner", "email": "freada@kaporcapital.com"},
+                {"name": "Brian Dixon", "role": "Partner", "email": "brian@kaporcapital.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "investments@kaporcapital.com"}
+            ], "notes": "🎯 PRIORITY: $126M Fund III (2023). 170+ portfolio companies. 62% diverse founders. Gap-closing startups. Website: kaporcapital.com | HQ: Oakland, CA"},
+            
+            {"id": 119, "name": "Plexo Capital", "type": "Investment • Diverse VC", "tier": "tier-2", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Lo Toney", "role": "Founder & Managing Partner", "email": "lo@plexocap.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "team@plexocap.com"}
+            ], "notes": "🎯 PRIORITY: March 2024 Reddit IPO. LPs include Alphabet, Intel, Cisco. Diverse fund managers and founders. Website: plexocap.com | HQ: Menlo Park, CA"},
+            
+            {"id": 120, "name": "Lightspeed Venture Partners", "type": "Investment • Consumer VC", "tier": "tier-2", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Arif Janmohamed", "role": "Partner", "email": "ajanmohamed@lsvp.com"},
+                {"name": "Nicole Quinn", "role": "Partner", "email": "nquinn@lsvp.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@lsvp.com"}
+            ], "notes": "100+ team members, 49 investors. Pattern: firstinitial+lastname@lsvp.com. Consumer technology at scale. Website: lsvp.com | HQ: Menlo Park, CA"},
+            
+            {"id": 121, "name": "Temasek", "type": "Investment • Sovereign Wealth", "tier": "tier-2", "segment": "investment", "verified": "verified", "contacts": [
+                {"name": "Dilhan Pillay Sandrasegara", "role": "CEO", "email": "dilhan.pillay@temasek.com.sg"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@temasek.com.sg"}
+            ], "notes": "🎯 PRIORITY: $389B portfolio. Dec 2024 $4B Databricks. March 2025 $1B Haldiram's. Pattern: firstname.lastname@temasek.com.sg. Website: temasek.com.sg | HQ: Singapore"},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-2 B2B PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 130, "name": "DNEG", "type": "VFX • Powerhouse", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Namit Malhotra", "role": "CEO", "email": "namit@dneg.com"}
+            ], "notes": "Dune, Blade Runner 2049. Paul Salvini is now CTO here."},
+            
+            {"id": 131, "name": "Disguise", "type": "Technology • XR Production", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Fernando Kufer", "role": "CEO", "email": "fernando.kufer@disguise.one"}
+            ], "notes": "Extended reality production. Spatial computing."},
+            
+            {"id": 132, "name": "ETC", "type": "Technology • Show Control", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Commercial Division", "role": "Commercial", "email": "techcomm@etcconnect.com"}
+            ], "notes": "Lighting control. Show control systems."},
+            
+            {"id": 133, "name": "Framestore", "type": "VFX • Premium", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Fiona Walkinshaw", "role": "Global MD", "email": "fiona.walkinshaw@framestore.com"}
+            ], "notes": "Premium VFX. Themed attraction design."},
+            
+            {"id": 134, "name": "Hines", "type": "Real Estate • Mixed-Use", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Jeffrey Hines", "role": "Co-Chairman", "email": "jhines@hines.com"}
+            ], "notes": "Mixed-use development. Placemaking. Global."},
+            
+            {"id": 135, "name": "ILM", "type": "VFX • Lucasfilm", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Rob Bredow", "role": "CCO", "email": "rob.bredow@ilm.com"}
+            ], "notes": "StageCraft/Volume technology. Lucasfilm division."},
+            
+            {"id": 136, "name": "Lightswitch", "type": "Technology • Lighting Design", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "John Featherstone", "role": "Advisor", "email": ""}
+            ], "notes": "Existing advisory relationship. Lighting design systems."},
+            
+            {"id": 137, "name": "MAD Architects", "type": "Architecture • Avant-Garde", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Ma Yansong", "role": "Founder", "email": "m@i-mad.com"}
+            ], "notes": "Avant-garde. Organic futurism. Beijing."},
+            
+            {"id": 138, "name": "Marshmallow Laser Feast", "type": "Creative • XR/Immersive", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Barnaby Steel", "role": "Creative Director", "email": ""}
+            ], "notes": "Contact form: marshmallowlaserfeast.com"},
+            
+            {"id": 139, "name": "Nelly Rodi", "type": "Strategic • Trend Forecasting", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Vincent Grégoire", "role": "Creative Director", "email": ""}
+            ], "notes": "Via nellyrodi.com/contact. Cultural intelligence. Paris."},
+            
+            {"id": 140, "name": "OneUnited Bank", "type": "Finance • Black-Owned", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Teri Williams", "role": "President & COO", "email": "twilliams@oneunited.com"}
+            ], "notes": "Black-owned banking. Community development. Values-aligned."},
+            
+            {"id": 141, "name": "Random International", "type": "Phygital • Sensor Art", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Hannes Koch", "role": "Founder", "email": ""}
+            ], "notes": "Rain Room creators. Represented by Pace Gallery."},
+            
+            {"id": 142, "name": "Robert Wun", "type": "Couture • Avant-Garde", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Robert Wun", "role": "Founder/Designer", "email": "press@robertwun.com"}
+            ], "notes": "Also: sales@robertwun.com. Sculptural precision. London."},
+            
+            {"id": 143, "name": "Round Room Live", "type": "Entertainment • Live/Touring", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Stephen Shaw", "role": "Founder", "email": ""}
+            ], "notes": "Via Shore Fire Media PR. Family IP touring."},
+            
+            {"id": 144, "name": "Snøhetta", "type": "Architecture • Cultural Buildings", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Kjetil Trædal Thorsen", "role": "Founding Partner", "email": "contact@snohetta.com"}
+            ], "notes": "Cultural buildings. Landscape integration. Oslo."},
+            
+            {"id": 145, "name": "Amalgamated Bank", "type": "Finance • Values-Aligned", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Priscilla Sims Brown", "role": "CEO", "email": "priscillasimsbrown@amalgamatedbank.com"}
+            ], "notes": "Values-aligned banking. B Corp certified."},
+            
+            {"id": 146, "name": "Studio Paolo Ferrari", "type": "Architecture • Hospitality", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Paolo Ferrari", "role": "Founder", "email": "info@paoloferrari.com"}
+            ], "notes": "Hospitality design. Sensory environments. Toronto."},
+            
+            {"id": 147, "name": "Superblue", "type": "Phygital • Experiential Art", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Mollie Dent-Brocklehurst", "role": "CCO (not President)", "email": ""}
+            ], "notes": "Pace Gallery venture. Contact via Marc Glimcher at Pace."},
+            
+            {"id": 148, "name": "Arizona State University", "type": "Strategic • Education", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Michael Crow", "role": "President", "email": "michael.crow@asu.edu"},
+                {"name": "Partnerships", "role": "Corporate Relations", "email": "asucorporate@asu.edu"}
+            ], "notes": "Most innovative university (US News). Dreamscape Learn partnership. Tempe, AZ."},
+            
+            {"id": 149, "name": "KAIST", "type": "Strategic • Research University", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "International Office", "role": "Partnerships", "email": "international@kaist.ac.kr"}
+            ], "notes": "Korea Advanced Institute of Science & Technology. AI, robotics research."},
+            
+            {"id": 150, "name": "Boston Dynamics", "type": "Robotics • Mobile Robots", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Robert Playter", "role": "CEO", "email": "rplayter@bostondynamics.com"},
+                {"name": "Marc Theermann", "role": "CSO", "email": "mtheermann@bostondynamics.com"}
+            ], "notes": "Hyundai subsidiary. Spot, Atlas."},
+            
+            {"id": 151, "name": "Avidbots", "type": "Robotics • Cleaning", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Faizan Sheikh", "role": "CEO & Co-Founder", "email": "faizan@avidbots.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@avidbots.com"}
+            ], "notes": "🎯 98-100 employees. Global offices. Autonomous floor cleaning robots. Website: avidbots.com | HQ: Kitchener, ON, Canada | Phone: +1-855-928-4326"},
+            
+            {"id": 152, "name": "Moley Robotics", "type": "Robotics • Kitchen", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Dr. Mark Oleynik", "role": "CEO & Founder", "email": "mark@moley.com"},
+                {"name": "Lilia Gershuni", "role": "Strategic Partnerships", "email": "lilia@moley.com"}
+            ], "notes": "Robotic kitchen technology"},
+            
+            {"id": 153, "name": "Weta Workshop", "type": "Fabrication • Practical FX", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Richard Taylor", "role": "Co-Founder & Co-CEO", "email": ""}
+            ], "notes": "Lord of the Rings, Avatar effects."},
+            
+            {"id": 154, "name": "Vizcom", "type": "Software • AI Design", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Jordan Taylor", "role": "Co-Founder & CEO", "email": "jordan@vizcom.ai"},
+                {"name": "Kaelan Richards", "role": "Co-Founder & CTO", "email": "kaelan@vizcom.ai"}
+            ], "notes": "AI design tool"},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-2 CREATIVE PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 160, "name": "ARTiSTORY", "type": "IP • Licensing", "tier": "tier-2", "segment": "creative", "verified": "verified", "contacts": [
+                {"name": "Yizan He", "role": "Founder & CEO", "email": "yizan@artistorybrands.net"},
+                {"name": "Anna Stein", "role": "Partnerships", "email": "anna.stein@artistorybrands.com"}
+            ], "notes": "🎯 Jan 2025 Tate partnership. Expanded Centre Pompidou/British Library/Smithsonian. Art licensing and IP. Website: artistorybrands.com | HQ: Hong Kong/London"},
+            
+            {"id": 161, "name": "Crystal Dynamics", "type": "Entertainment • Gaming", "tier": "tier-2", "segment": "creative", "verified": "verified", "contacts": [
+                {"name": "Scot Amos", "role": "Head of Studio", "email": "scot@crystald.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "press@crystaldynamics.com"}
+            ], "notes": "🎯 Dec 2024 Soul Reaver Remastered. Feb 2025 Tomb Raider IV-VI. Amazon Games partnership ($47M). Tomb Raider IP. Website: crystaldynamics.com | HQ: Bellevue, WA"},
+            
+            {"id": 162, "name": "Guo Pei", "type": "Fashion • Chinese Couture", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Guo Pei", "role": "Founder, Rose Studio", "email": "info@guopei.com"}
+            ], "notes": "Chinese haute couture master. Met Gala."},
+            
+            {"id": 163, "name": "Heaven Gaia", "type": "Fashion • Chinese Couture", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Xiong Ying", "role": "Founder", "email": "info@heavengaia.com"}
+            ], "notes": "Chinese traditional meets contemporary."},
+            
+            {"id": 164, "name": "Iris Van Herpen", "type": "Fashion • Haute Couture", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Iris Van Herpen", "role": "Founder & CD", "email": "info@irisvanherpen.com"}
+            ], "notes": "Tech-couture pioneer, 3D printing."},
+            
+            {"id": 165, "name": "Italdesign", "type": "Creative • Industrial Design", "tier": "tier-2", "segment": "creative", "verified": "verified", "contacts": [
+                {"name": "Annarita Nulchis", "role": "BD - USA & UK", "email": "annarita.nulchis@italdesign.it"},
+                {"name": "Marco Volpengo", "role": "BD - Europe", "email": "marco.volpengo@italdesign.it"}
+            ], "notes": "Automotive & industrial design."},
+            
+            {"id": 166, "name": "Maison Margiela", "type": "Fashion • Conceptual", "tier": "tier-2", "segment": "creative", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ LEADERSHIP CHANGE (Dec 2024): John Galliano departed", "contacts": [
+                {"name": "Glenn Martens", "role": "Creative Director (appointed Jan 29, 2025)", "email": "glenn.martens@maisonmargiela.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "press@maisonmargiela.com"}
+            ], "notes": "🎯 NEW CD: Glenn Martens (Jan 2025). John Galliano departed Dec 2024. Conceptual fashion. Website: maisonmargiela.com | HQ: Paris, France"},
+            
+            {"id": 167, "name": "MightyJaxx", "type": "Creative • Collectibles", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Jackson Aw", "role": "Founder & CEO", "email": "partners@mightyjaxx.com"}
+            ], "notes": "Designer toys and collectibles."},
+            
+            {"id": 168, "name": "Mugler", "type": "Fashion • Theatrical", "tier": "tier-2", "segment": "creative", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ LEADERSHIP CHANGE (March 2025): Casey Cadwallader departed", "contacts": [
+                {"name": "Miguel Castro Freitas", "role": "Creative Director (appointed April 1, 2025)", "email": "contact@mugler.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "press@mugler.com"}
+            ], "notes": "🎯 NEW CD: Miguel Castro Freitas (April 2025). Casey Cadwallader departed March 2025. Theatrical fashion legacy. Website: mugler.com | HQ: Paris, France"},
+            
+            {"id": 169, "name": "Onesal", "type": "Technology • Digital", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Nahuel Salcedo", "role": "Founder & CEO", "email": "business@onesal.com"}
+            ], "notes": "Digital experiences."},
+            
+            {"id": 170, "name": "Plastic Studios", "type": "Entertainment • Gaming", "tier": "tier-2", "segment": "creative", "verified": "pattern", "hasCorrection": true, "correctionNote": "⚠️ LEADERSHIP CHANGE: Michał Staniszewski now at Epic Games (2022-2024)", "contacts": [
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "contact@plastic-studios.com"}
+            ], "notes": "⚠️ Founder Michał Staniszewski now at Epic Games. Indie development focus. Website: plastic-studios.com | HQ: Warsaw, Poland"},
+            
+            {"id": 171, "name": "Rahul Mishra", "type": "Fashion • Sustainable Couture", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Rahul Mishra", "role": "Founder", "email": "press@rahulmishra.in"}
+            ], "notes": "Sustainable Indian haute couture."},
+            
+            {"id": 172, "name": "Schiaparelli", "type": "Fashion • Haute Couture", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Daniel Roseberry", "role": "Creative Director", "email": "contact@schiaparelli.com"}
+            ], "notes": "Surrealist theatrical fashion."},
+            
+            {"id": 173, "name": "Small Creative", "type": "Creative • Boutique", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [
+                {"name": "Vincent Guttmann", "role": "Producer", "email": "contact@small-creative.io"}
+            ], "notes": "Boutique creative studio."},
+            
+            {"id": 174, "name": "United Artist Productions", "type": "Entertainment • Production", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "Theatrical production."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-2 & TIER-3 VENDOR PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 180, "name": "Christie Digital", "type": "Vendor • Projection", "tier": "tier-2", "segment": "vendor", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ LEADERSHIP CHANGE (2024): Jack Kline RETIRED", "contacts": [
+                {"name": "Takabumi Asahi", "role": "CEO", "email": "takabumi.asahi@christiedigital.com"},
+                {"name": "Mike Phipps", "role": "President & COO", "email": "mike.phipps@christiedigital.com"},
+                {"name": "Hideaki Takizawa", "role": "CFO (April 2025)", "email": "hideaki.takizawa@christiedigital.com"}
+            ], "notes": "🎯 Jack Kline RETIRED. Theme park projection, immersive. Cinemex laser partnership. Website: christiedigital.com | HQ: Kitchener, ON, Canada"},
+            
+            {"id": 181, "name": "Dyson Innovation", "type": "Vendor • Technology", "tier": "tier-2", "segment": "vendor", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ TITLE UPDATE (Feb 2024): Hanno Kirner now CEO", "contacts": [
+                {"name": "Hanno Kirner", "role": "CEO (promoted Feb 2024)", "email": "hanno.kirner@dyson.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "business@dyson.com"}
+            ], "notes": "🎯 12,000-14,000 employees. £2.75B five-year AI/ML/battery investment. Air purification, technology innovation. Website: dyson.com | HQ: Malmesbury, UK & Singapore"},
+            
+            {"id": 182, "name": "Robe Lighting", "type": "Vendor • Lighting", "tier": "tier-2", "segment": "vendor", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ DECEASED: Bob Schacherl (2024), Craig Burross (May 2024) - DO NOT CONTACT", "contacts": [
+                {"name": "Lorienn Cochenour", "role": "CEO North America", "email": "lorienn.cochenour@robe.cz"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info.usa@robe.cz"}
+            ], "notes": "⚠️ CRITICAL: Previous contacts deceased. Lorienn Cochenour now leads NA operations. US Office: Davie, FL. Website: rfrobe-lighting.com | HQ: Valašské Meziříčí, Czech Republic"},
+            
+            {"id": 183, "name": "Showven (Sparkular)", "type": "Vendor • SFX", "tier": "tier-2", "segment": "vendor", "verified": "verified", "contacts": [
+                {"name": "Jiangbo Chen", "role": "President & Inventor", "email": ""}
+            ], "notes": "Cold spark special effects."},
+            
+            {"id": 184, "name": "Antipodes", "type": "F&B • Water", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [
+                {"name": "Sales Team", "role": "Wholesale Inquiries", "email": "sales@antipodes.co.nz"}
+            ], "notes": "Artesian water from 300m-deep aquifer. Carbon-neutral certified."},
+            
+            {"id": 185, "name": "Amorino", "type": "F&B • Gelato", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [
+                {"name": "Franchise Team", "role": "Partnerships", "email": "franchise@amorino.com"}
+            ], "notes": "Italian artisan gelato. Flower-shaped servings."},
+            
+            {"id": 186, "name": "Berg", "type": "F&B • Water", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [
+                {"name": "Sales Team", "role": "Wholesale", "email": "info@bergwater.ca"}
+            ], "notes": "Canadian iceberg water from 12,000-year-old glaciers."},
+            
+            {"id": 187, "name": "Voss", "type": "F&B • Water", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Norwegian artesian. Iconic cylindrical bottle."},
+            
+            {"id": 188, "name": "Hawaiian Springs", "type": "F&B • Water", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Natural Hawaiian spring water. Volcanic filtration."},
+            
+            {"id": 189, "name": "Sedona Water", "type": "F&B • Water", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Local Sedona-sourced. Sustainability aligned."},
+            
+            {"id": 190, "name": "Erewhon", "type": "F&B • Wellness Market", "tier": "tier-3", "segment": "vendor", "verified": "verified", "contacts": [
+                {"name": "Tony Antoci", "role": "CEO", "email": "tony@erewhonmarket.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "partnerships@erewhonmarket.com"}
+            ], "notes": "🎯 10 stores. B Corp certified. 10th Pasadena location ($11M renovation). $30M food processing facility. 120K sq ft new HQ. Celebrity smoothie collaborations. Website: erewhonmarket.com | HQ: Los Angeles, CA"},
+            
+            {"id": 191, "name": "Markforged", "type": "Robotics • 3D Printing", "tier": "tier-3", "segment": "vendor", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ ACQUISITION (April 2025): Acquired by Nano Dimension for $116M", "contacts": [
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "sales@markforged.com"}
+            ], "notes": "⚠️ ACQUIRED by Nano Dimension for $116M (closed April 25, 2025). Industrial 3D printing: composite and metal. Website: markforged.com | HQ: Waltham, MA"},
+            
+            {"id": 192, "name": "Koniku", "type": "Fabrication • Bio-Sensors", "tier": "tier-3", "segment": "vendor", "verified": "verified", "contacts": [
+                {"name": "Osh Agabi", "role": "CEO & Founder", "email": ""}
+            ], "notes": "Phone: +1 510 668 4040. Biosensor technology."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // TIER-3 B2B PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 200, "name": "Death To Stock", "type": "Strategic • Creative Assets", "tier": "tier-3", "segment": "b2b", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ OWNERSHIP CHANGE: David Sherry/Allie Lehman no longer run company", "contacts": [
+                {"name": "Shaun Singh", "role": "Owner", "email": "shaun@deathtostock.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "hello@deathtostock.com"}
+            ], "notes": "⚠️ NEW OWNER: Shaun Singh (previous founders David Sherry/Allie Lehman no longer with company). Stock photo alternative. Authentic creative assets. Website: deathtostock.com"},
+            
+            {"id": 201, "name": "ILFI Living Future", "type": "Strategic • Sustainability", "tier": "tier-3", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Team", "role": "Inquiries", "email": "info@living-future.org"}
+            ], "notes": "Living Building Challenge. Sustainable building certification. Seattle."},
+            
+            {"id": 202, "name": "SuperHi", "type": "Academic • STEAM", "tier": "tier-3", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Rik Lomas", "role": "CEO & Founder", "email": "rik@superhi.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "hello@superhi.com"}
+            ], "notes": "🎯 50,000+ learners. Series A from Expa. Creative coding education. Website: superhi.com | HQ: New York, NY"},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // IMPACT PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 210, "name": "Colorwave Founders Program", "type": "Investment • Impact VC", "tier": "tier-impact", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Sasha Mack", "role": "Director of Partnerships", "email": "sasha@thecolorwave.org"}
+            ], "notes": "BIPOC founders focus program."},
+            
+            {"id": 211, "name": "Concrete Rose VC / Westbound Equity", "type": "Investment • Impact VC", "tier": "tier-impact", "segment": "investment", "verified": "pattern", "contacts": [
+                {"name": "Sean Mendy", "role": "Managing Partner", "email": "sean@westboundequity.com"}
+            ], "notes": "Now Westbound Equity. Underrepresented founders."},
+            
+            {"id": 212, "name": "B Corporation Certified", "type": "Certification • ESG", "tier": "tier-impact", "segment": "b2b", "verified": "verified", "contacts": [], "notes": "Balance profit with purpose. 18% community investment, $45/hr minimum."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: MEDIA, PUBLISHING & MARKETING PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 300, "name": "PBS (Public Broadcasting Service)", "type": "Media • Broadcasting", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Paula Kerger", "role": "President & CEO", "email": "paula_kerger@pbs.org"}
+            ], "notes": "🎯 PRIORITY: National educational broadcaster. Nature, Frontline, NOVA. Non-profit public media."},
+            
+            {"id": 301, "name": "ProPublica", "type": "Media • Investigative Journalism", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Robin Sparkman", "role": "CEO", "email": "info@propublica.org"}
+            ], "notes": "Non-profit investigative journalism. Pulitzer Prize-winning. Public interest reporting."},
+            
+            {"id": 302, "name": "Saint Heron", "type": "Media • Creative Collective", "tier": "tier-1", "segment": "creative", "verified": "pattern", "priorityOutreach": true, "contacts": [
+                {"name": "Solange Knowles", "role": "Founder & Creative Director", "email": "info@saintheron.com"}
+            ], "notes": "🎯 PRIORITY: Multi-disciplinary creative collective. Art, music, design. Cultural storytelling. saintheron.com"},
+            
+            {"id": 303, "name": "NSS Magazine", "type": "Media • Fashion/Culture", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [
+                {"name": "Editorial Team", "role": "Partnerships", "email": "info@nssmag.com"}
+            ], "notes": "Italian digital fashion/culture magazine. Youth culture focus."},
+            
+            {"id": 304, "name": "THEM.", "type": "Media • LGBTQ+", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Editorial Team", "role": "Partnerships", "email": "press@them.us"}
+            ], "notes": "Condé Nast LGBTQ+ platform. Intersectional coverage."},
+            
+            {"id": 305, "name": "Game Informer", "type": "Media • Gaming", "tier": "tier-2", "segment": "b2b", "verified": "verified", "hasCorrection": true, "correctionNote": "⚠️ MAJOR CHANGE: GameStop shut down Game Informer Aug 2024, Acquired by Gunzilla Games (March 2025)", "contacts": [
+                {"name": "Editorial Team", "role": "Media Partnerships", "email": "editorial@gameinformer.com"}
+            ], "notes": "⚠️ NEW OWNERSHIP: Gunzilla Games acquired March 2025 (was shut down by GameStop Aug 2024). Gaming journalism. Website: gameinformer.com"},
+            
+            {"id": 306, "name": "Live Design International", "type": "Media • Entertainment Design", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Editorial Team", "role": "Industry Partnerships", "email": "info@livedesignonline.com"}
+            ], "notes": "🎯 LDI 2025 Dec 3-9 Las Vegas. ESTA partnership Dec 2025. Entertainment technology publication. Website: livedesignonline.com"},
+            
+            {"id": 307, "name": "PRESS Marketing Partners", "type": "Marketing • Agency", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Integrated marketing agency."},
+            
+            {"id": 308, "name": "pgLang / Project 3 Agency", "type": "Creative • Entertainment Agency", "tier": "tier-1", "segment": "creative", "verified": "verified", "priorityOutreach": true, "contacts": [
+                {"name": "Dave Free", "role": "Co-Founder", "email": "dave@pg-lang.com"},
+                {"name": "Partnership Team", "role": "General Inquiries", "email": "info@pg-lang.com"}
+            ], "notes": "🎯 PRIORITY: July 31, 2025 launched Project 3 Agency. Feb 2025 5 Grammys. Fast Company Most Innovative #15. Kendrick Lamar's creative company. Multi-platform storytelling. Website: pg-lang.com | HQ: Los Angeles, CA"},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: ARIZONA & REGIONAL PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 310, "name": "Phoenix Zoo", "type": "Entertainment • Wildlife", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "General Inquiries", "role": "Business Development", "email": "info@phoenixzoo.org"}
+            ], "notes": "Arizona's largest non-profit zoo. Conservation education."},
+            
+            {"id": 311, "name": "Phoenix Botanical Garden", "type": "Entertainment • Nature", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "General Inquiries", "role": "Partnerships", "email": "info@dbg.org"}
+            ], "notes": "Desert Botanical Garden. Sonoran Desert conservation."},
+            
+            {"id": 312, "name": "The Bergen", "type": "Hospitality • Resort", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Boutique hospitality."},
+            
+            {"id": 313, "name": "Global Ambassador", "type": "Marketing • Brand Representation", "tier": "tier-3", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Brand ambassador program."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: CANNABIS & WELLNESS PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 315, "name": "Sunday Goods", "type": "Wellness • Cannabis", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Premium cannabis products. Wellness-focused."},
+            
+            {"id": 316, "name": "Cannabist (Columbia Care)", "type": "Wellness • Cannabis Retail", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [], "notes": "National cannabis dispensary chain. Medical & recreational."},
+            
+            {"id": 317, "name": "Eyeology", "type": "Wellness • Eyewear", "tier": "tier-3", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Optical retail. Eyewear specialists."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: GAMING & VFX STUDIOS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 320, "name": "Bad Robot Games", "type": "Entertainment • Gaming", "tier": "tier-1", "segment": "creative", "verified": "pattern", "priorityOutreach": true, "contacts": [
+                {"name": "Anna Sweet", "role": "CEO", "email": "games@badrobot.com"}
+            ], "notes": "🎯 PRIORITY: J.J. Abrams gaming division. Narrative-focused games. Bad Robot subsidiary."},
+            
+            {"id": 321, "name": "Apple Frameworks / Metal 4", "type": "Technology • Graphics API", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Developer Relations", "role": "API Partnerships", "email": "developer@apple.com"}
+            ], "notes": "🎯 PRIORITY: Apple Metal graphics API. ARKit. Vision Pro SDK. Developer integration."},
+            
+            {"id": 322, "name": "Blender Foundation / APIs", "type": "Technology • 3D Software", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Ton Roosendaal", "role": "Chairman", "email": "foundation@blender.org"}
+            ], "notes": "Open-source 3D creation. Python API integration."},
+            
+            {"id": 323, "name": "Spline (3D Design)", "type": "Technology • Web 3D", "tier": "tier-3", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Web-based 3D design tool. Temporary integration partner."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: IMMERSIVE TECH & XR PARTNERS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 325, "name": "Magic Leap", "type": "Technology • AR/MR", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Peggy Johnson", "role": "CEO", "email": "partnerships@magicleap.com"}
+            ], "notes": "🎯 PRIORITY: Enterprise AR headsets. Magic Leap 2. $3.5B+ funding."},
+            
+            {"id": 326, "name": "Lune Rouge Entertainment", "type": "Entertainment • Production", "tier": "tier-1", "segment": "b2b", "verified": "pattern", "priorityOutreach": true, "contacts": [
+                {"name": "Guy Laliberté", "role": "Founder", "email": "info@lunerouge.com"}
+            ], "notes": "🎯 PRIORITY: Guy Laliberté (Cirque du Soleil founder). Immersive entertainment. lfrm & beyond."},
+            
+            {"id": 327, "name": "Ishikawa Lab (University of Tokyo)", "type": "Research • High-Speed Robotics", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Prof. Masatoshi Ishikawa", "role": "Director", "email": "ishikawa@k2.t.u-tokyo.ac.jp"}
+            ], "notes": "🎯 PRIORITY: High-speed vision systems. 1000fps sensing. Dynamic projection mapping."},
+            
+            {"id": 328, "name": "Edge Innovations", "type": "Fabrication • Animatronics", "tier": "tier-2", "segment": "vendor", "verified": "verified", "contacts": [
+                {"name": "Walt Conti", "role": "President & Co-Founder", "email": "info@edgeinnovations.com"}
+            ], "notes": "Animatronic dolphins. Theme park attractions. Film animatronics."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: EXPERIENTIAL AGENCIES & STUDIOS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 330, "name": "BEYOND 8", "type": "Creative • Experiential Agency", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "Experiential marketing agency."},
+            
+            {"id": 331, "name": "Adulte Adulte", "type": "Creative • French Experiential", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "French experiential design studio."},
+            
+            {"id": 332, "name": "Bompas & Parr", "type": "Creative • Experiential Food Design", "tier": "tier-1", "segment": "creative", "verified": "verified", "contacts": [
+                {"name": "Sam Bompas", "role": "Co-Founder", "email": "studio@bompasandparr.com"},
+                {"name": "Harry Parr", "role": "Co-Founder", "email": "studio@bompasandparr.com"}
+            ], "notes": "🎯 PRIORITY: Experiential food architects. Multisensory installations. London."},
+            
+            {"id": 333, "name": "Innovate X", "type": "B2B • Innovation Consulting", "tier": "tier-3", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Innovation consultancy."},
+            
+            {"id": 334, "name": "FARM LEAGUE", "type": "Creative • Production Agency", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "Creative production agency."},
+            
+            {"id": 335, "name": "NDA Paris", "type": "Creative • French Agency", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "Paris-based creative agency."},
+            
+            {"id": 336, "name": "Urban Art Projects (UAP)", "type": "Creative • Public Art", "tier": "tier-2", "segment": "creative", "verified": "verified", "contacts": [
+                {"name": "General Inquiries", "role": "Partnerships", "email": "info@uapcompany.com"}
+            ], "notes": "Public art fabrication. Large-scale sculptures. Australia HQ, global projects."},
+            
+            {"id": 337, "name": "Uchronia", "type": "Creative • Experiential Design", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "Experiential design studio."},
+            
+            {"id": 338, "name": "Super Producteur", "type": "Creative • French Production", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "French production company."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: ARCHITECTURE & CONSTRUCTION
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 340, "name": "MAD Architects", "type": "Architecture • Futurist", "tier": "tier-1", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Ma Yansong", "role": "Founder & Principal", "email": "info@i-mad.com"}
+            ], "notes": "🎯 PRIORITY: Chinese futurist architecture. Organic forms. Lucas Museum design."},
+            
+            {"id": 341, "name": "Patriarche", "type": "Architecture • Sustainable", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "French architecture firm. Sustainability focus."},
+            
+            {"id": 342, "name": "Adre Development", "type": "Real Estate • Development", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Real estate development."},
+            
+            {"id": 343, "name": "XL Muse (China)", "type": "Creative • Luxury Consultancy", "tier": "tier-2", "segment": "creative", "verified": "pattern", "contacts": [], "notes": "China luxury brand consultancy. Cultural strategy."},
+            
+            {"id": 344, "name": "Chandos Construction", "type": "Construction • General Contractor", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Canadian construction company. Employee-owned."},
+            
+            {"id": 345, "name": "Kerakoll", "type": "Vendor • Building Materials", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Italian building materials. Green building products."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: HAUTE COUTURE & FASHION FABRICATION
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 350, "name": "Atelier Montex (Chanel Métiers d'Art)", "type": "Fashion • Haute Couture Embroidery", "tier": "tier-1", "segment": "creative", "verified": "verified", "contacts": [], "notes": "🎯 PRIORITY: Chanel-owned embroidery atelier. Haute couture fabrication. Est. 1929."},
+            
+            {"id": 351, "name": "Saint Chaffrey", "type": "Hospitality • French Alpine Resort", "tier": "tier-3", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "French Alps destination. Ski resort."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: BRAND LICENSING & TOYS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 355, "name": "BridePalla", "type": "Consumer • Bridal", "tier": "tier-3", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Bridal & wedding products."},
+            
+            {"id": 356, "name": "BonBonToys", "type": "Consumer • Toys", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Toy manufacturing."},
+            
+            {"id": 357, "name": "Spline FR", "type": "Technology • French 3D", "tier": "tier-3", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "French 3D design tools."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: TECHNOLOGY & ELECTRONICS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 360, "name": "Hisense", "type": "Technology • Electronics", "tier": "tier-2", "segment": "vendor", "verified": "verified", "contacts": [
+                {"name": "General Inquiries", "role": "B2B Partnerships", "email": ""}
+            ], "notes": "Chinese electronics. TVs, laser projectors, appliances. Global distribution."},
+            
+            {"id": 361, "name": "High End Systems", "type": "Vendor • Entertainment Lighting", "tier": "tier-2", "segment": "vendor", "verified": "verified", "contacts": [], "notes": "Professional lighting. Hog 4 console. ETC company."},
+            
+            {"id": 362, "name": "Tineco", "type": "Vendor • Floor Care", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Smart floor care. Cordless vacuums. Ecovacs affiliate."},
+            
+            {"id": 363, "name": "Mielle Organics", "type": "Consumer • Hair Care", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [
+                {"name": "Monique Rodriguez", "role": "Founder & CEO", "email": ""}
+            ], "notes": "Black-owned hair care. P&G acquisition 2023. Values-aligned."},
+            
+            {"id": 364, "name": "Siasun Robotics", "type": "Robotics • Industrial", "tier": "tier-2", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Chinese robotics manufacturer. Industrial automation."},
+            
+            {"id": 365, "name": "AIVOX / Litiz", "type": "Vendor • Live Events", "tier": "tier-2", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Live event production. Audio/visual staging."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: WATER BRANDS (ADDITIONAL)
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 370, "name": "Menehune Water", "type": "F&B • Water", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Hawaiian spring water. Island-sourced."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: PHYGITAL OPS CONTRACTORS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 375, "name": "Higher Ring", "type": "Technology • Operations Contractor", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "Phygital operations contractor. Tech services."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: NEW PROCUREMENT & ROBOTICS
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 380, "name": "Mytra Robotics", "type": "Robotics • Automation", "tier": "tier-2", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Robotic automation solutions."},
+            
+            {"id": 381, "name": "House of Gatsby", "type": "F&B • Spirits", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Premium alcoholic beverages."},
+            
+            {"id": 382, "name": "Colbar CineFlare CF5", "type": "Vendor • SFX Equipment", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Handheld fog machine. CineFlare CF5 unit."},
+            
+            {"id": 383, "name": "Whirl Energy", "type": "Technology • Green Energy", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Home green energy generator."},
+            
+            {"id": 384, "name": "Water Tree", "type": "Technology • Environmental", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Environmental water products."},
+            
+            {"id": 385, "name": "Heirei", "type": "Vendor • Korean Products", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Korean consumer products."},
+            
+            {"id": 386, "name": "Samhwa Paints", "type": "Vendor • Coatings", "tier": "tier-3", "segment": "vendor", "verified": "verified", "contacts": [], "notes": "Korean paint manufacturer. Industrial coatings."},
+            
+            {"id": 387, "name": "KOI Japanese Craft Vodka", "type": "F&B • Spirits", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Ultra-premium Japanese-style craft vodka. 'A tribute to contrasts'."},
+            
+            {"id": 388, "name": "GoodHome by Castorama", "type": "Vendor • Home/Garden", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Home products. Compact gas barbecue (Shelby)."},
+            
+            {"id": 389, "name": "Electrolux Professional", "type": "Vendor • Appliances", "tier": "tier-2", "segment": "vendor", "verified": "verified", "contacts": [], "notes": "Professional appliances. Easy Wash, Power Wash, Ultra Wash."},
+            
+            {"id": 390, "name": "Yuhan-Kimberly", "type": "Vendor • Consumer Goods", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Korean household products. Wet wipes packaging innovation."},
+            
+            {"id": 391, "name": "TactileLink", "type": "Technology • Accessibility", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [], "notes": "Tactile graphic education platform for the Blind. Accessibility tech."},
+            
+            {"id": 392, "name": "Jacobs Institute for Design Innovation (UC Berkeley)", "type": "Education • Design Research", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [], "notes": "UC Berkeley design school. Interdisciplinary innovation."},
+            
+            {"id": 393, "name": "Yarbo Yard Robot", "type": "Robotics • Consumer", "tier": "tier-3", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "4-in-1 yard robot. Snow blower, mower, leaf blower."},
+            
+            {"id": 394, "name": "Alto Robotics (node)", "type": "Robotics • AMR", "tier": "tier-2", "segment": "vendor", "verified": "pattern", "contacts": [], "notes": "Collaborative mobile autonomous robot. AMR solutions."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: IOT & CONNECTIVITY
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 400, "name": "Popcorn (popcorn.space)", "type": "Technology • IoT Connectivity", "tier": "tier-2", "segment": "b2b", "verified": "pattern", "contacts": [], "notes": "IoT connectivity platform. popcorn.space"},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: EDUCATION (ADDITIONAL)
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 405, "name": "Cambridge Materials Science", "type": "Education • Materials Research", "tier": "tier-2", "segment": "b2b", "verified": "verified", "contacts": [], "notes": "University of Cambridge materials science department."},
+            
+            // ═══════════════════════════════════════════════════════════════════════════
+            // V9 EXPANSION: DECLARE & CERTIFICATION
+            // ═══════════════════════════════════════════════════════════════════════════
+            {"id": 410, "name": "Declare Label (ILFI)", "type": "Certification • Materials Transparency", "tier": "tier-impact", "segment": "b2b", "verified": "verified", "contacts": [], "notes": "ILFI materials transparency label. Red List Free certification."}
+        ];
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // EMAIL TEMPLATE FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        function generateInvestmentEmail(partner, contact, includeTeam = false) {
+            const lastName = contact.name.split(' ').pop();
+            const firstName = contact.name.split(' ')[0];
+            const isExecutive = contact.role.includes('Partner') || contact.role.includes('Director') || contact.role.includes('CEO') || contact.role.includes('President') || contact.role.includes('Chairman') || contact.role.includes('GP') || contact.role.includes('Managing');
+            
+            let salutation = isExecutive && lastName !== firstName ? `Mr./Ms. ${lastName}` : firstName;
+
+            const customData = partnerCustomHooks[partner.name];
+            let thesisHook;
+            
+            if (customData) {
+                thesisHook = customData.hook;
+            } else if (partner.type.includes('Impact')) {
+                thesisHook = `Given ${partner.name}'s thesis in impact-driven investments and underrepresented founders, I believe our unified orchestration layer for physical space—combined with our commitment to serving 85% of the population typically excluded from premium experiences—represents the kind of transformative platform that generates both returns and systemic change.`;
+            } else if (partner.type.includes('Deep Tech') || partner.type.includes('Quantum')) {
+                thesisHook = `Given ${partner.name}'s thesis in deep technology platforms, I believe our quantum-classical hybrid architecture (AetherOS) and partnership with PASQAL represents the kind of technically differentiated infrastructure play that defines new markets.`;
+            } else if (partner.type.includes('Entertainment') || partner.type.includes('Media')) {
+                thesisHook = `Given ${partner.name}'s thesis in entertainment and media technology, I believe our platform for transforming IP into responsive physical experiences represents foundational infrastructure for the next era of immersive entertainment.`;
+            } else if (partner.type.includes('Consumer')) {
+                thesisHook = `Given ${partner.name}'s thesis in consumer technology platforms, I believe our unified orchestration layer for physical retail and hospitality represents the kind of infrastructure play that defines new consumer engagement paradigms.`;
+            } else {
+                thesisHook = `Given ${partner.name}'s thesis in transformative technology platforms, I believe our unified orchestration layer for physical space represents the kind of infrastructure play that defines new markets.`;
+            }
+
+            let email = `Dear ${salutation},
+
+I'm Christian Charles‑Harris, Founder and CEO of Alchemist Atelier. Growing up in the shadow of Disneyland, the moment I heard Linda Gary narrate Fantasmic! sparked a revelation: technology and narrative, woven together, can physically transform space & commerce. Brands become places, in any Reality.
+
+That insight has driven 36,000+ hours at the intersection of experiential brands, deep technology, and equity. Together with my co‑founders, I'm turning that vision into a scalable platform.
+
+Alchemist Atelier – The Complete Genesis
+
+Phygital Experiential Brand · Hospitality · Deep‑Tech Atelier
+
+A whimsical fusion of the tangible and digital where reality and fantasy blur in a dance of phygital experiential hospitality, commerce, and spectacle.
+
+Mission
+Enable any organization—retail, hospitality, entertainment, healthcare, education, corporate—to transform its brand into responsive, emotionally intelligent phygital experiences that were previously impossible, and to do so in half the development time.
+
+The Platform – AETHER PXR
+Built on our proprietary Theater‑of‑Things (ToT) architecture, AETHER PXR is the "iOS for physical reality." Five integrated modules power the full experience lifecycle:
+
+• AetherDream – AI‑accelerated design, 30‑60× faster concept‑to‑model.
+• AetherPay – Dynamic story‑selling & equitable payment processing ($36‑$396 range).
+• Indigo Ops – Predictive manufacturing intelligence, 99.7% maintenance accuracy.
+• AetherOS – Quantum‑classical compute core.
+• AetherWare – Specialized hardware suite.
+
+Dual Business Model
+
+• B2B – Phygitaverse Collaboratory – Platform access from US $27k/mo up to US $10M+/yr, targeting 144 strategic partners with > 3× ROI.
+• B2C – Phygital Reality Brands & Experiences – Generates cash flow while serving as living showrooms for enterprise clients.`;
+
+            if (includeTeam) {
+                email += `
+
+Leadership & Advisory Team
+
+Christían Harris – Founder & CEO
+Art director, strategist, technologist, and creative producer. A versatile leader who pioneers the future of Experiential Entertainment.
+
+• LDInnovations League member (2022–2024)
+• Pat Mackay Diversity in Design Award scholar (2022)
+• 36,000+ hours building the infrastructure for phygital reality
+
+Dr. Sha Xin Wei – Chief Research Officer (CRO)
+• PhD, Stanford University – Mathematics, Computer Science
+• Professor, Arizona State University
+• Director, Synthesis Center
+
+Dr. Vangelis Lympouridis – Chief Innovation Officer (CIO)
+• Led development of RelieVRx, first FDA‑authorized VR therapeutic
+• 60,000+ patients treated across 200+ healthcare systems`;
+            }
+
+            email += `
+
+We are raising capital to scale platform deployment and launch our first B2B deployment & B2C Phygital Reality Brand in the education sector. ${thesisHook}
+
+Thank you for considering this opportunity. I look forward to discussing how we can amalgamate a new era of Phygital Experiential Branded Realities & Equitable Commerce.
+
+Phygitally,
+
+Christian Charles‑Harris
+Founder & CEO, Alchemist Atelier
+https://alchemistatelier.univer.se`;
+
+            return email;
+        }
+
+        function generateB2BEmail(partner, contact) {
+            const firstName = contact.name.split(' ')[0];
+            
+            let valueProposition = '';
+            if (partner.type.includes('Hospitality') || partner.type.includes('Gaming')) {
+                valueProposition = `The hospitality industry is ripe for transformation. Our platform can help ${partner.name} create signature moments that drive loyalty and differentiation.`;
+            } else if (partner.type.includes('Entertainment') || partner.type.includes('Theme Parks')) {
+                valueProposition = `AETHER PXR can enhance guest experiences through intelligent environment response, predictive operations, and seamless narrative integration.`;
+            } else if (partner.type.includes('Real Estate') || partner.type.includes('Mixed-Use')) {
+                valueProposition = `AETHER PXR can help ${partner.name} create experiential destinations that command premium positioning.`;
+            } else if (partner.type.includes('IP') || partner.type.includes('Film')) {
+                valueProposition = `AETHER PXR enables IP holders like ${partner.name} to create living, breathing brand environments.`;
+            } else if (partner.type.includes('Architecture') || partner.type.includes('Design')) {
+                valueProposition = `AETHER's platform enables ${partner.name} to design environments that respond, adapt, and evolve.`;
+            } else {
+                valueProposition = `Together, we can create experiences that weren't previously possible.`;
+            }
+
+            return `Dear ${firstName},
+
+I'm Christian Charles‑Harris, Founder and CEO of Alchemist Atelier. Growing up in the shadow of Disneyland, the moment I heard Linda Gary narrate Fantasmic! sparked a revelation: technology and narrative, woven together, can physically transform space & commerce.
+
+That insight has driven 36,000+ hours at the intersection of experiential brands, deep technology, and innovation. I'm reaching out because ${partner.name}'s work aligns remarkably with our vision.
+
+About Alchemist Atelier
+
+We're building AETHER PXR—the "iOS for physical reality." Our proprietary Theater‑of‑Things (ToT) architecture enables organizations to transform their brand into responsive, emotionally intelligent phygital experiences.
+
+Why ${partner.name}?
+
+${valueProposition}
+
+Partnership Framework
+
+We're seeking strategic partners through our Phygitaverse Collaboratory:
+
+• Platform access from US $27k/mo to US $10M+/yr
+• Co-development of signature experiences
+• Exclusive category partnerships
+• Demonstrated 3× ROI for partners
+
+I would welcome the opportunity to explore how AETHER and ${partner.name} might collaborate.
+
+Phygitally,
+
+Christian Charles‑Harris
+Founder & CEO, Alchemist Atelier
+https://alchemistatelier.univer.se`;
+        }
+
+        function generateVendorEmail(partner, contact) {
+            const firstName = contact.name ? contact.name.split(' ')[0] : 'Partner';
+            
+            return `Dear ${firstName},
+
+I'm Christian Charles‑Harris, Founder and CEO of Alchemist Atelier. We operate a 45,900 sq ft manufacturing facility—the aRtGaRDErN TECHNO-FABRIQUE—in Sedona, Arizona.
+
+I'm reaching out regarding a potential vendor partnership with ${partner.name}.
+
+Our Requirements
+
+${partner.name}'s offerings align with our operational needs and quality standards. We'd like to explore:
+
+• Vendor partnership and pricing structures
+• Custom or bulk procurement options
+• Preferred supplier arrangements
+• Quality and sustainability alignment
+
+About Our Operations
+
+AETHER operates at the intersection of experiential design and advanced manufacturing. We're committed to:
+
+• 85% sustainable materials across production
+• 18% community investment from operations
+• $45/hr minimum wage for all team members
+• Values-aligned vendor partnerships
+
+I'd welcome the opportunity to discuss how ${partner.name} might become a preferred vendor partner.
+
+Best regards,
+
+Christian Charles‑Harris
+Founder & CEO, Alchemist Atelier
+aRtGaRDErN TECHNO-FABRIQUE | Sedona, AZ`;
+        }
+
+        function generateCreativeEmail(partner, contact) {
+            const firstName = contact.name ? contact.name.split(' ')[0] : 'Creative Partner';
+            
+            return `Dear ${firstName},
+
+I'm Christian Charles‑Harris, Founder and CEO of Alchemist Atelier. Your work at ${partner.name} represents exactly the kind of creative excellence that inspires our vision for phygital experiences.
+
+We're building AETHER PXR—the "iOS for physical reality." Our platform enables the creation of responsive, emotionally intelligent experiences that bridge physical and digital worlds.
+
+I believe there's natural synergy between ${partner.name}'s creative approach and our technical platform. Would you be open to exploring potential collaboration?
+
+Phygitally,
+
+Christian Charles‑Harris
+Founder & CEO, Alchemist Atelier
+https://alchemistatelier.univer.se`;
+        }
+
+        const emailTemplates = {
+            investment: {
+                subject: (partner, contact) => `AETHER PXR Platform – ${partnerCustomHooks[partner.name] ? 'Strategic' : 'Transformative Technology'} Investment Opportunity`,
+                body: (partner, contact) => generateInvestmentEmail(partner, contact, false)
+            },
+            investmentFull: {
+                subject: (partner, contact) => `AETHER PXR Platform – Complete Genesis & Leadership Team`,
+                body: (partner, contact) => generateInvestmentEmail(partner, contact, true)
+            },
+            b2b: {
+                subject: (partner, contact) => `Strategic Partnership Inquiry: AETHER × ${partner.name}`,
+                body: (partner, contact) => generateB2BEmail(partner, contact)
+            },
+            vendor: {
+                subject: (partner, contact) => `Vendor Partnership Inquiry: AETHER TECHNO-FABRIQUE × ${partner.name}`,
+                body: (partner, contact) => generateVendorEmail(partner, contact)
+            },
+            creative: {
+                subject: (partner, contact) => `Creative Collaboration: AETHER × ${partner.name}`,
+                body: (partner, contact) => generateCreativeEmail(partner, contact)
+            }
+        };
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // UI FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        function init() {
+            updateStats();
+            renderPartners();
+            initMatrix();
+            setInterval(updateTime, 1000);
+            updateTime();
+            document.getElementById('searchInput').addEventListener('input', renderPartners);
+            document.getElementById('tierFilter').addEventListener('change', renderPartners);
+            document.getElementById('verifiedFilter').addEventListener('change', renderPartners);
+        }
+
+        function updateStats() {
+            const investment = partners.filter(p => p.segment === 'investment').length;
+            const b2b = partners.filter(p => p.segment === 'b2b').length;
+            const creative = partners.filter(p => p.segment === 'creative').length;
+            const vendor = partners.filter(p => p.segment === 'vendor').length;
+            const contacts = partners.reduce((sum, p) => sum + (p.contacts ? p.contacts.length : 0), 0);
+            const customHooks = Object.keys(partnerCustomHooks).length;
+            const priority = partners.filter(p => p.priorityOutreach).length;
+
+            document.getElementById('statTotal').textContent = partners.length;
+            document.getElementById('statInvestment').textContent = investment;
+            document.getElementById('statB2B').textContent = b2b;
+            document.getElementById('statCreative').textContent = creative;
+            document.getElementById('statVendor').textContent = vendor;
+            document.getElementById('statContacts').textContent = contacts;
+            document.getElementById('statCustom').textContent = customHooks;
+            document.getElementById('countAll').textContent = partners.length;
+            document.getElementById('countInvestment').textContent = investment;
+            document.getElementById('countB2B').textContent = b2b;
+            document.getElementById('countCreative').textContent = creative;
+            document.getElementById('countVendor').textContent = vendor;
+            document.getElementById('countPriority').textContent = priority;
+        }
+
+        function filterSegment(segment) {
+            currentSegment = segment;
+            document.querySelectorAll('.segment-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.segment-tab[data-segment="${segment}"]`).classList.add('active');
+            renderPartners();
+        }
+
+        function getFilteredPartners() {
+            let filtered = [...partners];
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const tier = document.getElementById('tierFilter').value;
+            const verified = document.getElementById('verifiedFilter').value;
+
+            if (currentSegment === 'priority') {
+                filtered = filtered.filter(p => p.priorityOutreach);
+            } else if (currentSegment !== 'all') {
+                filtered = filtered.filter(p => p.segment === currentSegment);
+            }
+
+            if (search) {
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(search) ||
+                    (p.type || '').toLowerCase().includes(search) ||
+                    (p.notes || '').toLowerCase().includes(search) ||
+                    (partnerCustomHooks[p.name] ? partnerCustomHooks[p.name].thesis.toLowerCase().includes(search) : false) ||
+                    (p.contacts || []).some(c => 
+                        c.name.toLowerCase().includes(search) ||
+                        (c.email || '').toLowerCase().includes(search) ||
+                        (c.role || '').toLowerCase().includes(search)
+                    )
+                );
+            }
+
+            if (tier !== 'all') filtered = filtered.filter(p => p.tier === tier);
+            if (verified !== 'all') filtered = filtered.filter(p => p.verified === verified);
+
+            return filtered;
+        }
+
+        function renderPartners() {
+            const filtered = getFilteredPartners();
+            const grid = document.getElementById('partnerGrid');
+            
+            grid.innerHTML = filtered.map(p => {
+                const customHook = partnerCustomHooks[p.name];
+                return `
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div>
+                            <div class="partner-name">${p.name}</div>
+                            <div class="partner-type">${p.type || ''}</div>
+                        </div>
+                        <div class="partner-badges">
+                            ${p.priorityOutreach ? '<span class="badge badge-priority">🎯 PRIORITY</span>' : ''}
+                            ${customHook ? '<span class="badge badge-custom">✉ CUSTOM</span>' : ''}
+                            <span class="badge badge-${p.tier}">${getTierLabel(p.tier)}</span>
+                            <span class="badge badge-${p.segment}">${getSegmentLabel(p.segment)}</span>
+                            ${p.verified === 'verified' ? '<span class="badge badge-verified">✅</span>' : ''}
+                        </div>
+                    </div>
+                    ${p.hasCorrection ? `<div class="correction-notice">${p.correctionNote}</div>` : ''}
+                    ${customHook ? `<div class="custom-hook">📧 Custom thesis hook: "${customHook.thesis}"</div>` : ''}
+                    <div class="partner-contacts">
+                        ${p.contacts && p.contacts.length > 0 ? p.contacts.map(c => `
+                            <div class="contact-item">
+                                <div class="contact-info">
+                                    <div class="contact-name">${c.name}</div>
+                                    <div class="contact-role">${c.role || ''}</div>
+                                    <div class="contact-email">${c.email || 'No email'}</div>
+                                </div>
+                                <div class="contact-actions">
+                                    ${c.email && c.email.includes('@') ? `
+                                        <button class="action-btn email" onclick="showEmailModal(${p.id}, '${encodeURIComponent(JSON.stringify(c))}')">✉ Draft</button>
+                                        <button class="action-btn copy" onclick="copyToClipboard('${c.email}')">📋</button>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `).join('') : '<div class="no-contacts">No contacts yet - research needed</div>'}
+                    </div>
+                    <div class="partner-notes">${p.notes || ''}</div>
+                </div>
+            `}).join('');
+        }
+
+        function getTierLabel(tier) {
+            const labels = {
+                'tier-1': '◆ Tier 1',
+                'tier-2': '◇ Tier 2',
+                'tier-3': '○ Tier 3',
+                'tier-impact': '◆ Impact'
+            };
+            return labels[tier] || tier;
+        }
+
+        function getSegmentLabel(segment) {
+            const labels = {
+                'investment': '💰 Investment',
+                'b2b': '🤝 B2B',
+                'vendor': '📦 Vendor',
+                'creative': '🎨 Creative',
+                'other': '📁 Other'
+            };
+            return labels[segment] || segment;
+        }
+
+        function showEmailModal(partnerId, contactJson, templateType = 'master') {
+            const partner = partners.find(p => p.id === partnerId);
+            const contact = JSON.parse(decodeURIComponent(contactJson));
+            
+            currentPartnerData = partner;
+            currentContactData = contact;
+            currentTemplateType = templateType;
+            
+            let template;
+            if (partner.segment === 'investment') {
+                template = templateType === 'full' ? emailTemplates.investmentFull : emailTemplates.investment;
+            } else if (partner.segment === 'b2b') {
+                template = emailTemplates.b2b;
+            } else if (partner.segment === 'vendor') {
+                template = emailTemplates.vendor;
+            } else if (partner.segment === 'creative') {
+                template = emailTemplates.creative;
+            } else {
+                template = emailTemplates.b2b;
+            }
+            
+            currentSubject = template.subject(partner, contact);
+            currentEmail = template.body(partner, contact);
+            currentRecipient = contact.email;
+
+            const templateSelector = partner.segment === 'investment' ? `
+                <div class="template-selector">
+                    <span>Template:</span>
+                    <button class="template-btn ${templateType === 'master' ? 'active' : ''}" 
+                        onclick="showEmailModal(${partnerId}, '${encodeURIComponent(JSON.stringify(contact))}', 'master')">
+                        📄 Master Template
+                    </button>
+                    <button class="template-btn ${templateType === 'full' ? 'active' : ''}"
+                        onclick="showEmailModal(${partnerId}, '${encodeURIComponent(JSON.stringify(contact))}', 'full')">
+                        📋 Full Genesis (w/ Team)
+                    </button>
+                    ${partnerCustomHooks[partner.name] ? '<span style="margin-left: 12px; color: #22c55e; font-size: 11px;">✓ Custom thesis hook active</span>' : ''}
+                </div>
+            ` : '';
+            
+            document.getElementById('modalTitle').textContent = `✉ Email Preview: ${partner.name}`;
+            document.getElementById('modalContent').innerHTML = `
+                ${templateSelector}
+                <div class="email-preview">
+                    <div class="subject-line">Subject: ${currentSubject}</div>
+                    <div class="recipient-line">To: ${contact.email}</div>
+                    ${currentEmail}
+                </div>
+            `;
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function copyEmail() {
+            const fullEmail = `Subject: ${currentSubject}\n\n${currentEmail}`;
+            navigator.clipboard.writeText(fullEmail).then(() => showToast());
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => showToast());
+        }
+
+        function openInGmail() {
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(currentRecipient)}&su=${encodeURIComponent(currentSubject)}&body=${encodeURIComponent(currentEmail)}`;
+            window.open(gmailUrl, '_blank');
+        }
+
+        function showToast() {
+            const toast = document.getElementById('copyToast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.classList.contains('modal-overlay')) {
+                document.getElementById('modalOverlay').classList.remove('active');
+            }
+        }
+
+        function showBulkEmailModal() {
+            document.getElementById('modalTitle').textContent = `✉ Bulk Email Generator`;
+            document.getElementById('modalContent').innerHTML = `
+                <div style="padding: 20px;">
+                    <p style="margin-bottom: 16px; font-size: 14px;">Generate customized emails for ethically-curated partners.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <button class="template-btn active" onclick="generateBulkEmails('investment')">💰 Investment</button>
+                        <button class="template-btn" onclick="generateBulkEmails('investmentFull')">💰 Investment (Full)</button>
+                        <button class="template-btn" onclick="generateBulkEmails('b2b')">🤝 B2B</button>
+                        <button class="template-btn" onclick="generateBulkEmails('vendor')">📦 Vendor</button>
+                    </div>
+                    <div id="bulkEmailOutput"></div>
+                </div>
+            `;
+            document.getElementById('modalActions').innerHTML = `
+                <button class="modal-btn secondary" onclick="closeModal()">Close</button>
+            `;
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function generateBulkEmails(templateType) {
+            const filtered = getFilteredPartners();
+            let output = '<div style="max-height: 400px; overflow-y: auto;">';
+            let count = 0;
+            
+            filtered.forEach(p => {
+                if (p.contacts && p.contacts.length > 0) {
+                    const contact = p.contacts[0];
+                    if (contact.email && contact.email.includes('@')) {
+                        const hasCustomHook = partnerCustomHooks[p.name];
+                        output += `
+                            <div style="background: #f8f9fa; padding: 12px; margin-bottom: 12px; border-radius: 8px; border-left: 4px solid ${hasCustomHook ? '#22c55e' : 'var(--aether-purple)'};">
+                                <div style="font-weight: 600; margin-bottom: 4px;">${p.name} → ${contact.name}</div>
+                                <div style="font-size: 12px; color: #666; margin-bottom: 8px;">${contact.email}</div>
+                                ${hasCustomHook ? '<div style="font-size: 10px; color: #22c55e; margin-bottom: 8px;">✓ Custom thesis hook</div>' : ''}
+                                <button class="action-btn email" onclick="showEmailModal(${p.id}, '${encodeURIComponent(JSON.stringify(contact))}')">View Full Email</button>
+                            </div>
+                        `;
+                        count++;
+                    }
+                }
+            });
+            
+            output = `<div style="margin-bottom: 12px; font-size: 13px; color: #666;">${count} emails ready for ${templateType} template</div>` + output;
+            output += '</div>';
+            document.getElementById('bulkEmailOutput').innerHTML = output;
+        }
+
+        function exportData(format) {
+            if (format === 'json') {
+                const exportData = {
+                    partners: partners,
+                    customHooks: partnerCustomHooks,
+                    exportDate: new Date().toISOString(),
+                    version: '10.0-research-verified-dec-2025',
+                    removedPartners: 36,
+                    leadershipChanges: 13,
+                    complianceFlags: 3,
+                    ethicsNote: 'Partners curated per E.L.I.A.S. framework - removed for ESG, human rights, labor, and governance concerns. Research verified December 2025.'
+                };
+                const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'aether-partners-v10-research-verified-dec-2025.json';
+                a.click();
+                URL.revokeObjectURL(url);
+            } else if (format === 'csv') {
+                let csv = 'Name,Type,Segment,Tier,Contact Name,Contact Role,Contact Email,Has Custom Hook,Notes\n';
+                partners.forEach(p => {
+                    const hasHook = partnerCustomHooks[p.name] ? 'Yes' : 'No';
+                    if (p.contacts && p.contacts.length > 0) {
+                        p.contacts.forEach(c => {
+                            csv += `"${p.name}","${p.type || ''}","${p.segment}","${p.tier}","${c.name}","${c.role || ''}","${c.email || ''}","${hasHook}","${(p.notes || '').replace(/"/g, '""')}"\n`;
+                        });
+                    } else {
+                        csv += `"${p.name}","${p.type || ''}","${p.segment}","${p.tier}","","","","${hasHook}","${(p.notes || '').replace(/"/g, '""')}"\n`;
+                    }
+                });
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'aether-partners-v10-research-verified-dec-2025.csv';
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        function updateTime() {
+            document.getElementById('currentTime').textContent = new Date().toLocaleTimeString();
+        }
+
+        function initMatrix() {
+            const canvas = document.getElementById('matrixCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const chars = '◈✦✧⬡⬢⎔⏣⌬☆★⚡💎🔮💫✨🌟⚙️AETHER🌿✉📧'.split('');
+            const fontSize = 18;
+            const columns = canvas.width / fontSize;
+            const drops = Array(Math.floor(columns)).fill(1);
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 128, 128, 0.03)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(34, 197, 94, 0.4)';
+                ctx.font = fontSize + 'px sans-serif';
+                for (let i = 0; i < drops.length; i++) {
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.98) drops[i] = 0;
+                    drops[i]++;
+                }
+            }
+            setInterval(draw, 80);
+            window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
