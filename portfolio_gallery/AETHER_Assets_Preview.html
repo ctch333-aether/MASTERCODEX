@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER Brand Assets v4 - Asset Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+            background: #008080;
+            color: #000;
+            padding: 20px;
+        }
+        
+        .window {
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            margin-bottom: 20px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 3px 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .title-bar-text {
+            font-size: 12px;
+        }
+        
+        .title-bar-controls button {
+            width: 16px;
+            height: 14px;
+            border: 1px outset #fff;
+            background: #c0c0c0;
+            font-size: 8px;
+            margin-left: 2px;
+        }
+        
+        .window-content {
+            padding: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            background: #fff;
+            border: 2px inset #808080;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000080;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            background: #000080;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 13px;
+            margin: 15px 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 10px;
+            background: #fff;
+            border: 2px inset #808080;
+        }
+        
+        .asset-card {
+            border: 1px solid #808080;
+            background: #f0f0f0;
+            padding: 8px;
+        }
+        
+        .asset-preview {
+            width: 100%;
+            height: 120px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px inset #808080;
+            margin-bottom: 8px;
+        }
+        
+        .asset-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .asset-preview.svg-preview {
+            background: repeating-conic-gradient(#ccc 0% 25%, #fff 0% 50%) 50% / 16px 16px;
+        }
+        
+        .asset-info {
+            font-size: 10px;
+        }
+        
+        .asset-id {
+            font-weight: bold;
+            color: #000080;
+            word-break: break-all;
+            margin-bottom: 3px;
+        }
+        
+        .asset-meta {
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .category-section {
+            margin-bottom: 25px;
+        }
+        
+        .copy-btn {
+            background: #c0c0c0;
+            border: 2px outset #fff;
+            padding: 2px 8px;
+            font-size: 9px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        
+        .copy-btn:active {
+            border: 2px inset #fff;
+        }
+        
+        .header-info {
+            background: #fff;
+            border: 2px inset #808080;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .header-info p {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+        
+        code {
+            background: #e0e0e0;
+            padding: 2px 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 11px;
+            padding: 10px;
+            background: #fff;
+            border: 2px inset #808080;
+            margin-bottom: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span class="title-bar-text">📁 AETHER Brand Assets v4.0 - Git-Ready Package</span>
+            <div class="title-bar-controls">
+                <button>_</button>
+                <button>□</button>
+                <button>×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="header-info">
+                <p><strong>Version:</strong> 4.0 (Consolidated, Deduplicated, WebP-Optimized)</p>
+                <p><strong>Generated:</strong> December 28, 2025</p>
+                <p><strong>Format:</strong> All images converted to WebP (SVGs preserved)</p>
+                <p><strong>Usage:</strong> <code>import manifest from './manifest.json'</code></p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Total Assets</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Duplicates Removed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">22MB</div>
+                    <div class="stat-label">Package Size</div>
+                </div>
+            </div>
+            
+            <h2>📂 Categories Overview</h2>
+            <div class="legend">
+                <div class="legend-item"><span class="legend-color" style="background:#000080"></span> logos (5)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#008000"></span> environments (7)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#800080"></span> ui-elements (10)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#008080"></span> characters (3)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#804000"></span> set-design (4)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#808000"></span> portfolio (5)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#800000"></span> founder-story (4)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#0000ff"></span> concept-art (2)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#ff00ff"></span> experiences (1)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#00ff00"></span> production (1)</div>
+                <div class="legend-item"><span class="legend-color" style="background:#c0c0c0"></span> misc (3)</div>
+            </div>
+
+            <!-- LOGOS -->
+            <div class="category-section">
+                <h2>🏷️ Logos (5 assets)</h2>
+                <div class="asset-grid">
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">phygital-logo-text.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">phygital-logo-text</div>
+                            <div class="asset-meta"><span>1920×1080</span><span>37KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">phygital-wordmark.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">phygital-wordmark</div>
+                            <div class="asset-meta"><span>1920×1080</span><span>56KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">rx-logo-meta.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">rx-logo-meta</div>
+                            <div class="asset-meta"><span>1920×1080</span><span>93KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">51popuplogo.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">51popuplogo</div>
+                            <div class="asset-meta"><span>1920×1080</span><span>91KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">bayoubbqlogo.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">bayoubbqlogo</div>
+                            <div class="asset-meta"><span>1920×1080</span><span>189KB</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI ELEMENTS -->
+            <div class="category-section">
+                <h2>🎨 UI Elements (10 assets)</h2>
+                <div class="asset-grid">
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">aetherui.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">aetherui</div>
+                            <div class="asset-meta"><span>504×644</span><span>34KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">aetherkemeticui.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">aetherkemeticui</div>
+                            <div class="asset-meta"><span>756×1120</span><span>139KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">aetherkemeticuibyte111.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">aetherkemeticuibyte111</div>
+                            <div class="asset-meta"><span>952×1260</span><span>117KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">aetherkemeticuiwayvy.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">aetherkemeticuiwayvy</div>
+                            <div class="asset-meta"><span>1092×1092</span><span>226KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">aetherkemeticuieinter.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">aetherkemeticuieinter</div>
+                            <div class="asset-meta"><span>1092×1092</span><span>468KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">uiorbethereal.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">uiorbethereal</div>
+                            <div class="asset-meta"><span>420×308</span><span>20KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview svg-preview"><div style="color:#000;font-size:10px">SVG Vector</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">webassetportsoftwarepopup6</div>
+                            <div class="asset-meta"><span>SVG</span><span>4.4MB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview svg-preview"><div style="color:#000;font-size:10px">SVG Vector</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">webassetportsoftwarepopup7</div>
+                            <div class="asset-meta"><span>SVG</span><span>4.4MB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview svg-preview"><div style="color:#000;font-size:10px">SVG Vector</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">webassetportsoftwarepopup8</div>
+                            <div class="asset-meta"><span>SVG</span><span>6.7MB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview svg-preview"><div style="color:#000;font-size:10px">SVG Vector</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">webassetportsoftwarepopup9</div>
+                            <div class="asset-meta"><span>SVG</span><span>5.3MB</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHARACTERS -->
+            <div class="category-section">
+                <h2>👤 Characters (3 assets)</h2>
+                <div class="asset-grid">
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">mj-character.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">mj-character</div>
+                            <div class="asset-meta"><span>1920×1080</span><span>234KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">peggy-character.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">peggy-character</div>
+                            <div class="asset-meta"><span>2000×1125</span><span>266KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">warrior-princess.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">warrior-princess</div>
+                            <div class="asset-meta"><span>1500×2000</span><span>176KB</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ENVIRONMENTS -->
+            <div class="category-section">
+                <h2>🌄 Environments (7 assets)</h2>
+                <div class="asset-grid">
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">site-collage.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">site-collage</div>
+                            <div class="asset-meta"><span>2000×1125</span><span>269KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">site-collage14-1.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">site-collage14-1</div>
+                            <div class="asset-meta"><span>2000×1125</span><span>331KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">artifacts-room.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">artifacts-room</div>
+                            <div class="asset-meta"><span>1920×1080</span><span>314KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">tipsy-tree-installation.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">tipsy-tree-installation</div>
+                            <div class="asset-meta"><span>782×632</span><span>41KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">believe-installation.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">believe-installation</div>
+                            <div class="asset-meta"><span>2000×1125</span><span>221KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">collage1kmp1-1-1.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">collage1kmp1-1-1</div>
+                            <div class="asset-meta"><span>2000×1125</span><span>98KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">collage1kmp1-1-1-1.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">collage1kmp1-1-1-1</div>
+                            <div class="asset-meta"><span>2000×1125</span><span>114KB</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REMAINING CATEGORIES -->
+            <div class="category-section">
+                <h2>📁 Other Categories</h2>
+                <div class="asset-grid">
+                    <!-- Set Design -->
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">believe.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">believe (set-design)</div>
+                            <div class="asset-meta"><span>3840×2160</span><span>296KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">blissethereal.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">blissethereal (set-design)</div>
+                            <div class="asset-meta"><span>756×952</span><span>93KB</span></div>
+                        </div>
+                    </div>
+                    <!-- Founder Story -->
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">vintage-portrait.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">vintage-portrait (founder)</div>
+                            <div class="asset-meta"><span>3024×4032</span><span>672KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">childhood-photo.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">childhood-photo (founder)</div>
+                            <div class="asset-meta"><span>3024×4032</span><span>609KB</span></div>
+                        </div>
+                    </div>
+                    <!-- Concept Art -->
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">dragon-watercolor.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">dragon-watercolor (concept)</div>
+                            <div class="asset-meta"><span>2448×3264</span><span>407KB</span></div>
+                        </div>
+                    </div>
+                    <!-- Experiences -->
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">candlelight-concert.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">candlelight-concert</div>
+                            <div class="asset-meta"><span>922×2000</span><span>57KB</span></div>
+                        </div>
+                    </div>
+                    <!-- Portfolio -->
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">skills-showcase.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">skills-showcase (portfolio)</div>
+                            <div class="asset-meta"><span>2000×1125</span><span>46KB</span></div>
+                        </div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-preview"><div style="color:#fff;font-size:12px">project51hint-3.webp</div></div>
+                        <div class="asset-info">
+                            <div class="asset-id">project51hint-3 (portfolio)</div>
+                            <div class="asset-meta"><span>4269×2400</span><span>544KB</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📋 Quick Integration Guide</h2>
+            <div style="background:#fff;border:2px inset #808080;padding:15px;font-size:12px;">
+                <p style="margin-bottom:10px;"><strong>1. Add to your git repo:</strong></p>
+                <code style="display:block;background:#000;color:#0f0;padding:10px;margin-bottom:15px;">
+unzip AETHER_Brand_Assets_V4_Git_Ready.zip<br>
+git add AETHER_Brand_Assets/<br>
+git commit -m "Add consolidated brand assets v4"
+                </code>
+                
+                <p style="margin-bottom:10px;"><strong>2. Import in TypeScript/JavaScript:</strong></p>
+                <code style="display:block;background:#000;color:#0f0;padding:10px;margin-bottom:15px;">
+import manifest from './AETHER_Brand_Assets/manifest.json';<br>
+import { getAsset, ASSET_IDS } from './AETHER_Brand_Assets/types';<br><br>
+const logo = getAsset(manifest, ASSET_IDS.PHYGITAL_LOGO_TEXT);
+                </code>
+                
+                <p style="margin-bottom:10px;"><strong>3. Ask Claude to integrate:</strong></p>
+                <code style="display:block;background:#000;color:#0f0;padding:10px;">
+"Use the asset with id: warrior-princess for the hero section"<br>
+"Add all logos from the logos category to the footer"<br>
+"Show me all environment assets for the gallery"
+                </code>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
