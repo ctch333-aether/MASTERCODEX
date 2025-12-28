@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AETHER KEMETIC - Alchemist Ethereal Edition v35.0 - Transmuting Reality Through Phygital Experiences">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="AETHER KEMETIC - Alchemist Ethereal Edition v35.0 - Transmuting Reality Through Phygital Experiences. Kemetic Alchemy meets Retro-Futurism.">
+    <meta name="keywords" content="AETHER, phygital, immersive entertainment, XR, spatial computing, Kemetic, alchemy, retro-futurism">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="ALCHEMIST ATELIER | AETHER PXR Platform v35.0 ALCHEMIST ETHEREAL">
     <meta property="og:description" content="Transmuting Reality Through Phygital Experiences. Kemetic Alchemy meets Retro-Futurism.">
-    <meta name="theme-color" content="#87CEEB">
+    <meta property="og:image" content="BLISSETHEREAL.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ALCHEMIST ATELIER | AETHER PXR v35.0">
+    <meta name="twitter:description" content="Transmuting Reality Through Phygital Experiences.">
+    <meta name="theme-color" content="#87CEEB" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0A1628" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AETHER PXR">
     <title>ALCHEMIST ATELIER | AETHER PXR v35.0 | ALCHEMIST ETHEREAL EDITION | December 2025</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +27,7 @@
    AETHER KEMETIC v35.0 - ALCHEMIST ETHEREAL
    Design System: Chrome Clouds + Ethereal Sky
    Inspired by: AlchemistInstaStory1.gif
-   Features: Floating Chrome Clouds, Winged Orbs
+   Complete Functional Site with All Assets
    ========================================== */
 
 :root {
@@ -51,12 +61,19 @@
     --kemetic-gold-glow: rgba(212, 175, 55, 0.5);
     --kemetic-lapis: #1E3A5F;
     --kemetic-turquoise: #40E0D0;
+    --kemetic-amethyst: #9966CC;
+
+    /* AETHER BRAND COLORS */
+    --aether-purple: #667eea;
+    --aether-purple-dark: #764ba2;
+    --aether-blue: #4a90e2;
 
     /* GLASS EFFECTS */
     --glass-frost: rgba(255, 255, 255, 0.15);
     --glass-chrome: rgba(192, 192, 192, 0.3);
     --glass-border: rgba(255, 255, 255, 0.25);
     --glass-shadow: rgba(0, 0, 0, 0.2);
+    --glass-dark: rgba(26, 26, 46, 0.85);
 
     /* TYPOGRAPHY */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -82,14 +99,16 @@ body {
         var(--sky-mid) 40%,
         var(--sky-horizon) 70%,
         var(--cloud-white) 100%);
+    background-attachment: fixed;
     min-height: 100vh;
     color: #fff;
     overflow-x: hidden;
     position: relative;
+    line-height: 1.6;
 }
 
 /* ==========================================
-   FLOATING CHROME CLOUDS - Inspired by GIF
+   FLOATING CHROME CLOUDS - From GIF
    ========================================== */
 .ethereal-atmosphere {
     position: fixed;
@@ -138,53 +157,46 @@ body {
     border-radius: 50%;
 }
 
-.chrome-cloud.small {
-    width: 60px;
-    height: 40px;
-}
+.chrome-cloud.small { width: 60px; height: 40px; }
+.chrome-cloud.medium { width: 100px; height: 65px; }
+.chrome-cloud.large { width: 150px; height: 95px; }
 
-.chrome-cloud.medium {
-    width: 100px;
-    height: 65px;
-}
-
-.chrome-cloud.large {
-    width: 150px;
-    height: 95px;
-}
-
-/* Chrome Cloud Positions */
-.chrome-cloud:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-.chrome-cloud:nth-child(2) { top: 20%; right: 10%; animation-delay: -5s; }
-.chrome-cloud:nth-child(3) { top: 35%; left: 15%; animation-delay: -10s; }
-.chrome-cloud:nth-child(4) { top: 50%; right: 5%; animation-delay: -3s; }
-.chrome-cloud:nth-child(5) { top: 65%; left: 8%; animation-delay: -8s; }
-.chrome-cloud:nth-child(6) { bottom: 25%; right: 15%; animation-delay: -12s; }
-.chrome-cloud:nth-child(7) { top: 15%; left: 40%; animation-delay: -7s; }
-.chrome-cloud:nth-child(8) { top: 45%; right: 25%; animation-delay: -15s; }
+.chrome-cloud:nth-child(1) { top: 8%; left: 5%; animation-delay: 0s; }
+.chrome-cloud:nth-child(2) { top: 18%; right: 8%; animation-delay: -4s; }
+.chrome-cloud:nth-child(3) { top: 32%; left: 12%; animation-delay: -8s; }
+.chrome-cloud:nth-child(4) { top: 48%; right: 6%; animation-delay: -2s; }
+.chrome-cloud:nth-child(5) { top: 62%; left: 6%; animation-delay: -6s; }
+.chrome-cloud:nth-child(6) { bottom: 28%; right: 12%; animation-delay: -10s; }
+.chrome-cloud:nth-child(7) { top: 12%; left: 38%; animation-delay: -5s; }
+.chrome-cloud:nth-child(8) { top: 42%; right: 22%; animation-delay: -12s; }
 
 @keyframes cloud-float {
-    0%, 100% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-20px) translateX(10px) rotate(2deg);
-    }
-    50% {
-        transform: translateY(-10px) translateX(-5px) rotate(-1deg);
-    }
-    75% {
-        transform: translateY(-25px) translateX(15px) rotate(3deg);
-    }
+    0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+    25% { transform: translateY(-20px) translateX(10px) rotate(2deg); }
+    50% { transform: translateY(-10px) translateX(-5px) rotate(-1deg); }
+    75% { transform: translateY(-25px) translateX(15px) rotate(3deg); }
 }
 
 @keyframes chrome-shimmer {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Sacred Ankh Decorations */
+.floating-ankh {
+    position: fixed;
+    font-size: 2.5rem;
+    color: var(--kemetic-gold);
+    text-shadow: 0 0 20px var(--kemetic-gold-glow);
+    animation: ankh-float 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.6;
+}
+
+@keyframes ankh-float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.4; }
+    50% { transform: translateY(-15px) rotate(5deg); opacity: 0.7; }
 }
 
 /* ==========================================
@@ -201,18 +213,71 @@ body {
     z-index: 10;
 }
 
+.brand-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-logo {
+    font-family: var(--font-sacred);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    background: linear-gradient(135deg,
+        var(--kemetic-gold) 0%,
+        var(--kemetic-gold-bright) 50%,
+        var(--chrome-silver) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px var(--kemetic-gold-glow);
+    letter-spacing: 0.15em;
+    animation: logo-glow 4s ease-in-out infinite;
+}
+
+.brand-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    color: var(--sky-glow);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-top: 12px;
+    opacity: 0.9;
+}
+
+.sacred-symbols {
+    font-size: 1.8rem;
+    letter-spacing: 1rem;
+    margin-top: 15px;
+    color: var(--kemetic-gold);
+    text-shadow: 0 0 20px var(--kemetic-gold-glow);
+    animation: symbols-float 5s ease-in-out infinite;
+}
+
+@keyframes logo-glow {
+    0%, 100% { filter: brightness(1) drop-shadow(0 0 20px var(--kemetic-gold-glow)); }
+    50% { filter: brightness(1.2) drop-shadow(0 0 40px var(--kemetic-gold-glow)); }
+}
+
+@keyframes symbols-float {
+    0%, 100% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-8px); opacity: 1; }
+}
+
+/* ==========================================
+   ALCHEMIST PORTAL - GIF Display
+   ========================================== */
 .alchemist-portal {
     position: relative;
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 40px;
+    max-width: 380px;
+    margin-bottom: 35px;
 }
 
 .portal-frame {
     position: relative;
     width: 100%;
-    padding-top: 177.78%; /* 9:16 aspect ratio for story format */
-    border-radius: 30px;
+    padding-top: 177.78%;
+    border-radius: 28px;
     overflow: hidden;
     box-shadow:
         0 0 0 4px var(--chrome-silver),
@@ -273,73 +338,20 @@ body {
 }
 
 /* ==========================================
-   BRAND HEADER
-   ========================================== */
-.brand-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.brand-logo {
-    font-family: var(--font-sacred);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 600;
-    background: linear-gradient(135deg,
-        var(--kemetic-gold) 0%,
-        var(--kemetic-gold-bright) 50%,
-        var(--chrome-silver) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 40px var(--kemetic-gold-glow);
-    letter-spacing: 0.15em;
-    animation: logo-glow 4s ease-in-out infinite;
-}
-
-.brand-tagline {
-    font-family: var(--font-display);
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    color: var(--sky-glow);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-top: 15px;
-    opacity: 0.9;
-}
-
-.sacred-symbols {
-    font-size: 1.8rem;
-    letter-spacing: 1rem;
-    margin-top: 20px;
-    color: var(--kemetic-gold);
-    text-shadow: 0 0 20px var(--kemetic-gold-glow);
-    animation: symbols-float 5s ease-in-out infinite;
-}
-
-@keyframes logo-glow {
-    0%, 100% { filter: brightness(1) drop-shadow(0 0 20px var(--kemetic-gold-glow)); }
-    50% { filter: brightness(1.2) drop-shadow(0 0 40px var(--kemetic-gold-glow)); }
-}
-
-@keyframes symbols-float {
-    0%, 100% { transform: translateY(0); opacity: 0.8; }
-    50% { transform: translateY(-8px); opacity: 1; }
-}
-
-/* ==========================================
    NAVIGATION ORBS - Chrome Style
    ========================================== */
 .nav-orbs {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .nav-orb {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
     background: var(--chrome-reflect);
     background-size: 200% 200%;
@@ -383,23 +395,62 @@ body {
 }
 
 .orb-icon {
-    font-size: 2rem;
-    margin-bottom: 5px;
+    font-size: 1.8rem;
+    margin-bottom: 4px;
     color: var(--chrome-deep);
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .orb-label {
     font-family: var(--font-display);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 600;
     color: var(--chrome-deep);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.scroll-indicator span {
+    font-size: 0.7rem;
+    color: var(--sky-glow);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.scroll-arrow {
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--chrome-silver);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--chrome-silver);
+    font-size: 0.9rem;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
 /* ==========================================
-   CONTENT SECTIONS - Glass Cards
+   CONTENT SECTIONS
    ========================================== */
 .content-section {
     position: relative;
@@ -412,6 +463,29 @@ body {
     margin: 0 auto;
 }
 
+.section-title {
+    font-family: var(--font-sacred);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    background: linear-gradient(135deg, var(--kemetic-gold), var(--chrome-silver));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--sky-glow);
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+/* ==========================================
+   GLASS CARDS
+   ========================================== */
 .glass-card {
     background: var(--glass-frost);
     backdrop-filter: blur(20px) saturate(180%);
@@ -434,64 +508,24 @@ body {
         inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
-.chrome-card {
-    background: linear-gradient(145deg,
-        rgba(192, 192, 192, 0.3) 0%,
-        rgba(128, 128, 128, 0.2) 50%,
-        rgba(192, 192, 192, 0.3) 100%);
+.dark-glass-card {
+    background: var(--glass-dark);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 2px solid var(--chrome-silver);
+    border: 2px solid rgba(212, 175, 55, 0.3);
     border-radius: 20px;
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
-}
-
-.chrome-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: card-shine 8s ease-in-out infinite;
-}
-
-@keyframes card-shine {
-    0%, 100% { left: -100%; }
-    50% { left: 100%; }
-}
-
-.section-title {
-    font-family: var(--font-sacred);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    background: linear-gradient(135deg, var(--kemetic-gold), var(--chrome-silver));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.section-subtitle {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    color: var(--sky-glow);
-    text-align: center;
-    margin-bottom: 40px;
-    opacity: 0.85;
+    padding: 35px;
+    color: #fff;
 }
 
 /* ==========================================
-   PILLAR CARDS - Ethos, Pathos, Logos
+   PILLAR CARDS
    ========================================== */
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 25px;
+    margin-top: 35px;
 }
 
 .pillar-card {
@@ -502,7 +536,7 @@ body {
     -webkit-backdrop-filter: blur(15px);
     border: 2px solid rgba(212, 175, 55, 0.3);
     border-radius: 20px;
-    padding: 35px;
+    padding: 30px;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -534,17 +568,17 @@ body {
 }
 
 .pillar-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 18px;
     display: block;
     animation: icon-pulse 3s ease-in-out infinite;
 }
 
 .pillar-title {
     font-family: var(--font-sacred);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--kemetic-gold);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     letter-spacing: 0.1em;
 }
 
@@ -561,12 +595,123 @@ body {
 }
 
 /* ==========================================
-   FEATURE SHOWCASE
+   IMAGE GALLERY SECTION
+   ========================================== */
+.gallery-section {
+    padding: 60px 20px;
+    background: linear-gradient(180deg,
+        rgba(10, 22, 40, 0.9) 0%,
+        rgba(30, 58, 95, 0.8) 100%);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.gallery-desc {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   STATS SECTION
+   ========================================== */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 25px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateY(-5px);
+}
+
+.stat-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--kemetic-gold);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--sky-glow);
+    opacity: 0.9;
+}
+
+/* ==========================================
+   FEATURE CARDS
    ========================================== */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
 .feature-item {
@@ -606,7 +751,7 @@ body {
 .feature-title {
     font-family: var(--font-display);
     font-size: 1.1rem;
-    color: var(--chrome-deep);
+    color: var(--sky-zenith);
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -618,7 +763,121 @@ body {
 }
 
 /* ==========================================
-   FOOTER - Ethereal Close
+   ABOUT/VISION SECTION
+   ========================================== */
+.vision-content {
+    color: #fff;
+}
+
+.vision-content h2 {
+    font-family: var(--font-sacred);
+    font-size: 1.8rem;
+    color: var(--kemetic-gold);
+    margin-bottom: 20px;
+}
+
+.vision-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--iridescent-blue);
+    margin: 25px 0 15px;
+}
+
+.vision-content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+    border-left: 4px solid var(--aether-purple);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.highlight-box p {
+    margin: 0;
+    font-style: italic;
+}
+
+.quote-box {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.quote-box p {
+    font-family: var(--font-sacred);
+    font-size: 1.2rem;
+    color: var(--kemetic-gold);
+    margin: 0;
+}
+
+/* ==========================================
+   IMAGE MODAL
+   ========================================== */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--kemetic-gold);
+    border: none;
+    border-radius: 50%;
+    color: var(--sky-zenith);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+    background: var(--kemetic-gold-bright);
+}
+
+/* ==========================================
+   FOOTER
    ========================================== */
 .ethereal-footer {
     position: relative;
@@ -627,7 +886,7 @@ body {
     text-align: center;
     background: linear-gradient(180deg,
         transparent 0%,
-        rgba(10, 22, 40, 0.8) 100%);
+        rgba(10, 22, 40, 0.9) 100%);
 }
 
 .footer-logo {
@@ -637,14 +896,14 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .footer-tagline {
     font-size: 0.9rem;
     color: var(--sky-glow);
     opacity: 0.8;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .footer-symbols {
@@ -656,57 +915,35 @@ body {
 
 .version-badge {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 25px;
     padding: 10px 25px;
     background: var(--glass-chrome);
     backdrop-filter: blur(10px);
     border: 1px solid var(--chrome-silver);
     border-radius: 50px;
     font-family: var(--font-display);
-    font-size: 0.8rem;
-    color: var(--chrome-deep);
+    font-size: 0.75rem;
+    color: var(--sky-zenith);
     letter-spacing: 0.1em;
 }
 
-/* ==========================================
-   SCROLL INDICATOR
-   ========================================== */
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+.footer-links {
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    animation: bounce 2s ease-in-out infinite;
-    cursor: pointer;
-}
-
-.scroll-indicator span {
-    font-size: 0.75rem;
-    color: var(--sky-glow);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-
-.scroll-arrow {
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--chrome-silver);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
+    gap: 30px;
     justify-content: center;
-    color: var(--chrome-silver);
-    font-size: 1rem;
+    flex-wrap: wrap;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(10px); }
+.footer-link {
+    color: var(--sky-glow);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--kemetic-gold);
 }
 
 /* ==========================================
@@ -718,32 +955,36 @@ body {
     }
 
     .alchemist-portal {
-        max-width: 320px;
+        max-width: 300px;
     }
 
     .nav-orbs {
-        gap: 20px;
+        gap: 18px;
     }
 
     .nav-orb {
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
     }
 
     .orb-icon {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .orb-label {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
     }
 
-    .glass-card {
+    .glass-card, .dark-glass-card {
         padding: 25px;
     }
 
     .pillars-grid {
-        gap: 20px;
+        gap: 18px;
+    }
+
+    .pillar-card {
+        padding: 25px;
     }
 
     .chrome-cloud.large {
@@ -760,25 +1001,49 @@ body {
         width: 45px;
         height: 30px;
     }
+
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
     .brand-logo {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .brand-tagline {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         letter-spacing: 0.15em;
     }
 
     .nav-orb {
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .orb-icon {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
     }
 
     .pillar-card {
-        padding: 25px;
+        padding: 20px;
+    }
+
+    .pillar-icon {
+        font-size: 2.2rem;
+    }
+
+    .stats-row {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -804,21 +1069,75 @@ body {
     border-radius: 0 0 10px 10px;
     z-index: 10000;
     transition: top 0.3s ease;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .skip-link:focus {
     top: 0;
 }
 
-/* Focus styles */
 button:focus-visible,
 a:focus-visible {
     outline: 3px solid var(--kemetic-gold);
     outline-offset: 3px;
 }
+
+/* ==========================================
+   LOADING ANIMATION
+   ========================================== */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--sky-zenith);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-ankh {
+    font-size: 4rem;
+    color: var(--kemetic-gold);
+    animation: loader-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loader-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.loader-text {
+    margin-top: 20px;
+    font-family: var(--font-display);
+    color: var(--sky-glow);
+    letter-spacing: 0.3em;
+    font-size: 0.8rem;
+}
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-ankh">&#9765;</div>
+            <div class="loader-text">TRANSMUTING REALITY...</div>
+        </div>
+    </div>
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Ethereal Atmosphere - Chrome Clouds -->
@@ -833,9 +1152,13 @@ a:focus-visible {
         <div class="chrome-cloud medium"></div>
     </div>
 
+    <!-- Floating Ankh Decorations -->
+    <div class="floating-ankh" style="top: 15%; left: 5%;" aria-hidden="true">&#9765;</div>
+    <div class="floating-ankh" style="top: 45%; right: 8%; animation-delay: -3s;" aria-hidden="true">&#9765;</div>
+    <div class="floating-ankh" style="bottom: 25%; left: 10%; animation-delay: -6s;" aria-hidden="true">&#9765;</div>
+
     <!-- Hero Section -->
     <section class="hero-section" id="main-content">
-        <!-- Brand Header -->
         <header class="brand-header">
             <h1 class="brand-logo">ALCHEMIST ATELIER</h1>
             <p class="brand-tagline">Transmuting Reality Through Phygital Experiences</p>
@@ -845,7 +1168,7 @@ a:focus-visible {
         <!-- Alchemist Portal - GIF Display -->
         <div class="alchemist-portal">
             <div class="portal-frame">
-                <img src="AlchemistInstaStory1.gif" alt="Alchemist ethereal portal - floating chrome orbs in celestial sky" class="portal-gif" loading="eager">
+                <img src="AlchemistInstaStory1.gif" alt="Alchemist ethereal portal - floating chrome orbs in celestial sky with mystical winged figure" class="portal-gif" loading="eager">
             </div>
         </div>
 
@@ -863,77 +1186,131 @@ a:focus-visible {
                 <span class="orb-icon">&#127760;</span>
                 <span class="orb-label">Logos</span>
             </button>
+            <button class="nav-orb" onclick="scrollToSection('gallery')" aria-label="Navigate to Gallery section">
+                <span class="orb-icon">&#127912;</span>
+                <span class="orb-label">Gallery</span>
+            </button>
         </nav>
 
-        <!-- Scroll Indicator -->
         <div class="scroll-indicator" onclick="scrollToSection('ethos')" aria-hidden="true">
             <span>Explore</span>
             <div class="scroll-arrow">&#8595;</div>
         </div>
     </section>
 
-    <!-- Ethos Section -->
+    <!-- ETHOS Section -->
     <section class="content-section" id="ethos">
         <div class="section-container">
             <h2 class="section-title">&#128142; ETHOS</h2>
             <p class="section-subtitle">The Sacred Foundation of Our Craft</p>
 
-            <div class="glass-card">
-                <div class="pillars-grid">
-                    <article class="pillar-card">
-                        <span class="pillar-icon">&#9765;</span>
-                        <h3 class="pillar-title">Ancient Wisdom</h3>
-                        <p class="pillar-description">Drawing from Kemetic mysteries and alchemical traditions to create transformative experiences that bridge the physical and digital realms.</p>
-                    </article>
-                    <article class="pillar-card">
-                        <span class="pillar-icon">&#9883;</span>
-                        <h3 class="pillar-title">Sacred Geometry</h3>
-                        <p class="pillar-description">Every design embodies mathematical perfection found in nature - the golden ratio, Fibonacci sequences, and platonic solids guide our creative process.</p>
-                    </article>
-                    <article class="pillar-card">
-                        <span class="pillar-icon">&#9733;</span>
-                        <h3 class="pillar-title">Ethereal Craft</h3>
-                        <p class="pillar-description">Merging cutting-edge technology with timeless artistry to forge phygital artifacts that transcend conventional boundaries.</p>
-                    </article>
+            <div class="dark-glass-card">
+                <div class="vision-content">
+                    <h2>The AETHER Vision: Where Worlds Converge</h2>
+                    <p>The future of entertainment merges three elements: <strong>Equitable Commerce</strong>, <strong>Phygital Experiential Reality</strong>, and <strong>Fandomonium</strong>&#8212;interconnected pillars of one revolutionary ecosystem.</p>
+
+                    <h3>A Brand & Creative Technology Atelier</h3>
+                    <div class="highlight-box">
+                        <p>AETHER is a Brand & Creative Technology Atelier dedicated to transforming consumer brands into Phygital Experiential Storytelling Brands across categories and launching our own defining Phygital Experiential Storytelling Brands.</p>
+                    </div>
+
+                    <p>We exist at the intersection of brand strategy, creative excellence, and technological innovation&#8212;enabling both our clients and our own portfolio of experiences to transcend traditional boundaries between physical and digital, between commerce and narrative, between entertainment and transformation.</p>
+
+                    <div class="quote-box">
+                        <p>"In a world where screens are all around us, the future of Branded Entertainment merges: Equitable Commerce, Phygital Experiential Reality & FANDOMONIUM."</p>
+                    </div>
+
+                    <h3>AETHER PXR Platform</h3>
+                    <p><strong>AETHER PXR (Phygital Experiential Reality & Commerce Engine)</strong> isn't just software or hardware&#8212;it's the complete operating system AND hardware platform envisioned during those childhood visits to Disneyland, when wondering why magic couldn't be everywhere, accessible to everyone.</p>
                 </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-value">36,000</span>
+                    <span class="stat-label">Hours of Creating & Building</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">$18M+</span>
+                    <span class="stat-label">Career Profits Generated</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">Zero Safety Incidents</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">94%</span>
+                    <span class="stat-label">Emotional Resonance Accuracy</span>
+                </div>
+            </div>
+
+            <div class="pillars-grid">
+                <article class="pillar-card">
+                    <span class="pillar-icon">&#9765;</span>
+                    <h3 class="pillar-title">Ancient Wisdom</h3>
+                    <p class="pillar-description">Drawing from Kemetic mysteries and alchemical traditions to create transformative experiences that bridge the physical and digital realms.</p>
+                </article>
+                <article class="pillar-card">
+                    <span class="pillar-icon">&#9883;</span>
+                    <h3 class="pillar-title">Sacred Geometry</h3>
+                    <p class="pillar-description">Every design embodies mathematical perfection found in nature&#8212;the golden ratio, Fibonacci sequences, and platonic solids guide our creative process.</p>
+                </article>
+                <article class="pillar-card">
+                    <span class="pillar-icon">&#9733;</span>
+                    <h3 class="pillar-title">Ethereal Craft</h3>
+                    <p class="pillar-description">Merging cutting-edge technology with timeless artistry to forge phygital artifacts that transcend conventional boundaries.</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Pathos Section -->
+    <!-- PATHOS Section -->
     <section class="content-section" id="pathos">
         <div class="section-container">
             <h2 class="section-title">&#128156; PATHOS</h2>
             <p class="section-subtitle">The Emotional Resonance of Experience</p>
 
-            <div class="chrome-card">
+            <div class="glass-card">
                 <div class="features-grid">
                     <div class="feature-item">
                         <div class="feature-icon">&#127912;</div>
                         <h3 class="feature-title">Visual Alchemy</h3>
-                        <p class="feature-text">Transforming ordinary moments into extraordinary visual experiences through masterful design.</p>
+                        <p class="feature-text">Transforming ordinary moments into extraordinary visual experiences through masterful design and emotional intelligence.</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">&#128302;</div>
                         <h3 class="feature-title">Digital Transmutation</h3>
-                        <p class="feature-text">Converting creative vision into immersive digital artifacts with lasting impact.</p>
+                        <p class="feature-text">Converting creative vision into immersive digital artifacts with lasting impact and meaningful connection.</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">&#10024;</div>
                         <h3 class="feature-title">Ethereal Connection</h3>
-                        <p class="feature-text">Building bridges between creator and audience through emotionally resonant design.</p>
+                        <p class="feature-text">Building bridges between creator and audience through emotionally resonant design and shared experience.</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">&#128171;</div>
                         <h3 class="feature-title">Experiential Power</h3>
-                        <p class="feature-text">Crafting memorable journeys that leave lasting impressions on the soul.</p>
+                        <p class="feature-text">Crafting memorable journeys that leave lasting impressions on the soul and transform perspectives.</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="dark-glass-card" style="margin-top: 30px;">
+                <div class="vision-content">
+                    <h2>The Alchemist's Declaration</h2>
+                    <p>Every AETHER experience is designed with deep empathy for the human journey. We understand that entertainment is not just about spectacle&#8212;it's about connection, meaning, and transformation.</p>
+
+                    <div class="highlight-box">
+                        <p>Our spaces adapt to individual emotions, our narratives respond to personal choices, and our commerce systems work to enable rather than extract.</p>
+                    </div>
+
+                    <p>It's not about surrounding people with content. It's about inviting them into <em>co-creation.</em> It's about making them forget they're an audience because they've become participants. It's about that moment when the boundary between story and self dissolves.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Logos Section -->
+    <!-- LOGOS Section -->
     <section class="content-section" id="logos">
         <div class="section-container">
             <h2 class="section-title">&#127760; LOGOS</h2>
@@ -944,18 +1321,83 @@ a:focus-visible {
                     <article class="pillar-card">
                         <span class="pillar-icon">&#128187;</span>
                         <h3 class="pillar-title">PXR Technology</h3>
-                        <p class="pillar-description">Phygital Extended Reality platform bridging physical and digital worlds through innovative AR/VR/MR experiences.</p>
+                        <p class="pillar-description">Phygital Extended Reality platform bridging physical and digital worlds through innovative AR/VR/MR experiences with sub-10ms response times.</p>
                     </article>
                     <article class="pillar-card">
                         <span class="pillar-icon">&#9878;</span>
-                        <h3 class="pillar-title">Blockchain Verified</h3>
-                        <p class="pillar-description">Immutable provenance and authentication for digital artifacts ensuring authenticity and ownership.</p>
+                        <h3 class="pillar-title">Quantum Optimized</h3>
+                        <p class="pillar-description">Calculating 2.4 million potential experience variations per guest per second through advanced quantum computing partnerships.</p>
                     </article>
                     <article class="pillar-card">
                         <span class="pillar-icon">&#128640;</span>
                         <h3 class="pillar-title">Future Forward</h3>
-                        <p class="pillar-description">Continuously evolving with emerging technologies to stay at the forefront of digital innovation.</p>
+                        <p class="pillar-description">Continuously evolving with emerging technologies to stay at the forefront of digital innovation and experiential design.</p>
                     </article>
+                </div>
+            </div>
+
+            <div class="dark-glass-card" style="margin-top: 30px;">
+                <div class="vision-content">
+                    <h3>The AETHER PXR Platform Enables:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2);">&#9733; <strong>Physical spaces that behave like software</strong> through 1,024 sensors per 100 square meters</li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2);">&#9733; <strong>Emotional resonance engineering</strong> with 94% accuracy in predicting and optimizing emotional states</li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2);">&#9733; <strong>Adaptive narrative experiences</strong> powered by AI integration enabling truly conversational character interactions</li>
+                        <li style="padding: 12px 0;">&#9733; <strong>Democratized access</strong> achieving 85% population accessibility vs. 15% industry standard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-container">
+            <h2 class="section-title">&#127912; VISUAL CODEX</h2>
+            <p class="section-subtitle">A Collection of Ethereal Artifacts</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('BLISSETHEREAL.jpg', 'BLISS ETHEREAL', 'Pacific Blue - The path to contentment')">
+                    <img src="BLISSETHEREAL.jpg" alt="BLISS Ethereal - Pacific Blue artistic visualization" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">BLISS ETHEREAL</div>
+                        <div class="gallery-desc">Pacific Blue - Liquid Chrome Edition</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('UIORBETHEREAL.jpg', 'ORBITAL ORB', 'Chrome spheres in ethereal dance')">
+                    <img src="UIORBETHEREAL.jpg" alt="Orbital Orb - Chrome sphere with interlocking rings" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">ORBITAL ORB</div>
+                        <div class="gallery-desc">Chrome Spheres in Ethereal Dance</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('AETHERKEMETICUI.jpg', 'TOWER OF KNOWLEDGE', 'Sacred wisdom ascending')">
+                    <img src="AETHERKEMETICUI.jpg" alt="Tower of Knowledge - Ancient seekers discovering sacred tablets" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">TOWER OF KNOWLEDGE</div>
+                        <div class="gallery-desc">Sacred Wisdom Ascending</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('AETHERKEMETICUI333.jpg', 'ALCHEMIST LAMP', 'Illuminating mathematical mysteries')">
+                    <img src="AETHERKEMETICUI333.jpg" alt="Alchemist Lamp - Golden lamp with mathematical formulas" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">ALCHEMIST LAMP</div>
+                        <div class="gallery-desc">Illuminating Mathematical Mysteries</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('production-photo-3184.webp', 'CANDLELIGHT EXPERIENCE', 'Immersive musical journey')">
+                    <img src="production-photo-3184.webp" alt="Candlelight Experience - Atmospheric concert venue" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">CANDLELIGHT EXPERIENCE</div>
+                        <div class="gallery-desc">Immersive Musical Journey</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('AlchemistInstaStory1.gif', 'CELESTIAL PORTAL', 'Floating chrome clouds in ethereal sky')">
+                    <img src="AlchemistInstaStory1.gif" alt="Celestial Portal - Animated ethereal sky scene" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">CELESTIAL PORTAL</div>
+                        <div class="gallery-desc">Floating Chrome Clouds</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -967,9 +1409,35 @@ a:focus-visible {
         <p class="footer-tagline">Where Ancient Wisdom Meets Digital Innovation</p>
         <div class="footer-symbols" aria-hidden="true">&#9765; &#128302; &#9883; &#128171; &#9765;</div>
         <div class="version-badge">v35.0 ALCHEMIST ETHEREAL EDITION</div>
+        <div class="footer-links">
+            <a href="#ethos" class="footer-link">Ethos</a>
+            <a href="#pathos" class="footer-link">Pathos</a>
+            <a href="#logos" class="footer-link">Logos</a>
+            <a href="#gallery" class="footer-link">Gallery</a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.75rem; opacity: 0.6;">&copy; 2025 Alchemist Atelier. All Rights Reserved.</p>
     </footer>
 
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&#10005;</button>
+            <img id="modalImage" src="" alt="">
+            <div style="text-align: center; margin-top: 15px;">
+                <h3 id="modalTitle" style="color: var(--kemetic-gold); font-family: var(--font-sacred);"></h3>
+                <p id="modalDesc" style="color: var(--sky-glow); opacity: 0.8; margin-top: 5px;"></p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('pageLoader').classList.add('hidden');
+            }, 1000);
+        });
+
         // Smooth scroll to section
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
@@ -978,18 +1446,53 @@ a:focus-visible {
             }
         }
 
-        // Parallax effect for chrome clouds
-        document.addEventListener('mousemove', (e) => {
-            const clouds = document.querySelectorAll('.chrome-cloud');
-            const mouseX = e.clientX / window.innerWidth - 0.5;
-            const mouseY = e.clientY / window.innerHeight - 0.5;
+        // Image Modal Functions
+        function openModal(src, title, desc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDesc = document.getElementById('modalDesc');
 
-            clouds.forEach((cloud, index) => {
-                const speed = (index + 1) * 0.5;
-                const x = mouseX * speed * 30;
-                const y = mouseY * speed * 30;
-                cloud.style.transform = `translate(${x}px, ${y}px)`;
-            });
+            modalImg.src = src;
+            modalImg.alt = title;
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Parallax effect for chrome clouds
+        let ticking = false;
+        document.addEventListener('mousemove', function(e) {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    const clouds = document.querySelectorAll('.chrome-cloud');
+                    const mouseX = e.clientX / window.innerWidth - 0.5;
+                    const mouseY = e.clientY / window.innerHeight - 0.5;
+
+                    clouds.forEach(function(cloud, index) {
+                        const speed = (index + 1) * 0.4;
+                        const x = mouseX * speed * 25;
+                        const y = mouseY * speed * 25;
+                        cloud.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
 
         // Intersection Observer for scroll animations
@@ -998,8 +1501,8 @@ a:focus-visible {
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
@@ -1007,40 +1510,63 @@ a:focus-visible {
             });
         }, observerOptions);
 
-        // Observe all cards for animation
-        document.querySelectorAll('.glass-card, .chrome-card, .pillar-card, .feature-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.glass-card, .dark-glass-card, .pillar-card, .feature-item, .stat-item, .gallery-item');
+            animatedElements.forEach(function(el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
         });
 
         // Touch support for mobile parallax
-        let isTouchDevice = 'ontouchstart' in window;
+        var isTouchDevice = 'ontouchstart' in window;
         if (isTouchDevice) {
-            document.addEventListener('touchmove', (e) => {
-                const touch = e.touches[0];
-                const clouds = document.querySelectorAll('.chrome-cloud');
-                const touchX = touch.clientX / window.innerWidth - 0.5;
-                const touchY = touch.clientY / window.innerHeight - 0.5;
+            document.addEventListener('touchmove', function(e) {
+                var touch = e.touches[0];
+                var clouds = document.querySelectorAll('.chrome-cloud');
+                var touchX = touch.clientX / window.innerWidth - 0.5;
+                var touchY = touch.clientY / window.innerHeight - 0.5;
 
-                clouds.forEach((cloud, index) => {
-                    const speed = (index + 1) * 0.3;
-                    const x = touchX * speed * 20;
-                    const y = touchY * speed * 20;
-                    cloud.style.transform = `translate(${x}px, ${y}px)`;
+                clouds.forEach(function(cloud, index) {
+                    var speed = (index + 1) * 0.25;
+                    var x = touchX * speed * 15;
+                    var y = touchY * speed * 15;
+                    cloud.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
                 });
             });
         }
 
-        // Add subtle animation to portal on scroll
-        window.addEventListener('scroll', () => {
-            const portal = document.querySelector('.portal-frame');
-            const scrolled = window.pageYOffset;
-            if (portal) {
-                portal.style.transform = `perspective(1000px) rotateX(${scrolled * 0.02}deg)`;
+        // Portal perspective transform on scroll
+        window.addEventListener('scroll', function() {
+            var portal = document.querySelector('.portal-frame');
+            var scrolled = window.pageYOffset;
+            if (portal && scrolled < window.innerHeight) {
+                portal.style.transform = 'perspective(1000px) rotateX(' + (scrolled * 0.02) + 'deg)';
             }
         });
+
+        // Lazy load images with IntersectionObserver
+        if ('IntersectionObserver' in window) {
+            var imgObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imgObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(function(img) {
+                imgObserver.observe(img);
+            });
+        }
     </script>
 </body>
 </html>
