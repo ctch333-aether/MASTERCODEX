@@ -1,0 +1,765 @@
+{
+  "name": "AETHER KEMETIC BRAND ASSETS",
+  "version": "1.0.0",
+  "created": "2025-12-28T21:38:29.245791",
+  "description": "Consolidated brand assets for MASTERCODEX - Glass Chrome Sky Iridescent aesthetic",
+  "brand": {
+    "name": "AETHER KEMETIC ALCHEMY",
+    "tagline": "Digital Alchemy for the Modern Age",
+    "aesthetic": [
+      "glass-morphism",
+      "chrome-sky",
+      "iridescent",
+      "kemetic",
+      "sacred-geometry"
+    ],
+    "colors": {
+      "primary": {
+        "gold": "#D4AF37",
+        "gold_light": "#CFB53B",
+        "platinum": "#E5E4E2",
+        "platinum_pure": "#F4F4F4"
+      },
+      "gems": {
+        "sapphire": "#0F52BA",
+        "sapphire_light": "#4169E1",
+        "emerald": "#2E8B57",
+        "emerald_light": "#3CB371",
+        "amethyst": "#9966CC",
+        "turquoise": "#40E0D0"
+      },
+      "kemetic": {
+        "lapis_dark": "#1E3A5F",
+        "lapis_light": "#2E5A8F",
+        "obsidian": "#0f0f1a",
+        "obsidian_deep": "#1a1a2e"
+      },
+      "retro": {
+        "terminal_green": "#33FF33",
+        "amber": "#FFB000",
+        "crt_blue": "#00BFFF",
+        "win95_gray": "#c0c0c0"
+      },
+      "glass": {
+        "chrome_sky": "rgba(255, 255, 255, 0.1)",
+        "iridescent": "linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))"
+      }
+    },
+    "fonts": {
+      "primary": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700"
+      },
+      "display": {
+        "family": "Space Grotesk",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "url": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500"
+      }
+    },
+    "symbols": {
+      "primary": "ankh",
+      "unicode": "\u2625",
+      "meaning": "Life, Immortality, Digital Eternity"
+    }
+  },
+  "assets": [
+    {
+      "id": "AETHERKEMETICUI",
+      "original_name": "AETHERKEMETICUI.jpg",
+      "category": "brand",
+      "path": "assets/brand/AETHERKEMETICUI.webp",
+      "format": "webp",
+      "size_bytes": 127952,
+      "hash": "37215d5230fccbcba0a48e0ff88f5fde",
+      "width": 736,
+      "height": 1113
+    },
+    {
+      "id": "AETHERKEMETICUI333",
+      "original_name": "AETHERKEMETICUI333.jpg",
+      "category": "brand",
+      "path": "assets/brand/AETHERKEMETICUI333.webp",
+      "format": "webp",
+      "size_bytes": 139792,
+      "hash": "3f6c042e5d4d9c6e9e76e5183acad2cd",
+      "width": 640,
+      "height": 861
+    },
+    {
+      "id": "AETHERKEMETICUIBYTE111",
+      "original_name": "AETHERKEMETICUIBYTE111.jpg",
+      "category": "brand",
+      "path": "assets/brand/AETHERKEMETICUIBYTE111.webp",
+      "format": "webp",
+      "size_bytes": 171376,
+      "hash": "20131ea5d824524ccfe911338d1295ca",
+      "width": 1200,
+      "height": 1575
+    },
+    {
+      "id": "AETHERKEMETICUIEINTER",
+      "original_name": "AETHERKEMETICUIEINTER.jpg",
+      "category": "brand",
+      "path": "assets/brand/AETHERKEMETICUIEINTER.webp",
+      "format": "webp",
+      "size_bytes": 448880,
+      "hash": "17de746fd63d43d2390f06fb749d31fb",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "id": "AETHERKEMETICUIWAYVY",
+      "original_name": "AETHERKEMETICUIWAYVY.jpg",
+      "category": "brand",
+      "path": "assets/brand/AETHERKEMETICUIWAYVY.webp",
+      "format": "webp",
+      "size_bytes": 291596,
+      "hash": "11ec14e4e76cf9009e74147c827b6079",
+      "width": 1200,
+      "height": 1200
+    },
+    {
+      "id": "AETHERUI",
+      "original_name": "AETHERUI.jpg",
+      "category": "brand",
+      "path": "assets/brand/AETHERUI.webp",
+      "format": "webp",
+      "size_bytes": 30944,
+      "hash": "adb1555124f261ab0b1892052f6c382a",
+      "width": 500,
+      "height": 640
+    },
+    {
+      "id": "AlchemistInstaStory1",
+      "original_name": "AlchemistInstaStory1.gif",
+      "category": "animated",
+      "path": "assets/animated/AlchemistInstaStory1.gif",
+      "format": "gif",
+      "size_bytes": 10756868,
+      "hash": "822851abe9211aae32dbfa71810ec298"
+    },
+    {
+      "id": "BLISSETHEREAL",
+      "original_name": "BLISSETHEREAL.jpg",
+      "category": "brand",
+      "path": "assets/brand/BLISSETHEREAL.webp",
+      "format": "webp",
+      "size_bytes": 84158,
+      "hash": "84a610a84d22190cb3d4dc9e80747261",
+      "width": 735,
+      "height": 934
+    },
+    {
+      "id": "IMG_3027",
+      "original_name": "IMG_3027.HEIC",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_3027.webp",
+      "format": "webp",
+      "size_bytes": 1709286,
+      "hash": "95e1648f54d075c1b32a5e932e15a0cd",
+      "width": 3024,
+      "height": 4032
+    },
+    {
+      "id": "IMG_3040",
+      "original_name": "IMG_3040.HEIC",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_3040.webp",
+      "format": "webp",
+      "size_bytes": 1498202,
+      "hash": "b952616f9d14d102ba6bc0b4bf79ac36",
+      "width": 3024,
+      "height": 4032
+    },
+    {
+      "id": "IMG_3457",
+      "original_name": "IMG_3457.PNG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_3457.webp",
+      "format": "webp",
+      "size_bytes": 98586,
+      "hash": "70eb9099d61786c77329c54a4d6e1a71",
+      "width": 1170,
+      "height": 2532
+    },
+    {
+      "id": "IMG_3835",
+      "original_name": "IMG_3835.HEIC",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_3835.webp",
+      "format": "webp",
+      "size_bytes": 1270062,
+      "hash": "5d7f2f3e411c85f251942d4c741014e5",
+      "width": 4032,
+      "height": 3024
+    },
+    {
+      "id": "IMG_4243",
+      "original_name": "IMG_4243.HEIC",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_4243.webp",
+      "format": "webp",
+      "size_bytes": 1453576,
+      "hash": "07f98d352f7e874b404358f7e9dd2677",
+      "width": 3024,
+      "height": 4032
+    },
+    {
+      "id": "IMG_5397",
+      "original_name": "IMG_5397.JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_5397.webp",
+      "format": "webp",
+      "size_bytes": 49588,
+      "hash": "7d485a39a0985e2c8923388771cc7b1d",
+      "width": 720,
+      "height": 960
+    },
+    {
+      "id": "IMG_5776",
+      "original_name": "IMG_5776.JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_5776.webp",
+      "format": "webp",
+      "size_bytes": 56668,
+      "hash": "b4af73309e2d5b562b37a312ee0e44de",
+      "width": 1043,
+      "height": 599
+    },
+    {
+      "id": "IMG_5793",
+      "original_name": "IMG_5793.HEIC",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_5793.webp",
+      "format": "webp",
+      "size_bytes": 353962,
+      "hash": "14b9b567ae428fed441fc1fe14c239d6",
+      "width": 3024,
+      "height": 4032
+    },
+    {
+      "id": "IMG_5888",
+      "original_name": "IMG_5888.JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_5888.webp",
+      "format": "webp",
+      "size_bytes": 652800,
+      "hash": "c913676c3967b610a373cb6e60a576fa",
+      "width": 3024,
+      "height": 4032
+    },
+    {
+      "id": "IMG_5894",
+      "original_name": "IMG_5894.JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_5894.webp",
+      "format": "webp",
+      "size_bytes": 723604,
+      "hash": "807c13b3f2337ee146676cffe66f5232",
+      "width": 3024,
+      "height": 4032
+    },
+    {
+      "id": "IMG_6026",
+      "original_name": "IMG_6026.HEIC",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_6026.webp",
+      "format": "webp",
+      "size_bytes": 600958,
+      "hash": "3d08affb25646fdcb607cdee4082c75c",
+      "width": 4032,
+      "height": 3024
+    },
+    {
+      "id": "IMG_6085",
+      "original_name": "IMG_6085.PNG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_6085.webp",
+      "format": "webp",
+      "size_bytes": 156240,
+      "hash": "4d1bc9e72bf4c1b3bacd44c0c1dccbb5",
+      "width": 1125,
+      "height": 2436
+    },
+    {
+      "id": "IMG_7076_1",
+      "original_name": "IMG_7076 (1).JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_7076_1.webp",
+      "format": "webp",
+      "size_bytes": 1106504,
+      "hash": "75b52c12c87a904ba99f459818b5dcfe",
+      "width": 4032,
+      "height": 3024
+    },
+    {
+      "id": "IMG_7178",
+      "original_name": "IMG_7178.JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_7178.webp",
+      "format": "webp",
+      "size_bytes": 676654,
+      "hash": "6a10e7984a3d5aeb750f04c1136655c4",
+      "width": 2550,
+      "height": 3300
+    },
+    {
+      "id": "IMG_7187_1",
+      "original_name": "IMG_7187 (1).JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_7187_1.webp",
+      "format": "webp",
+      "size_bytes": 526140,
+      "hash": "14acd3545f4b2d67d947a6517a7ed4c3",
+      "width": 3300,
+      "height": 4200
+    },
+    {
+      "id": "IMG_7188",
+      "original_name": "IMG_7188.JPEG",
+      "category": "portfolio",
+      "path": "assets/portfolio/IMG_7188.webp",
+      "format": "webp",
+      "size_bytes": 177826,
+      "hash": "9048fc1bc5ecc1e2990fea6f9361400c",
+      "width": 2550,
+      "height": 3300
+    },
+    {
+      "id": "UIORBETHEREAL",
+      "original_name": "UIORBETHEREAL.jpg",
+      "category": "brand",
+      "path": "assets/brand/UIORBETHEREAL.webp",
+      "format": "webp",
+      "size_bytes": 19142,
+      "hash": "627e926286e92e8f38eb1770105c35eb",
+      "width": 400,
+      "height": 300
+    },
+    {
+      "id": "WebAssetPortsoftwarepopup6",
+      "original_name": "WebAssetPortsoftwarepopup6.svg",
+      "category": "vectors",
+      "path": "assets/vectors/WebAssetPortsoftwarepopup6.svg",
+      "format": "svg",
+      "size_bytes": 4557316,
+      "hash": "c194843990032e3dcefeead198cd39f9"
+    },
+    {
+      "id": "WebAssetPortsoftwarepopup7",
+      "original_name": "WebAssetPortsoftwarepopup7.svg",
+      "category": "vectors",
+      "path": "assets/vectors/WebAssetPortsoftwarepopup7.svg",
+      "format": "svg",
+      "size_bytes": 4386688,
+      "hash": "0a7b2cabbdf264253cd635fe0b46b0ef"
+    },
+    {
+      "id": "WebAssetPortsoftwarepopup8",
+      "original_name": "WebAssetPortsoftwarepopup8.svg",
+      "category": "vectors",
+      "path": "assets/vectors/WebAssetPortsoftwarepopup8.svg",
+      "format": "svg",
+      "size_bytes": 6702064,
+      "hash": "9a3e11a0acf8de8a066c5b873c1d05c4"
+    },
+    {
+      "id": "WebAssetPortsoftwarepopup9",
+      "original_name": "WebAssetPortsoftwarepopup9.svg",
+      "category": "vectors",
+      "path": "assets/vectors/WebAssetPortsoftwarepopup9.svg",
+      "format": "svg",
+      "size_bytes": 5306470,
+      "hash": "084ad7be7766b2839b913206da5a990b"
+    },
+    {
+      "id": "production-photo-3184",
+      "original_name": "production-photo-3184.webp",
+      "category": "portfolio",
+      "path": "assets/portfolio/production-photo-3184.webp",
+      "format": "webp",
+      "size_bytes": 112334,
+      "hash": "da94333684a4e465b7a7cbba8cd613df",
+      "width": 2000,
+      "height": 1500
+    }
+  ],
+  "categories": {
+    "brand": [
+      {
+        "id": "AETHERKEMETICUI",
+        "original_name": "AETHERKEMETICUI.jpg",
+        "category": "brand",
+        "path": "assets/brand/AETHERKEMETICUI.webp",
+        "format": "webp",
+        "size_bytes": 127952,
+        "hash": "37215d5230fccbcba0a48e0ff88f5fde",
+        "width": 736,
+        "height": 1113
+      },
+      {
+        "id": "AETHERKEMETICUI333",
+        "original_name": "AETHERKEMETICUI333.jpg",
+        "category": "brand",
+        "path": "assets/brand/AETHERKEMETICUI333.webp",
+        "format": "webp",
+        "size_bytes": 139792,
+        "hash": "3f6c042e5d4d9c6e9e76e5183acad2cd",
+        "width": 640,
+        "height": 861
+      },
+      {
+        "id": "AETHERKEMETICUIBYTE111",
+        "original_name": "AETHERKEMETICUIBYTE111.jpg",
+        "category": "brand",
+        "path": "assets/brand/AETHERKEMETICUIBYTE111.webp",
+        "format": "webp",
+        "size_bytes": 171376,
+        "hash": "20131ea5d824524ccfe911338d1295ca",
+        "width": 1200,
+        "height": 1575
+      },
+      {
+        "id": "AETHERKEMETICUIEINTER",
+        "original_name": "AETHERKEMETICUIEINTER.jpg",
+        "category": "brand",
+        "path": "assets/brand/AETHERKEMETICUIEINTER.webp",
+        "format": "webp",
+        "size_bytes": 448880,
+        "hash": "17de746fd63d43d2390f06fb749d31fb",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "id": "AETHERKEMETICUIWAYVY",
+        "original_name": "AETHERKEMETICUIWAYVY.jpg",
+        "category": "brand",
+        "path": "assets/brand/AETHERKEMETICUIWAYVY.webp",
+        "format": "webp",
+        "size_bytes": 291596,
+        "hash": "11ec14e4e76cf9009e74147c827b6079",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "id": "AETHERUI",
+        "original_name": "AETHERUI.jpg",
+        "category": "brand",
+        "path": "assets/brand/AETHERUI.webp",
+        "format": "webp",
+        "size_bytes": 30944,
+        "hash": "adb1555124f261ab0b1892052f6c382a",
+        "width": 500,
+        "height": 640
+      },
+      {
+        "id": "BLISSETHEREAL",
+        "original_name": "BLISSETHEREAL.jpg",
+        "category": "brand",
+        "path": "assets/brand/BLISSETHEREAL.webp",
+        "format": "webp",
+        "size_bytes": 84158,
+        "hash": "84a610a84d22190cb3d4dc9e80747261",
+        "width": 735,
+        "height": 934
+      },
+      {
+        "id": "UIORBETHEREAL",
+        "original_name": "UIORBETHEREAL.jpg",
+        "category": "brand",
+        "path": "assets/brand/UIORBETHEREAL.webp",
+        "format": "webp",
+        "size_bytes": 19142,
+        "hash": "627e926286e92e8f38eb1770105c35eb",
+        "width": 400,
+        "height": 300
+      }
+    ],
+    "portfolio": [
+      {
+        "id": "IMG_3027",
+        "original_name": "IMG_3027.HEIC",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_3027.webp",
+        "format": "webp",
+        "size_bytes": 1709286,
+        "hash": "95e1648f54d075c1b32a5e932e15a0cd",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "IMG_3040",
+        "original_name": "IMG_3040.HEIC",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_3040.webp",
+        "format": "webp",
+        "size_bytes": 1498202,
+        "hash": "b952616f9d14d102ba6bc0b4bf79ac36",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "IMG_3457",
+        "original_name": "IMG_3457.PNG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_3457.webp",
+        "format": "webp",
+        "size_bytes": 98586,
+        "hash": "70eb9099d61786c77329c54a4d6e1a71",
+        "width": 1170,
+        "height": 2532
+      },
+      {
+        "id": "IMG_3835",
+        "original_name": "IMG_3835.HEIC",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_3835.webp",
+        "format": "webp",
+        "size_bytes": 1270062,
+        "hash": "5d7f2f3e411c85f251942d4c741014e5",
+        "width": 4032,
+        "height": 3024
+      },
+      {
+        "id": "IMG_4243",
+        "original_name": "IMG_4243.HEIC",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_4243.webp",
+        "format": "webp",
+        "size_bytes": 1453576,
+        "hash": "07f98d352f7e874b404358f7e9dd2677",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "IMG_5397",
+        "original_name": "IMG_5397.JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_5397.webp",
+        "format": "webp",
+        "size_bytes": 49588,
+        "hash": "7d485a39a0985e2c8923388771cc7b1d",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "id": "IMG_5776",
+        "original_name": "IMG_5776.JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_5776.webp",
+        "format": "webp",
+        "size_bytes": 56668,
+        "hash": "b4af73309e2d5b562b37a312ee0e44de",
+        "width": 1043,
+        "height": 599
+      },
+      {
+        "id": "IMG_5793",
+        "original_name": "IMG_5793.HEIC",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_5793.webp",
+        "format": "webp",
+        "size_bytes": 353962,
+        "hash": "14b9b567ae428fed441fc1fe14c239d6",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "IMG_5888",
+        "original_name": "IMG_5888.JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_5888.webp",
+        "format": "webp",
+        "size_bytes": 652800,
+        "hash": "c913676c3967b610a373cb6e60a576fa",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "IMG_5894",
+        "original_name": "IMG_5894.JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_5894.webp",
+        "format": "webp",
+        "size_bytes": 723604,
+        "hash": "807c13b3f2337ee146676cffe66f5232",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "IMG_6026",
+        "original_name": "IMG_6026.HEIC",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_6026.webp",
+        "format": "webp",
+        "size_bytes": 600958,
+        "hash": "3d08affb25646fdcb607cdee4082c75c",
+        "width": 4032,
+        "height": 3024
+      },
+      {
+        "id": "IMG_6085",
+        "original_name": "IMG_6085.PNG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_6085.webp",
+        "format": "webp",
+        "size_bytes": 156240,
+        "hash": "4d1bc9e72bf4c1b3bacd44c0c1dccbb5",
+        "width": 1125,
+        "height": 2436
+      },
+      {
+        "id": "IMG_7076_1",
+        "original_name": "IMG_7076 (1).JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_7076_1.webp",
+        "format": "webp",
+        "size_bytes": 1106504,
+        "hash": "75b52c12c87a904ba99f459818b5dcfe",
+        "width": 4032,
+        "height": 3024
+      },
+      {
+        "id": "IMG_7178",
+        "original_name": "IMG_7178.JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_7178.webp",
+        "format": "webp",
+        "size_bytes": 676654,
+        "hash": "6a10e7984a3d5aeb750f04c1136655c4",
+        "width": 2550,
+        "height": 3300
+      },
+      {
+        "id": "IMG_7187_1",
+        "original_name": "IMG_7187 (1).JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_7187_1.webp",
+        "format": "webp",
+        "size_bytes": 526140,
+        "hash": "14acd3545f4b2d67d947a6517a7ed4c3",
+        "width": 3300,
+        "height": 4200
+      },
+      {
+        "id": "IMG_7188",
+        "original_name": "IMG_7188.JPEG",
+        "category": "portfolio",
+        "path": "assets/portfolio/IMG_7188.webp",
+        "format": "webp",
+        "size_bytes": 177826,
+        "hash": "9048fc1bc5ecc1e2990fea6f9361400c",
+        "width": 2550,
+        "height": 3300
+      },
+      {
+        "id": "production-photo-3184",
+        "original_name": "production-photo-3184.webp",
+        "category": "portfolio",
+        "path": "assets/portfolio/production-photo-3184.webp",
+        "format": "webp",
+        "size_bytes": 112334,
+        "hash": "da94333684a4e465b7a7cbba8cd613df",
+        "width": 2000,
+        "height": 1500
+      }
+    ],
+    "vectors": [
+      {
+        "id": "WebAssetPortsoftwarepopup6",
+        "original_name": "WebAssetPortsoftwarepopup6.svg",
+        "category": "vectors",
+        "path": "assets/vectors/WebAssetPortsoftwarepopup6.svg",
+        "format": "svg",
+        "size_bytes": 4557316,
+        "hash": "c194843990032e3dcefeead198cd39f9"
+      },
+      {
+        "id": "WebAssetPortsoftwarepopup7",
+        "original_name": "WebAssetPortsoftwarepopup7.svg",
+        "category": "vectors",
+        "path": "assets/vectors/WebAssetPortsoftwarepopup7.svg",
+        "format": "svg",
+        "size_bytes": 4386688,
+        "hash": "0a7b2cabbdf264253cd635fe0b46b0ef"
+      },
+      {
+        "id": "WebAssetPortsoftwarepopup8",
+        "original_name": "WebAssetPortsoftwarepopup8.svg",
+        "category": "vectors",
+        "path": "assets/vectors/WebAssetPortsoftwarepopup8.svg",
+        "format": "svg",
+        "size_bytes": 6702064,
+        "hash": "9a3e11a0acf8de8a066c5b873c1d05c4"
+      },
+      {
+        "id": "WebAssetPortsoftwarepopup9",
+        "original_name": "WebAssetPortsoftwarepopup9.svg",
+        "category": "vectors",
+        "path": "assets/vectors/WebAssetPortsoftwarepopup9.svg",
+        "format": "svg",
+        "size_bytes": 5306470,
+        "hash": "084ad7be7766b2839b913206da5a990b"
+      }
+    ],
+    "animated": [
+      {
+        "id": "AlchemistInstaStory1",
+        "original_name": "AlchemistInstaStory1.gif",
+        "category": "animated",
+        "path": "assets/animated/AlchemistInstaStory1.gif",
+        "format": "gif",
+        "size_bytes": 10756868,
+        "hash": "822851abe9211aae32dbfa71810ec298"
+      }
+    ]
+  },
+  "statistics": {
+    "total_assets": 30,
+    "duplicates_removed": 1,
+    "by_category": {
+      "brand": 8,
+      "portfolio": 17,
+      "vectors": 4,
+      "animated": 1
+    }
+  },
+  "duplicates_log": [
+    {
+      "file": "/home/user/MASTERCODEX/IMG_7187 (2).JPEG",
+      "duplicate_of": "/home/user/MASTERCODEX/IMG_7187 (1).JPEG",
+      "hash": "14acd3545f4b2d67d947a6517a7ed4c3"
+    }
+  ],
+  "integration": {
+    "css_import": "\n/* AETHER Brand Fonts */\n@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');\n\n/* AETHER Brand CSS Variables */\n:root {\n    --aether-gold: #D4AF37;\n    --aether-platinum: #E5E4E2;\n    --aether-sapphire: #0F52BA;\n    --aether-emerald: #2E8B57;\n    --aether-amethyst: #9966CC;\n    --aether-lapis: #1E3A5F;\n    --aether-obsidian: #0f0f1a;\n    --aether-terminal: #33FF33;\n    --aether-font-primary: 'Inter', sans-serif;\n    --aether-font-display: 'Space Grotesk', sans-serif;\n    --aether-font-mono: 'JetBrains Mono', monospace;\n}\n",
+    "html_component": "\n<!-- AETHER Asset Container Component -->\n<div class=\"aether-asset-container\" data-category=\"{category}\">\n    <img src=\"assets/{category}/{filename}\"\n         alt=\"{id}\"\n         class=\"aether-asset\"\n         loading=\"lazy\"\n         decoding=\"async\">\n</div>\n",
+    "react_component": "\n// AETHER Asset Component\nimport React from 'react';\nimport manifest from './brand_manifest.json';\n\nexport const AetherAsset = ({ id, category = 'brand', className = '' }) => {\n  const asset = manifest.assets.find(a => a.id === id);\n  if (!asset) return null;\n\n  return (\n    <img\n      src={`/${asset.path}`}\n      alt={asset.id}\n      width={asset.width}\n      height={asset.height}\n      className={`aether-asset ${className}`}\n      loading=\"lazy\"\n    />\n  );\n};\n\n// Usage: <AetherAsset id=\"AETHERKEMETICUI\" category=\"brand\" />\n",
+    "claude_query_examples": [
+      "Query: 'Get all brand assets' -> manifest.categories.brand",
+      "Query: 'Find asset by name' -> manifest.assets.find(a => a.id.includes('name'))",
+      "Query: 'Get brand colors' -> manifest.brand.colors",
+      "Query: 'Get font stack' -> manifest.brand.fonts",
+      "Query: 'Portfolio images' -> manifest.categories.portfolio"
+    ]
+  }
+}
