@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com data:; img-src 'self' data: https:;">
+    <meta property="og:title" content="ALCHEMIST ATELIER | AETHER PXR Platform v35.0 CHROME DRAGON">
+    <meta property="og:description" content="Transmuting Reality Through Phygital Experiences. Chrome Dragon Celestial Design.">
+    <meta name="theme-color" content="#87CEEB">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☥</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Cinzel:wght@400;500;600;700&family=Orbitron:wght@400;500;600&display=swap">
+    <title>ALCHEMIST ATELIER | AETHER PXR Platform | v35.0 CHROME DRAGON CELESTIAL | December 2025</title>
+    <style>
+/* ═══════════════════════════════════════════════════════════════════════════════
+   AETHER v35.0 CHROME DRAGON CELESTIAL
+
+   VISUAL DNA: AlchemistInstaStory1.gif
+   ════════════════════════════════════════════════════════════════════════════
+   • Chrome-Glass Phoenix Dragon — Crystalline mechanical deity
+   • Iridescent Portal Threshold — Rainbow iris, 8s sacred cycle
+   • Floating Chrome Clouds — Organic liquid glass formations
+   • Celestial Mountain Atmosphere — Sky gradient, mist layers
+   • BYTE Magazine Heritage — Crystal goblet computing
+   • Y2K Liquid Chrome — Pacific Blue aqua surfaces
+   • Kemetic Alchemy — Sacred gold, obsidian depths, hieroglyphics
+
+   COLOR LAW: NO YELLOWS — ONLY METALLIC GOLD (#D4AF37 family)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* KEMETIC METALLIC GOLD (NO YELLOWS) */
+    --kemetic-gold: #D4AF37;
+    --kemetic-gold-bright: #CFB53B;
+    --kemetic-gold-deep: #AA8C2C;
+    --kemetic-gold-shimmer: #C9A227;
+    --kemetic-platinum: #E5E4E2;
+    --kemetic-platinum-shine: #F4F4F4;
+
+    /* SACRED METAL GRADIENTS */
+    --sacred-metals-shimmer: linear-gradient(135deg, #D4AF37 0%, #E5E4E2 25%, #D4AF37 50%, #E5E4E2 75%, #D4AF37 100%);
+    --gold-chrome-gradient: linear-gradient(135deg, #D4AF37 0%, #CFB53B 20%, #D4AF37 40%, #AA8C2C 60%, #D4AF37 80%, #CFB53B 100%);
+
+    /* CELESTIAL SKY (From AlchemistInstaStory1.gif) */
+    --sky-zenith: #87CEEB;
+    --sky-azure: #6BB3D9;
+    --sky-mist: #B8D4E8;
+    --sky-cloud: #E8F4F8;
+    --sky-atmosphere: #A8C8DC;
+    --sky-horizon: #C4D4E4;
+    --mountain-mist: #9AB4C8;
+    --celestial-white: #F0F8FF;
+
+    /* CHROME-CLOUD SYSTEM */
+    --chrome-cloud-surface: rgba(200, 220, 240, 0.55);
+    --chrome-cloud-highlight: rgba(255, 255, 255, 0.85);
+    --chrome-cloud-depth: rgba(138, 168, 200, 0.45);
+    --chrome-bubble: rgba(220, 235, 250, 0.35);
+    --crystal-chrome: #B8C4D0;
+    --crystal-chrome-light: #D0DAE4;
+    --phoenix-ice: #8AA8C8;
+    --liquid-chrome: #C8D8E8;
+    --facet-highlight: #E0ECF4;
+
+    /* SACRED GEM TONES */
+    --gem-sapphire: #0F52BA;
+    --gem-sapphire-light: #4169E1;
+    --gem-sapphire-glow: rgba(15, 82, 186, 0.6);
+    --gem-emerald: #2E8B57;
+    --gem-emerald-glow: rgba(46, 139, 87, 0.6);
+    --gem-amethyst: #9966CC;
+    --gem-amethyst-glow: rgba(153, 102, 204, 0.6);
+    --gem-turquoise: #40E0D0;
+    --gem-turquoise-glow: rgba(64, 224, 208, 0.6);
+    --gem-lapis: #1E3A5F;
+    --gem-ruby: #9B111E;
+    --gem-carnelian: #B5651D;
+
+    /* IRIDESCENT PORTAL (8s sacred cycle - NO YELLOWS) */
+    --iris-ruby: #9B111E;
+    --iris-carnelian: #B5651D;
+    --iris-gold: #D4AF37;
+    --iris-emerald: #2E8B57;
+    --iris-turquoise: #40E0D0;
+    --iris-sapphire: #4169E1;
+    --iris-amethyst: #9966CC;
+    --iris-lapis: #1E3A5F;
+    --portal-iris: linear-gradient(90deg, #9B111E 0%, #B5651D 14%, #D4AF37 28%, #2E8B57 42%, #40E0D0 56%, #4169E1 70%, #9966CC 84%, #1E3A5F 100%);
+
+    /* Y2K PACIFIC BLUE LIQUID */
+    --pacific-deep: #0A2463;
+    --pacific-ocean: #1E3F8C;
+    --pacific-azure: #2D60A8;
+    --pacific-aqua: #3D7DC4;
+    --pacific-sky: #5B9BD5;
+    --pacific-mist: #A8D4F2;
+    --liquid-glow: #33CCFF;
+
+    /* KEMETIC OBSIDIAN */
+    --kemetic-obsidian: #1a1a2e;
+    --kemetic-obsidian-night: #0f0f1a;
+
+    /* WIN95 CHROME */
+    --win95-gray: #C0C0C0;
+    --win95-dark: #808080;
+    --win95-highlight: #FFFFFF;
+    --win95-shadow: #000000;
+    --win95-teal: #008080;
+
+    /* GLASS MATERIALS */
+    --glass-crystal-bg: rgba(255, 255, 255, 0.08);
+    --glass-cloud-bg: rgba(200, 216, 232, 0.38);
+    --glass-kemetic: rgba(26, 26, 46, 0.88);
+    --glass-kemetic-border: rgba(212, 175, 55, 0.35);
+
+    /* SHADOWS */
+    --shadow-kemetic: 0 0 25px rgba(212, 175, 55, 0.35), 0 0 50px rgba(15, 82, 186, 0.18);
+    --shadow-chrome-cloud: 0 20px 50px rgba(138, 168, 200, 0.45), inset 0 -10px 30px rgba(255, 255, 255, 0.25);
+    --shadow-dragon: 0 25px 60px rgba(138, 168, 200, 0.5), 0 0 50px rgba(212, 175, 55, 0.15);
+    --shadow-portal: 0 0 40px rgba(153, 102, 204, 0.4), 0 0 80px rgba(64, 224, 208, 0.25);
+
+    /* TYPOGRAPHY */
+    --font-kemetic: 'Cinzel', serif;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+    --font-y2k: 'Orbitron', sans-serif;
+
+    /* ANIMATION TIMING */
+    --ease-kemetic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --ease-chrome: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-dragon: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-iris: 8s;
+    --duration-float: 6s;
+    --duration-morph: 15s;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes metallic-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes iris-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+@keyframes iris-pulse {
+    0%, 100% { filter: brightness(1) saturate(1); box-shadow: var(--shadow-portal); }
+    50% { filter: brightness(1.15) saturate(1.2); box-shadow: 0 0 60px rgba(64, 224, 208, 0.5), 0 0 100px rgba(153, 102, 204, 0.4); }
+}
+
+@keyframes cloud-float {
+    0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); filter: brightness(1); }
+    25% { transform: translateY(-15px) translateX(6px) rotate(1.5deg); filter: brightness(1.1); }
+    50% { transform: translateY(-8px) translateX(-4px) rotate(-1deg); filter: brightness(1.05); }
+    75% { transform: translateY(-22px) translateX(3px) rotate(0.8deg); filter: brightness(1.15); }
+}
+
+@keyframes blob-morph {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    20% { border-radius: 40% 60% 50% 50% / 45% 55% 45% 55%; }
+    40% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    60% { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
+    80% { border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%; }
+}
+
+@keyframes dragon-hover {
+    0%, 100% { transform: perspective(1000px) rotateY(0deg) rotateX(3deg) scale(1); filter: brightness(1); }
+    25% { transform: perspective(1000px) rotateY(6deg) rotateX(-2deg) scale(1.01); filter: brightness(1.1); }
+    50% { transform: perspective(1000px) rotateY(-4deg) rotateX(1deg) scale(1.02); filter: brightness(1.18); }
+    75% { transform: perspective(1000px) rotateY(3deg) rotateX(-1deg) scale(1.01); filter: brightness(1.08); }
+}
+
+@keyframes kemetic-glow {
+    0%, 100% { box-shadow: var(--shadow-kemetic); filter: brightness(1); }
+    50% { box-shadow: 0 0 35px rgba(212, 175, 55, 0.5), 0 0 60px rgba(153, 102, 204, 0.25); filter: brightness(1.08); }
+}
+
+@keyframes gem-cycle {
+    0%, 100% { box-shadow: 0 0 20px var(--gem-sapphire-glow), 0 0 40px var(--gem-amethyst-glow); }
+    33% { box-shadow: 0 0 20px var(--gem-amethyst-glow), 0 0 40px var(--gem-emerald-glow); }
+    66% { box-shadow: 0 0 20px var(--gem-emerald-glow), 0 0 40px var(--gem-turquoise-glow); }
+}
+
+@keyframes hieroglyph-float {
+    0%, 100% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-8px); opacity: 1; }
+}
+
+@keyframes ankh-pulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)); }
+    50% { transform: scale(1.12); filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.9)); }
+}
+
+@keyframes water-wave {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(6px) translateY(-4px); }
+    50% { transform: translateX(0) translateY(-6px); }
+    75% { transform: translateX(-6px) translateY(-3px); }
+}
+
+@keyframes caustic-light {
+    0%, 100% { opacity: 0.35; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.7; transform: scale(1.18) rotate(180deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CELESTIAL ATMOSPHERE BACKGROUND
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body {
+    font-family: var(--font-body);
+    min-height: 100vh;
+    background: linear-gradient(180deg,
+        var(--sky-zenith) 0%,
+        var(--sky-azure) 20%,
+        var(--sky-mist) 40%,
+        var(--sky-atmosphere) 60%,
+        var(--sky-horizon) 80%,
+        var(--mountain-mist) 100%
+    );
+    background-attachment: fixed;
+    color: var(--kemetic-obsidian);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Mountain Mist Layer */
+body::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(154, 180, 200, 0.3) 50%,
+        rgba(154, 180, 200, 0.6) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Atmospheric Haze */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255,255,255,0.2) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CHROME CLOUDS - Floating Glass Formations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.chrome-cloud {
+    position: fixed;
+    background: var(--chrome-cloud-surface);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    animation: cloud-float var(--duration-float) ease-in-out infinite, blob-morph var(--duration-morph) ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.chrome-cloud::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 40%;
+    height: 35%;
+    background: radial-gradient(ellipse, var(--chrome-cloud-highlight) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.chrome-cloud::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    width: 50%;
+    height: 40%;
+    background: radial-gradient(ellipse, var(--chrome-cloud-depth) 0%, transparent 60%);
+    border-radius: 50%;
+}
+
+.chrome-cloud.cloud-1 {
+    top: 8%;
+    left: 5%;
+    width: 180px;
+    height: 100px;
+    box-shadow: var(--shadow-chrome-cloud);
+}
+
+.chrome-cloud.cloud-2 {
+    top: 15%;
+    right: 10%;
+    width: 140px;
+    height: 80px;
+    animation-delay: -2s;
+    box-shadow: var(--shadow-chrome-cloud);
+}
+
+.chrome-cloud.cloud-3 {
+    top: 35%;
+    left: 2%;
+    width: 100px;
+    height: 60px;
+    animation-delay: -4s;
+}
+
+.chrome-cloud.cloud-4 {
+    bottom: 30%;
+    right: 5%;
+    width: 120px;
+    height: 70px;
+    animation-delay: -3s;
+}
+
+.chrome-cloud.cloud-5 {
+    bottom: 45%;
+    left: 8%;
+    width: 90px;
+    height: 55px;
+    animation-delay: -5s;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAIN CONTAINER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.main-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO SECTION - Chrome Dragon Portal
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+/* IRIDESCENT PORTAL FRAME */
+.portal-frame {
+    position: relative;
+    padding: 8px;
+    background: var(--portal-iris);
+    background-size: 400% 100%;
+    border-radius: 24px;
+    animation: iris-flow var(--duration-iris) linear infinite, iris-pulse 4s ease-in-out infinite;
+    box-shadow: var(--shadow-portal);
+}
+
+.portal-frame::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    z-index: 0;
+}
+
+/* GIF SHOWCASE */
+.gif-showcase {
+    position: relative;
+    z-index: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    animation: dragon-hover 12s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+.gif-showcase img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+/* KEMETIC TITLE */
+.kemetic-title {
+    font-family: var(--font-kemetic);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30px;
+    background: var(--gold-chrome-gradient);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: metallic-shimmer 4s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    letter-spacing: 4px;
+}
+
+.subtitle-y2k {
+    font-family: var(--font-y2k);
+    font-size: 14px;
+    text-align: center;
+    color: var(--kemetic-obsidian);
+    margin-top: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* HIEROGLYPH ROW */
+.hieroglyph-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    font-size: 28px;
+    color: var(--kemetic-gold);
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+}
+
+.hieroglyph-row span {
+    animation: hieroglyph-float 4s ease-in-out infinite;
+}
+
+.hieroglyph-row span:nth-child(2) { animation-delay: -0.5s; }
+.hieroglyph-row span:nth-child(3) { animation-delay: -1s; }
+.hieroglyph-row span:nth-child(4) { animation-delay: -1.5s; }
+.hieroglyph-row span:nth-child(5) { animation-delay: -2s; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NAVIGATION - Chrome Tabs
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.nav-tab {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 14px 28px;
+    background: var(--glass-cloud-bg);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 12px;
+    color: var(--kemetic-obsidian);
+    cursor: pointer;
+    transition: all 0.4s var(--ease-kemetic);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-chrome-cloud);
+}
+
+.nav-tab:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--kemetic-gold);
+    box-shadow: var(--shadow-dragon);
+}
+
+.nav-tab.active {
+    background: var(--glass-kemetic);
+    border-color: var(--kemetic-gold);
+    color: var(--kemetic-platinum);
+    animation: kemetic-glow 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATS BAR - Gem Cycle
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    background: var(--glass-kemetic);
+    border: 1px solid var(--glass-kemetic-border);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    animation: gem-cycle 6s ease-in-out infinite;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-family: var(--font-kemetic);
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: var(--sacred-metals-shimmer);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: metallic-shimmer 4s ease-in-out infinite;
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: var(--font-code);
+    font-size: 11px;
+    color: var(--crystal-chrome);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTENT SECTIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeInUp 0.5s var(--ease-chrome);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLASS CARD - Kemetic Style
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.glass-card {
+    background: var(--glass-kemetic);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-kemetic-border);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    animation: kemetic-glow 4s ease-in-out infinite;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--kemetic-gold), transparent);
+}
+
+.glass-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(212,175,55,0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.card-title {
+    font-family: var(--font-kemetic);
+    font-size: 1.5rem;
+    color: var(--kemetic-gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-title .ankh {
+    font-size: 1.8rem;
+    animation: ankh-pulse 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CHROME CLOUD CARD - Lighter Style
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.cloud-card {
+    background: var(--glass-cloud-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-chrome-cloud);
+    transition: all 0.4s var(--ease-chrome);
+}
+
+.cloud-card::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 30%;
+    height: 25%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cloud-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-dragon);
+    border-color: var(--kemetic-gold);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WIN95 BYTE WINDOW
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.byte-window {
+    background: linear-gradient(180deg, var(--pacific-sky) 0%, var(--pacific-azure) 100%);
+    border: 3px solid var(--win95-gray);
+    border-top-color: var(--win95-highlight);
+    border-left-color: var(--win95-highlight);
+    border-bottom-color: var(--win95-shadow);
+    border-right-color: var(--win95-shadow);
+    margin-bottom: 25px;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+}
+
+.byte-window-header {
+    background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.byte-window-title {
+    color: white;
+    font-family: var(--font-code);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.byte-window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.byte-window-btn {
+    width: 16px;
+    height: 14px;
+    background: var(--win95-gray);
+    border: 1px solid;
+    border-color: var(--win95-highlight) var(--win95-dark) var(--win95-dark) var(--win95-highlight);
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.byte-window-content {
+    padding: 20px;
+    color: white;
+    font-family: var(--font-code);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PARTNER GRID
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.partner-card {
+    background: var(--glass-kemetic);
+    border: 1px solid var(--glass-kemetic-border);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.4s var(--ease-kemetic);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.partner-card:hover::before {
+    left: 100%;
+}
+
+.partner-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--kemetic-gold);
+    box-shadow: var(--shadow-kemetic);
+}
+
+.partner-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--kemetic-platinum);
+    margin-bottom: 6px;
+}
+
+.partner-type {
+    font-family: var(--font-code);
+    font-size: 10px;
+    color: var(--kemetic-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.partner-email {
+    font-size: 12px;
+    color: var(--crystal-chrome);
+    word-break: break-all;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BRAND GALLERY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.brand-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.brand-item {
+    aspect-ratio: 1;
+    background: var(--glass-cloud-bg);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s var(--ease-dragon);
+    position: relative;
+}
+
+.brand-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-chrome);
+}
+
+.brand-item:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: var(--shadow-dragon);
+    border-color: var(--kemetic-gold);
+}
+
+.brand-item:hover img {
+    transform: scale(1.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FILTER BAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--glass-kemetic);
+    border: 1px solid var(--glass-kemetic-border);
+    border-radius: 12px;
+}
+
+.filter-select, .search-input {
+    font-family: var(--font-code);
+    font-size: 13px;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid var(--crystal-chrome);
+    border-radius: 8px;
+    color: var(--kemetic-obsidian);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus, .search-input:focus {
+    outline: none;
+    border-color: var(--kemetic-gold);
+    box-shadow: 0 0 15px rgba(212,175,55,0.3);
+}
+
+.search-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FLOATING ACTION BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.fab-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--kemetic-gold);
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s var(--ease-kemetic);
+}
+
+.fab-btn.primary {
+    background: var(--glass-kemetic);
+    color: var(--kemetic-gold);
+    animation: kemetic-glow 4s ease-in-out infinite;
+}
+
+.fab-btn.secondary {
+    background: var(--glass-cloud-bg);
+    color: var(--kemetic-obsidian);
+    box-shadow: var(--shadow-chrome-cloud);
+}
+
+.fab-btn:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: var(--shadow-dragon);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ethereal-footer {
+    background: var(--glass-kemetic);
+    border: 1px solid var(--glass-kemetic-border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer-brand {
+    font-family: var(--font-kemetic);
+    font-size: 1.8rem;
+    background: var(--sacred-metals-shimmer);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: metallic-shimmer 4s ease-in-out infinite;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--crystal-chrome);
+    line-height: 1.8;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.footer-link {
+    font-size: 24px;
+    transition: all 0.3s ease;
+    filter: grayscale(50%);
+}
+
+.footer-link:hover {
+    transform: scale(1.3) translateY(-3px);
+    filter: grayscale(0%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CRYSTAL DIVIDER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.crystal-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    gap: 20px;
+}
+
+.crystal-divider::before, .crystal-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--kemetic-gold), transparent);
+}
+
+.crystal-icon {
+    font-size: 36px;
+    animation: ankh-pulse 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOADING SCREEN
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, var(--sky-zenith) 0%, var(--pacific-deep) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-portal {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--portal-iris);
+    background-size: 400% 100%;
+    animation: iris-flow var(--duration-iris) linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-portal);
+}
+
+.loading-ankh {
+    font-size: 48px;
+    color: var(--kemetic-gold);
+    animation: ankh-pulse 2s ease-in-out infinite;
+}
+
+.loading-text {
+    font-family: var(--font-code);
+    font-size: 14px;
+    color: white;
+    margin-top: 25px;
+    letter-spacing: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .chrome-cloud { display: none; }
+    .kemetic-title { font-size: 1.8rem; letter-spacing: 2px; }
+    .nav-tabs { gap: 8px; }
+    .nav-tab { padding: 10px 16px; font-size: 11px; }
+    .partner-grid { grid-template-columns: 1fr; }
+    .stats-bar { gap: 20px; padding: 20px; }
+    .stat-value { font-size: 2rem; }
+    .fab-container { bottom: 20px; right: 20px; }
+    .fab-btn { width: 50px; height: 50px; font-size: 18px; }
+    .gif-showcase img { max-height: 350px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--kemetic-obsidian); }
+::-webkit-scrollbar-thumb {
+    background: var(--gold-chrome-gradient);
+    background-size: 200% 100%;
+    border-radius: 6px;
+    animation: metallic-shimmer 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media print {
+    body { background: white; }
+    .chrome-cloud, .fab-container, .loading-screen { display: none; }
+}
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-portal">
+            <span class="loading-ankh">☥</span>
+        </div>
+        <div class="loading-text">INITIALIZING AETHER v35.0...</div>
+    </div>
+
+    <!-- Chrome Clouds -->
+    <div class="chrome-cloud cloud-1"></div>
+    <div class="chrome-cloud cloud-2"></div>
+    <div class="chrome-cloud cloud-3"></div>
+    <div class="chrome-cloud cloud-4"></div>
+    <div class="chrome-cloud cloud-5"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="portal-frame">
+                <div class="gif-showcase">
+                    <img src="AlchemistInstaStory1.gif" alt="AETHER Chrome Dragon - Celestial Phygital Experience" loading="eager">
+                </div>
+            </div>
+
+            <h1 class="kemetic-title">AETHER</h1>
+            <p class="subtitle-y2k">Phygital Experience Reality</p>
+
+            <div class="hieroglyph-row">
+                <span>𓂀</span>
+                <span>𓆣</span>
+                <span>☥</span>
+                <span>𓋹</span>
+                <span>𓅃</span>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs" role="tablist">
+            <button class="nav-tab active" onclick="showSection('partners')" role="tab">☥ Partners</button>
+            <button class="nav-tab" onclick="showSection('gallery')" role="tab">◈ Gallery</button>
+            <button class="nav-tab" onclick="showSection('brands')" role="tab">✦ Assets</button>
+            <button class="nav-tab" onclick="showSection('about')" role="tab">𓂀 About</button>
+        </nav>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">165+</div>
+                <div class="stat-label">Partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Investors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">75+</div>
+                <div class="stat-label">B2B</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">40+</div>
+                <div class="stat-label">Vendors</div>
+            </div>
+        </div>
+
+        <!-- Partners Section -->
+        <section id="partners-section" class="content-section active">
+            <div class="glass-card">
+                <h2 class="card-title"><span class="ankh">☥</span> Partner Database</h2>
+
+                <div class="filter-bar">
+                    <select class="filter-select" id="typeFilter" onchange="filterPartners()">
+                        <option value="all">All Types</option>
+                        <option value="investor">Investors</option>
+                        <option value="b2b">B2B Partners</option>
+                        <option value="vendor">Vendors</option>
+                    </select>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search partners..." oninput="filterPartners()">
+                </div>
+
+                <div class="partner-grid" id="partnerGrid"></div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-section" class="content-section">
+            <div class="byte-window">
+                <div class="byte-window-header">
+                    <span class="byte-window-title">GALLERY.exe - AETHER Visual Assets</span>
+                    <div class="byte-window-controls">
+                        <button class="byte-window-btn">─</button>
+                        <button class="byte-window-btn">□</button>
+                        <button class="byte-window-btn">×</button>
+                    </div>
+                </div>
+                <div class="byte-window-content">
+                    <p>C:\AETHER\GALLERY> dir /w</p>
+                    <p style="color: #00ff00; margin-top: 8px;">✓ 8 visual assets loaded</p>
+                    <p style="color: #40E0D0;">✓ AlchemistInstaStory1.gif featured</p>
+                </div>
+            </div>
+
+            <div class="brand-gallery" id="galleryGrid"></div>
+        </section>
+
+        <!-- Brand Assets Section -->
+        <section id="brands-section" class="content-section">
+            <div class="cloud-card">
+                <h2 class="card-title" style="color: var(--kemetic-obsidian);"><span class="ankh">✦</span> Brand Assets</h2>
+                <div class="brand-gallery" id="brandGrid"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="content-section">
+            <div class="glass-card">
+                <h2 class="card-title"><span class="ankh">𓂀</span> About AETHER</h2>
+                <p style="color: var(--kemetic-platinum); line-height: 1.9; margin-bottom: 25px;">
+                    AETHER is a Phygital Experience Reality platform that transmutes the boundary between physical and digital realms.
+                    Through the sacred principles of Kemetic Alchemy and chrome-glass aesthetics, we create immersive experiences
+                    that resonate across dimensions.
+                </p>
+
+                <div class="crystal-divider">
+                    <span class="crystal-icon">⚗️</span>
+                </div>
+
+                <div class="byte-window">
+                    <div class="byte-window-header">
+                        <span class="byte-window-title">SYSTEM.exe - v35.0 CHROME DRAGON</span>
+                        <div class="byte-window-controls">
+                            <button class="byte-window-btn">─</button>
+                            <button class="byte-window-btn">□</button>
+                            <button class="byte-window-btn">×</button>
+                        </div>
+                    </div>
+                    <div class="byte-window-content">
+                        <p>AETHER PXR Platform v35.0</p>
+                        <p>Build: December 2025 | CHROME DRAGON CELESTIAL</p>
+                        <p style="margin-top: 10px;">Visual DNA Sources:</p>
+                        <p style="color: #40E0D0;">• AlchemistInstaStory1.gif - Chrome Dragon Phoenix</p>
+                        <p style="color: #9966CC;">• BYTE Magazine 1977 - Crystal Goblet Computing</p>
+                        <p style="color: #D4AF37;">• Kemetic Alchemy - Sacred Gold Mysticism</p>
+                        <p style="color: #4169E1;">• Y2K Pacific Blue - Liquid Chrome Surfaces</p>
+                        <p style="margin-top: 10px;">Status: <span style="color: #00ff00;">● OPERATIONAL</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Crystal Divider -->
+        <div class="crystal-divider">
+            <span class="crystal-icon">☥</span>
+        </div>
+
+        <!-- Footer -->
+        <footer class="ethereal-footer">
+            <div class="footer-brand">☥ ALCHEMIST ATELIER</div>
+            <p class="footer-text">
+                Transmuting Reality Through Phygital Experiences<br>
+                © 2024-2025 AETHER Phygitaverse | All Rights Reserved
+            </p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">📸</a>
+                <a href="#" class="footer-link">🐦</a>
+                <a href="#" class="footer-link">💼</a>
+                <a href="#" class="footer-link">🌐</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- FABs -->
+    <div class="fab-container">
+        <button class="fab-btn primary" onclick="scrollToTop()" title="Ascend">↑</button>
+        <button class="fab-btn secondary" onclick="location.reload()" title="Refresh">⟳</button>
+    </div>
+
+    <script>
+    // Partner Database
+    const partners = [
+        { name: "Andreessen Horowitz (a16z)", type: "investor", email: "partnerships@a16z.com" },
+        { name: "Sequoia Capital", type: "investor", email: "info@sequoiacap.com" },
+        { name: "LVMH Luxury Ventures", type: "investor", email: "ventures@lvmh.com" },
+        { name: "Kering Ventures", type: "investor", email: "ventures@kering.com" },
+        { name: "Google Ventures", type: "investor", email: "partnerships@gv.com" },
+        { name: "SoftBank Vision Fund", type: "investor", email: "info@softbank.com" },
+        { name: "Tiger Global", type: "investor", email: "info@tigerglobal.com" },
+        { name: "Founders Fund", type: "investor", email: "info@foundersfund.com" },
+        { name: "Nike Innovation", type: "b2b", email: "innovation@nike.com" },
+        { name: "Gucci Digital Lab", type: "b2b", email: "digital@gucci.com" },
+        { name: "Louis Vuitton Metaverse", type: "b2b", email: "metaverse@louisvuitton.com" },
+        { name: "Apple Retail Experience", type: "b2b", email: "retail@apple.com" },
+        { name: "Disney Imagineering", type: "b2b", email: "imagineering@disney.com" },
+        { name: "Marriott Innovation Lab", type: "b2b", email: "innovation@marriott.com" },
+        { name: "Meta Reality Labs", type: "b2b", email: "realitylabs@meta.com" },
+        { name: "Epic Games Unreal", type: "b2b", email: "partnerships@epicgames.com" },
+        { name: "teamLab", type: "b2b", email: "info@teamlab.art" },
+        { name: "Meow Wolf", type: "b2b", email: "partnerships@meowwolf.com" },
+        { name: "Samsung Display", type: "vendor", email: "display@samsung.com" },
+        { name: "Sony Professional", type: "vendor", email: "professional@sony.com" },
+        { name: "Christie Digital", type: "vendor", email: "info@christiedigital.com" },
+        { name: "Disguise (d3)", type: "vendor", email: "info@disguise.one" },
+        { name: "ROE Visual", type: "vendor", email: "info@roevisual.com" },
+        { name: "Blackmagic Design", type: "vendor", email: "info@blackmagicdesign.com" }
+    ];
+
+    // Gallery Items
+    const galleryItems = [
+        { title: "Chrome Dragon", image: "AlchemistInstaStory1.gif" },
+        { title: "Ethereal Portal", image: "AETHERKEMETICUI.jpg" },
+        { title: "BYTE Retro", image: "AETHERKEMETICUIBYTE111.jpg" },
+        { title: "Bliss Pacific", image: "BLISSETHEREAL.jpg" },
+        { title: "Orbital Chrome", image: "UIORBETHEREAL.jpg" },
+        { title: "Sacred Lamp", image: "AETHERKEMETICUI333.jpg" },
+        { title: "Rainbow Explorer", image: "AETHERKEMETICUIEINTER.jpg" },
+        { title: "Wavy", image: "AETHERKEMETICUIWAYVY.jpg" }
+    ];
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        renderPartners(partners);
+        renderGallery();
+        renderBrands();
+        setTimeout(() => document.getElementById('loadingScreen').classList.add('hidden'), 1800);
+    });
+
+    function renderPartners(data) {
+        const grid = document.getElementById('partnerGrid');
+        grid.innerHTML = data.map(p => `
+            <div class="partner-card" data-type="${p.type}">
+                <div class="partner-name">${p.name}</div>
+                <div class="partner-type">${p.type}</div>
+                <div class="partner-email">${p.email}</div>
+            </div>
+        `).join('');
+    }
+
+    function filterPartners() {
+        const type = document.getElementById('typeFilter').value;
+        const search = document.getElementById('searchInput').value.toLowerCase();
+        const filtered = partners.filter(p =>
+            (type === 'all' || p.type === type) &&
+            (p.name.toLowerCase().includes(search) || p.email.toLowerCase().includes(search))
+        );
+        renderPartners(filtered);
+    }
+
+    function renderGallery() {
+        document.getElementById('galleryGrid').innerHTML = galleryItems.map(item => `
+            <div class="brand-item" onclick="window.open('${item.image}', '_blank')">
+                <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            </div>
+        `).join('');
+    }
+
+    function renderBrands() {
+        document.getElementById('brandGrid').innerHTML = galleryItems.map(item => `
+            <div class="brand-item" onclick="window.open('${item.image}', '_blank')">
+                <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            </div>
+        `).join('');
+    }
+
+    function showSection(section) {
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById(section + '-section').classList.add('active');
+        event.target.classList.add('active');
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>
