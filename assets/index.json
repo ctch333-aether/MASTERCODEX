@@ -1,0 +1,43 @@
+{
+  "generated": "2025-12-28T00:00:00Z",
+  "name": "AETHER Consolidated Assets",
+  "structure": {
+    "brand-ui": {
+      "description": "Core AETHER brand UI mockups and designs",
+      "files": ["AETHERUI.jpg", "AETHERKEMETICUI.jpg", "AETHERKEMETICUI333.jpg", "AETHERKEMETICUIBYTE111.jpg", "AETHERKEMETICUIEINTER.jpg", "AETHERKEMETICUIWAYVY.jpg"],
+      "count": 6
+    },
+    "ethereal": {
+      "description": "Ethereal and orb-themed design elements",
+      "files": ["BLISSETHEREAL.jpg", "UIORBETHEREAL.jpg"],
+      "count": 2
+    },
+    "animations": {
+      "description": "GIF and animated assets for social media",
+      "files": ["AlchemistInstaStory1.gif"],
+      "count": 1
+    },
+    "photography": {
+      "description": "JPEG/WEBP photographs and imagery",
+      "files": ["IMG_5397.JPEG", "IMG_5776.JPEG", "IMG_5888.JPEG", "IMG_5894.JPEG", "IMG_7076 (1).JPEG", "IMG_7178.JPEG", "IMG_7187 (1).JPEG", "IMG_7188.JPEG", "production-photo-3184.webp"],
+      "count": 9
+    },
+    "ios-originals": {
+      "description": "Original HEIC files from iOS devices",
+      "files": ["IMG_3027.HEIC", "IMG_3040.HEIC", "IMG_3835.HEIC", "IMG_4243.HEIC", "IMG_5793.HEIC", "IMG_6026.HEIC"],
+      "count": 6
+    },
+    "screenshots": {
+      "description": "PNG screenshots and high-res mockups",
+      "files": ["IMG_3457.PNG", "IMG_6085.PNG"],
+      "count": 2
+    },
+    "svg-components": {
+      "description": "SVG web UI components and vectors",
+      "files": ["WebAssetPortsoftwarepopup6.svg", "WebAssetPortsoftwarepopup7.svg", "WebAssetPortsoftwarepopup8.svg", "WebAssetPortsoftwarepopup9.svg"],
+      "count": 4
+    }
+  },
+  "totalAssets": 30,
+  "usage": "Import this index to navigate the organized asset structure. Reference brand-assets.json in the parent directory for complete manifest with colors and metadata."
+}
