@@ -1,0 +1,380 @@
+{
+  "name": "AETHER Brand Assets",
+  "version": "1.0.0",
+  "description": "Consolidated brand assets manifest for MASTERCODEX - AETHER Kemetic UI Design System",
+  "lastUpdated": "2025-12-28",
+  "repository": "https://github.com/ctch333-aether/MASTERCODEX",
+
+  "brandIdentity": {
+    "name": "AETHER",
+    "tagline": "Kemetic Alchemy UI",
+    "themes": ["Ethereal Chrome", "Alchemist", "SkyMatrix", "Iridescent Glass"]
+  },
+
+  "colorPalette": {
+    "primary": {
+      "aetherBlue": "#667eea",
+      "aetherDark": "#102b8e",
+      "aetherGradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },
+    "accent": {
+      "teal": "#008080",
+      "secondaryBlue": "#4a90e2",
+      "neutralGray": "#5a6c7d",
+      "darkText": "#2c3e50"
+    },
+    "status": {
+      "success": "#00ff00",
+      "successAlt": "#33ff33",
+      "error": "#ff0000",
+      "warning": "#ffff00",
+      "info": "#00ffff"
+    },
+    "ui": {
+      "background": "#c0c0c0",
+      "white": "#ffffff",
+      "black": "#000000",
+      "linkedIn": "#0077b5"
+    }
+  },
+
+  "assets": {
+    "brandUI": [
+      {
+        "id": "aether-ui-core",
+        "file": "AETHERUI.jpg",
+        "path": "/AETHERUI.jpg",
+        "type": "image/jpeg",
+        "size": "42KB",
+        "purpose": "Core UI element",
+        "category": "brand-ui"
+      },
+      {
+        "id": "aether-kemetic-ui",
+        "file": "AETHERKEMETICUI.jpg",
+        "path": "/AETHERKEMETICUI.jpg",
+        "type": "image/jpeg",
+        "size": "139KB",
+        "purpose": "Brand UI mockup",
+        "category": "brand-ui"
+      },
+      {
+        "id": "aether-kemetic-ui-333",
+        "file": "AETHERKEMETICUI333.jpg",
+        "path": "/AETHERKEMETICUI333.jpg",
+        "type": "image/jpeg",
+        "size": "130KB",
+        "purpose": "Alternative UI variant",
+        "category": "brand-ui"
+      },
+      {
+        "id": "aether-kemetic-ui-byte",
+        "file": "AETHERKEMETICUIBYTE111.jpg",
+        "path": "/AETHERKEMETICUIBYTE111.jpg",
+        "type": "image/jpeg",
+        "size": "225KB",
+        "purpose": "Tech-focused UI design",
+        "category": "brand-ui"
+      },
+      {
+        "id": "aether-kemetic-ui-enter",
+        "file": "AETHERKEMETICUIEINTER.jpg",
+        "path": "/AETHERKEMETICUIEINTER.jpg",
+        "type": "image/jpeg",
+        "size": "354KB",
+        "purpose": "Enhanced UI variant",
+        "category": "brand-ui"
+      },
+      {
+        "id": "aether-kemetic-ui-wavy",
+        "file": "AETHERKEMETICUIWAYVY.jpg",
+        "path": "/AETHERKEMETICUIWAYVY.jpg",
+        "type": "image/jpeg",
+        "size": "273KB",
+        "purpose": "Wavy design variant",
+        "category": "brand-ui"
+      }
+    ],
+
+    "ethereal": [
+      {
+        "id": "bliss-ethereal",
+        "file": "BLISSETHEREAL.jpg",
+        "path": "/BLISSETHEREAL.jpg",
+        "type": "image/jpeg",
+        "size": "101KB",
+        "purpose": "Ethereal branding",
+        "category": "ethereal"
+      },
+      {
+        "id": "ui-orb-ethereal",
+        "file": "UIORBETHEREAL.jpg",
+        "path": "/UIORBETHEREAL.jpg",
+        "type": "image/jpeg",
+        "size": "22KB",
+        "purpose": "Orb design element",
+        "category": "ethereal"
+      }
+    ],
+
+    "animations": [
+      {
+        "id": "alchemist-story",
+        "file": "AlchemistInstaStory1.gif",
+        "path": "/AlchemistInstaStory1.gif",
+        "type": "image/gif",
+        "size": "10.8MB",
+        "purpose": "Animated social media asset",
+        "category": "animation"
+      }
+    ],
+
+    "photography": [
+      {
+        "id": "photo-5397",
+        "file": "IMG_5397.JPEG",
+        "path": "/IMG_5397.JPEG",
+        "type": "image/jpeg",
+        "size": "384KB",
+        "category": "photography"
+      },
+      {
+        "id": "photo-5776",
+        "file": "IMG_5776.JPEG",
+        "path": "/IMG_5776.JPEG",
+        "type": "image/jpeg",
+        "size": "152KB",
+        "category": "photography"
+      },
+      {
+        "id": "photo-5888",
+        "file": "IMG_5888.JPEG",
+        "path": "/IMG_5888.JPEG",
+        "type": "image/jpeg",
+        "size": "2.1MB",
+        "category": "photography"
+      },
+      {
+        "id": "photo-5894",
+        "file": "IMG_5894.JPEG",
+        "path": "/IMG_5894.JPEG",
+        "type": "image/jpeg",
+        "size": "2.2MB",
+        "category": "photography"
+      },
+      {
+        "id": "photo-7076",
+        "file": "IMG_7076 (1).JPEG",
+        "path": "/IMG_7076 (1).JPEG",
+        "type": "image/jpeg",
+        "size": "3.2MB",
+        "category": "photography"
+      },
+      {
+        "id": "photo-7178",
+        "file": "IMG_7178.JPEG",
+        "path": "/IMG_7178.JPEG",
+        "type": "image/jpeg",
+        "size": "1.1MB",
+        "category": "photography"
+      },
+      {
+        "id": "photo-7187",
+        "file": "IMG_7187 (1).JPEG",
+        "path": "/IMG_7187 (1).JPEG",
+        "type": "image/jpeg",
+        "size": "972KB",
+        "category": "photography",
+        "note": "Duplicate IMG_7187 (2).JPEG removed"
+      },
+      {
+        "id": "photo-7188",
+        "file": "IMG_7188.JPEG",
+        "path": "/IMG_7188.JPEG",
+        "type": "image/jpeg",
+        "size": "405KB",
+        "category": "photography"
+      },
+      {
+        "id": "production-photo",
+        "file": "production-photo-3184.webp",
+        "path": "/production-photo-3184.webp",
+        "type": "image/webp",
+        "size": "92KB",
+        "category": "photography"
+      }
+    ],
+
+    "iosPhotos": [
+      {
+        "id": "heic-3027",
+        "file": "IMG_3027.HEIC",
+        "path": "/IMG_3027.HEIC",
+        "type": "image/heic",
+        "size": "2.5MB",
+        "category": "ios-original"
+      },
+      {
+        "id": "heic-3040",
+        "file": "IMG_3040.HEIC",
+        "path": "/IMG_3040.HEIC",
+        "type": "image/heic",
+        "size": "2.3MB",
+        "category": "ios-original"
+      },
+      {
+        "id": "heic-3835",
+        "file": "IMG_3835.HEIC",
+        "path": "/IMG_3835.HEIC",
+        "type": "image/heic",
+        "size": "2.3MB",
+        "category": "ios-original"
+      },
+      {
+        "id": "heic-4243",
+        "file": "IMG_4243.HEIC",
+        "path": "/IMG_4243.HEIC",
+        "type": "image/heic",
+        "size": "1.7MB",
+        "category": "ios-original"
+      },
+      {
+        "id": "heic-5793",
+        "file": "IMG_5793.HEIC",
+        "path": "/IMG_5793.HEIC",
+        "type": "image/heic",
+        "size": "806KB",
+        "category": "ios-original"
+      },
+      {
+        "id": "heic-6026",
+        "file": "IMG_6026.HEIC",
+        "path": "/IMG_6026.HEIC",
+        "type": "image/heic",
+        "size": "1.5MB",
+        "category": "ios-original"
+      }
+    ],
+
+    "screenshots": [
+      {
+        "id": "screenshot-3457",
+        "file": "IMG_3457.PNG",
+        "path": "/IMG_3457.PNG",
+        "type": "image/png",
+        "size": "4.3MB",
+        "category": "screenshot"
+      },
+      {
+        "id": "screenshot-6085",
+        "file": "IMG_6085.PNG",
+        "path": "/IMG_6085.PNG",
+        "type": "image/png",
+        "size": "4.5MB",
+        "category": "screenshot"
+      }
+    ],
+
+    "webComponents": [
+      {
+        "id": "web-popup-6",
+        "file": "WebAssetPortsoftwarepopup6.svg",
+        "path": "/WebAssetPortsoftwarepopup6.svg",
+        "type": "image/svg+xml",
+        "size": "4.4MB",
+        "purpose": "Complex web UI component",
+        "category": "svg"
+      },
+      {
+        "id": "web-popup-7",
+        "file": "WebAssetPortsoftwarepopup7.svg",
+        "path": "/WebAssetPortsoftwarepopup7.svg",
+        "type": "image/svg+xml",
+        "size": "4.2MB",
+        "purpose": "Complex web UI component",
+        "category": "svg"
+      },
+      {
+        "id": "web-popup-8",
+        "file": "WebAssetPortsoftwarepopup8.svg",
+        "path": "/WebAssetPortsoftwarepopup8.svg",
+        "type": "image/svg+xml",
+        "size": "6.4MB",
+        "purpose": "Complex web UI component",
+        "category": "svg"
+      },
+      {
+        "id": "web-popup-9",
+        "file": "WebAssetPortsoftwarepopup9.svg",
+        "path": "/WebAssetPortsoftwarepopup9.svg",
+        "type": "image/svg+xml",
+        "size": "5.1MB",
+        "purpose": "Complex web UI component",
+        "category": "svg"
+      }
+    ]
+  },
+
+  "archives": [
+    {
+      "id": "brand-portfolio",
+      "file": "AETHERPXRBRANDUIWORKPORTFOLIO122825.zip",
+      "size": "23MB",
+      "contents": ["AETHER_Brand_Assets_V4_Git_Ready.zip", "AETHER_Assets_Preview.html", "aether-manifest.json", "aether-types.ts"]
+    },
+    {
+      "id": "design-system",
+      "file": "DESIGNUIAETHERPXREVOVLE.zip",
+      "size": "11MB",
+      "contents": ["aether-kemetic-alchemy-v5.zip", "aether-kemetic-alchemy-ui.html", "aether-kemetic-tokens.css", "SKILL.md", "README.md"]
+    },
+    {
+      "id": "design-test",
+      "file": "DESIGNPXRTEST.zip",
+      "size": "25KB",
+      "contents": ["aether-design-matrix-v8.html", "aether-design-matrix-ultimate.html"]
+    }
+  ],
+
+  "htmlVersions": {
+    "latest": "MASTERSITEAETHERPXRKEMETIC333_v36_BRAND_FIXED.html",
+    "versions": [
+      {"version": "v36", "file": "MASTERSITEAETHERPXRKEMETIC333_v36_BRAND_FIXED.html", "theme": "Iridescent Glass Chrome"},
+      {"version": "v35", "file": "SITEAETHERKEMETIC_v35_ALCHEMIST_ETHEREAL.html", "theme": "Alchemist Ethereal"},
+      {"version": "v34", "file": "SITEAETHERKEMETIC_v34_ETHEREAL_CHROME.html", "theme": "Ethereal Chrome"},
+      {"version": "v32", "file": "SITEAETHERKEMETIC_v32_SKYMATRIX.html", "theme": "SkyMatrix"},
+      {"version": "v31", "file": "SITEAETHERKEMETIC_v31_PRODUCTION.html", "theme": "Production"},
+      {"version": "v27", "file": "SITEAETHERKEMETIC_v27_MASTER.html", "theme": "Master"},
+      {"version": "v25", "file": "SITEAETHERKEMETIC_v25_ENHANCED (2).html", "theme": "Enhanced"}
+    ]
+  },
+
+  "duplicatesRemoved": [
+    {
+      "kept": "IMG_7187 (1).JPEG",
+      "removed": "IMG_7187 (2).JPEG",
+      "reason": "Identical MD5 hash: 14acd3545f4b2d67d947a6517a7ed4c3"
+    }
+  ],
+
+  "statistics": {
+    "totalAssets": 31,
+    "totalSize": "263MB",
+    "byType": {
+      "jpg": {"count": 9, "size": "1.2MB"},
+      "jpeg": {"count": 9, "size": "11.7MB"},
+      "png": {"count": 2, "size": "8.9MB"},
+      "gif": {"count": 1, "size": "10.8MB"},
+      "svg": {"count": 4, "size": "20.2MB"},
+      "heic": {"count": 6, "size": "14.8MB"},
+      "webp": {"count": 1, "size": "92KB"}
+    }
+  },
+
+  "claudeIntegration": {
+    "quickAccess": "Use brand-assets.json to query any asset by ID or category",
+    "colorUsage": "Reference colorPalette object for consistent brand colors",
+    "assetLookup": "Query assets.{category} for specific asset types",
+    "latestVersion": "htmlVersions.latest for current production file"
+  }
+}
