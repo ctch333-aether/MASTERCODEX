@@ -35,6 +35,30 @@
       "white": "#ffffff",
       "black": "#000000",
       "linkedIn": "#0077b5"
+    },
+    "alchemistGemstone": {
+      "iceBluePlatinum": "#C8E0F0",
+      "icePinkish": "#E6D6E8",
+      "sapphirePull": "#0F52BA",
+      "diamondPure": "#F0F8FF",
+      "rubyBlood": "#CC0033",
+      "rubyHeart": "#E0115F",
+      "emeraldMuzo": "#287B5A",
+      "emeraldBlueFire": "#2A9D8F",
+      "aquamarineSea": "#7FFFD4",
+      "aquamarineDeep": "#48D1CC",
+      "painiteRare": "#722F37",
+      "lapisRoyal": "#1E3A6E",
+      "lapisUltramarine": "#26619C",
+      "alexandriteGreen": "#357A50",
+      "alexandritePurple": "#8B4C9B",
+      "pearlOrient": "#FAF8F5",
+      "pearlPurple": "#E8D8F0",
+      "pearlBlue": "#D8E8F8",
+      "pearlGolden": "#F8F0D8",
+      "bismuthGold": "#D4AF37",
+      "bismuthCopper": "#B87333",
+      "bismuthPlatinum": "#E5E4E2"
     }
   },
 
@@ -337,8 +361,9 @@
   ],
 
   "htmlVersions": {
-    "latest": "MASTERSITEAETHERPXRKEMETIC333_v36_BRAND_FIXED.html",
+    "latest": "MASTERSITEAETHERPXRKEMETIC333_v37_ALCHEMIST_GEMSTONE.html",
     "versions": [
+      {"version": "v37", "file": "MASTERSITEAETHERPXRKEMETIC333_v37_ALCHEMIST_GEMSTONE.html", "theme": "Alchemist Gemstone Chrome"},
       {"version": "v36", "file": "MASTERSITEAETHERPXRKEMETIC333_v36_BRAND_FIXED.html", "theme": "Iridescent Glass Chrome"},
       {"version": "v35", "file": "SITEAETHERKEMETIC_v35_ALCHEMIST_ETHEREAL.html", "theme": "Alchemist Ethereal"},
       {"version": "v34", "file": "SITEAETHERKEMETIC_v34_ETHEREAL_CHROME.html", "theme": "Ethereal Chrome"},
