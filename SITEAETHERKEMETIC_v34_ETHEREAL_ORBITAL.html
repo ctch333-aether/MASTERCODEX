@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com data:; img-src 'self' data: https:;">
+    <meta property="og:title" content="ALCHEMIST ATELIER | AETHER PXR Platform v34.0 ETHEREAL ORBITAL">
+    <meta property="og:description" content="Transmuting Reality Through Phygital Experiences. Ethereal Chrome Orbital Design.">
+    <meta name="theme-color" content="#4A90E2">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☥</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <title>ALCHEMIST ATELIER | AETHER PXR Platform | v34.0 ETHEREAL ORBITAL CHROME EDITION | December 2025</title>
+    <style>
+/* ========================================
+   AETHER v34.0 ETHEREAL ORBITAL CHROME
+   Inspired by: Chrome Orbs, Water Bliss,
+   BYTE Magazine, Sacred Mysticism
+   ======================================== */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ETHEREAL BLUE PALETTE - From BLISSETHEREAL */
+    --ethereal-blue-deep: #0A4D8C;
+    --ethereal-blue: #1E90FF;
+    --ethereal-blue-light: #87CEEB;
+    --ethereal-blue-sky: #B8E0F7;
+    --ethereal-blue-mist: rgba(135, 206, 235, 0.3);
+
+    /* CHROME METALLIC - From UIORBETHEREAL */
+    --chrome-silver: #C0C0C0;
+    --chrome-shine: #E8E8E8;
+    --chrome-highlight: #FFFFFF;
+    --chrome-shadow: #808080;
+    --chrome-gradient: linear-gradient(135deg, #E8E8E8 0%, #A8A8A8 25%, #E8E8E8 50%, #A8A8A8 75%, #E8E8E8 100%);
+
+    /* SACRED GOLD - From AETHERKEMETICUI */
+    --sacred-gold: #D4AF37;
+    --sacred-gold-bright: #FFD700;
+    --sacred-gold-deep: #B8860B;
+    --gold-gradient: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+
+    /* WATER EFFECTS - From BLISSETHEREAL */
+    --water-surface: rgba(30, 144, 255, 0.4);
+    --water-droplet: rgba(255, 255, 255, 0.8);
+    --water-ripple: rgba(135, 206, 235, 0.6);
+
+    /* RETRO BYTE - From BYTE Magazine */
+    --byte-blue: #5B8DBE;
+    --byte-text: #FFFFFF;
+    --win95-gray: #C0C0C0;
+    --win95-dark: #808080;
+
+    /* TYPOGRAPHY */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ETHEREAL SKY BACKGROUND */
+body {
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    background: linear-gradient(180deg,
+        #B8E0F7 0%,
+        #87CEEB 15%,
+        #5B9BD5 35%,
+        #4A90E2 55%,
+        #1E90FF 75%,
+        #0A4D8C 100%
+    );
+    background-attachment: fixed;
+    color: #1a1a2e;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* WATER RIPPLE OVERLAY */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 800px 200px at 50% 100%, rgba(255,255,255,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 150px at 30% 90%, rgba(255,255,255,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 100px at 70% 95%, rgba(255,255,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    animation: waterRipple 8s ease-in-out infinite;
+}
+
+@keyframes waterRipple {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* FLOATING WATER DROPLETS */
+.water-droplet {
+    position: fixed;
+    width: 12px;
+    height: 18px;
+    background: radial-gradient(ellipse at 30% 20%,
+        rgba(255,255,255,0.95) 0%,
+        rgba(135,206,235,0.7) 40%,
+        rgba(30,144,255,0.5) 100%
+    );
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    animation: dropletFloat 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.water-droplet:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.water-droplet:nth-child(2) { top: 20%; right: 8%; animation-delay: -1s; width: 8px; height: 12px; }
+.water-droplet:nth-child(3) { top: 40%; left: 3%; animation-delay: -2s; }
+.water-droplet:nth-child(4) { top: 60%; right: 4%; animation-delay: -3s; width: 10px; height: 15px; }
+.water-droplet:nth-child(5) { top: 75%; left: 7%; animation-delay: -4s; width: 6px; height: 9px; }
+.water-droplet:nth-child(6) { top: 85%; right: 6%; animation-delay: -5s; }
+
+@keyframes dropletFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    25% { transform: translateY(-15px) rotate(5deg); opacity: 1; }
+    75% { transform: translateY(-8px) rotate(-3deg); opacity: 0.9; }
+}
+
+/* CHROME ORBITAL ORB - Main Decorative Element */
+.chrome-orbital-orb {
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.chrome-orbital-orb.top-right {
+    top: 8%;
+    right: 5%;
+    animation: orbFloat 12s ease-in-out infinite;
+}
+
+.chrome-orbital-orb.bottom-left {
+    bottom: 15%;
+    left: 3%;
+    width: 120px;
+    height: 120px;
+    animation: orbFloat 15s ease-in-out infinite reverse;
+}
+
+/* Chrome Orb Core - Blue Swirling Center */
+.orb-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at 30% 30%,
+        #E0F4FF 0%,
+        #87CEEB 20%,
+        #4A90E2 45%,
+        #1E3A5F 80%,
+        #0A2540 100%
+    );
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 30px rgba(255,255,255,0.5),
+        inset 0 0 60px rgba(30,144,255,0.3),
+        0 0 40px rgba(30,144,255,0.4);
+    animation: coreSwirl 8s linear infinite;
+}
+
+@keyframes coreSwirl {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Chrome Orbital Rings */
+.orbital-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E8E8E8, #A0A0A0, #E8E8E8) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.orbital-ring.ring-1 {
+    width: 130%;
+    height: 80%;
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(30deg);
+    animation: ringOrbit1 10s linear infinite;
+}
+
+.orbital-ring.ring-2 {
+    width: 140%;
+    height: 70%;
+    transform: translate(-50%, -50%) rotateX(75deg) rotateZ(-45deg);
+    animation: ringOrbit2 12s linear infinite reverse;
+    border-color: var(--sacred-gold);
+    background: var(--gold-gradient) border-box;
+}
+
+.orbital-ring.ring-3 {
+    width: 120%;
+    height: 90%;
+    transform: translate(-50%, -50%) rotateX(65deg) rotateZ(60deg);
+    animation: ringOrbit3 14s linear infinite;
+}
+
+@keyframes ringOrbit1 { 0% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(30deg); } 100% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(390deg); } }
+@keyframes ringOrbit2 { 0% { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(-45deg); } 100% { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(-405deg); } }
+@keyframes ringOrbit3 { 0% { transform: translate(-50%, -50%) rotateX(65deg) rotateZ(60deg); } 100% { transform: translate(-50%, -50%) rotateX(65deg) rotateZ(420deg); } }
+
+@keyframes orbFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* LIQUID GLASS HEADER - BYTE Magazine Inspired */
+.liquid-header {
+    background: linear-gradient(180deg,
+        rgba(255,255,255,0.25) 0%,
+        rgba(255,255,255,0.15) 50%,
+        rgba(135,206,235,0.2) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.liquid-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* LIQUID 3D TEXT - From BLISSETHEREAL */
+.liquid-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(180deg,
+        #FFFFFF 0%,
+        #E0F4FF 30%,
+        #87CEEB 60%,
+        #4A90E2 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 8px rgba(0,77,140,0.3));
+    position: relative;
+    letter-spacing: -1px;
+}
+
+.liquid-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg,
+        rgba(255,255,255,0.6) 0%,
+        transparent 50%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: -1;
+}
+
+.subtitle {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    text-align: center;
+    color: rgba(255,255,255,0.9);
+    margin-top: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* SACRED HIEROGLYPH DECORATIONS */
+.hieroglyph-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+    font-size: 24px;
+    color: var(--sacred-gold);
+    text-shadow: 0 0 20px rgba(212,175,55,0.5);
+    animation: hieroglyphGlow 3s ease-in-out infinite;
+}
+
+@keyframes hieroglyphGlow {
+    0%, 100% { opacity: 0.8; filter: brightness(1); }
+    50% { opacity: 1; filter: brightness(1.3); }
+}
+
+/* NAVIGATION TABS - Chrome Style */
+.nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.nav-tab {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 24px;
+    background: var(--chrome-gradient);
+    background-size: 200% 200%;
+    border: 2px solid var(--chrome-shine);
+    border-radius: 8px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        2px 2px 4px rgba(0,0,0,0.2),
+        inset 1px 1px 0 rgba(255,255,255,0.8),
+        inset -1px -1px 0 rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-tab:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        4px 4px 8px rgba(0,0,0,0.25),
+        inset 1px 1px 0 rgba(255,255,255,0.9),
+        inset -1px -1px 0 rgba(0,0,0,0.1);
+    background-position: 100% 100%;
+}
+
+.nav-tab.active {
+    background: var(--gold-gradient);
+    border-color: var(--sacred-gold-bright);
+    color: #1a1a2e;
+    box-shadow:
+        0 0 15px rgba(212,175,55,0.4),
+        inset 1px 1px 0 rgba(255,255,255,0.5);
+}
+
+/* CONTENT SECTIONS */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ETHEREAL GLASS CARD */
+.ethereal-card {
+    background: linear-gradient(135deg,
+        rgba(255,255,255,0.3) 0%,
+        rgba(255,255,255,0.15) 50%,
+        rgba(135,206,235,0.2) 100%
+    );
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.5);
+    transition: all 0.4s ease;
+}
+
+.ethereal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.ethereal-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.6),
+        0 0 30px rgba(135,206,235,0.2);
+}
+
+/* RETRO BYTE WINDOW STYLE */
+.byte-window {
+    background: linear-gradient(180deg, var(--byte-blue) 0%, #4A7BAA 100%);
+    border: 3px solid var(--win95-gray);
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-bottom-color: var(--win95-dark);
+    border-right-color: var(--win95-dark);
+    border-radius: 0;
+    margin-bottom: 25px;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+}
+
+.byte-window-header {
+    background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.byte-window-title {
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.byte-window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.byte-window-btn {
+    width: 16px;
+    height: 14px;
+    background: var(--win95-gray);
+    border: 1px solid;
+    border-color: #fff #808080 #808080 #fff;
+    font-size: 10px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.byte-window-content {
+    padding: 20px;
+    color: white;
+    font-family: var(--font-mono);
+}
+
+/* CRYSTAL CHALICE SECTION DIVIDER */
+.crystal-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    gap: 20px;
+}
+
+.crystal-divider::before,
+.crystal-divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255,255,255,0.5) 50%,
+        transparent 100%
+    );
+}
+
+.crystal-icon {
+    font-size: 32px;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 0 0 20px rgba(135,206,235,0.8);
+    animation: crystalPulse 3s ease-in-out infinite;
+}
+
+@keyframes crystalPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* PARTNER GRID */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.partner-card {
+    background: linear-gradient(135deg,
+        rgba(255,255,255,0.25) 0%,
+        rgba(255,255,255,0.1) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.partner-card:hover::after {
+    left: 100%;
+}
+
+.partner-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-color: var(--sacred-gold);
+}
+
+.partner-name {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.partner-type {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--sacred-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.partner-email {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    word-break: break-all;
+}
+
+/* STATS BAR */
+.stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 25px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* BRAND GALLERY */
+.brand-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.brand-item {
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.brand-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.brand-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-color: var(--sacred-gold);
+}
+
+.brand-item:hover img {
+    transform: scale(1.1);
+}
+
+/* FILTER CONTROLS */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 12px;
+}
+
+.filter-select {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid var(--chrome-silver);
+    border-radius: 6px;
+    color: #333;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--sacred-gold);
+    box-shadow: 0 0 10px rgba(212,175,55,0.3);
+}
+
+.search-input {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid var(--chrome-silver);
+    border-radius: 6px;
+    color: #333;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--ethereal-blue);
+    box-shadow: 0 0 10px rgba(30,144,255,0.3);
+}
+
+/* FLOATING ACTION BUTTONS */
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.fab-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.fab-btn.primary {
+    background: var(--gold-gradient);
+    color: #1a1a2e;
+}
+
+.fab-btn.secondary {
+    background: var(--chrome-gradient);
+    color: #333;
+}
+
+.fab-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+.ethereal-footer {
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-brand {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--sacred-gold);
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.footer-link {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--sacred-gold);
+    transform: scale(1.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .chrome-orbital-orb { display: none; }
+    .liquid-title { font-size: 2rem; }
+    .nav-tabs { gap: 8px; }
+    .nav-tab { padding: 10px 16px; font-size: 11px; }
+    .partner-grid { grid-template-columns: 1fr; }
+    .stats-bar { gap: 20px; }
+    .stat-value { font-size: 2rem; }
+    .fab-container { bottom: 20px; right: 20px; }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--chrome-gradient);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-gradient);
+}
+
+/* LOADING ANIMATION */
+.loading-orb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #B8E0F7 0%, #0A4D8C 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-orb.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-orb-inner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.loading-orb-inner .orb-core {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+}
+
+.loading-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Print styles */
+@media print {
+    body { background: white; }
+    .chrome-orbital-orb, .water-droplet, .fab-container { display: none; }
+    .ethereal-card, .partner-card {
+        background: #f5f5f5;
+        border: 1px solid #ccc;
+        color: #333;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-orb" id="loadingScreen">
+        <div class="loading-orb-inner">
+            <div class="orb-core"></div>
+            <div class="orbital-ring ring-1"></div>
+            <div class="orbital-ring ring-2"></div>
+            <div class="loading-text">INITIALIZING AETHER v34.0...</div>
+        </div>
+    </div>
+
+    <!-- Water Droplets -->
+    <div class="water-droplet"></div>
+    <div class="water-droplet"></div>
+    <div class="water-droplet"></div>
+    <div class="water-droplet"></div>
+    <div class="water-droplet"></div>
+    <div class="water-droplet"></div>
+
+    <!-- Chrome Orbital Orbs -->
+    <div class="chrome-orbital-orb top-right">
+        <div class="orb-core"></div>
+        <div class="orbital-ring ring-1"></div>
+        <div class="orbital-ring ring-2"></div>
+        <div class="orbital-ring ring-3"></div>
+    </div>
+
+    <div class="chrome-orbital-orb bottom-left">
+        <div class="orb-core"></div>
+        <div class="orbital-ring ring-1"></div>
+        <div class="orbital-ring ring-2"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="liquid-header">
+            <div class="hieroglyph-row">
+                <span>𓂀</span>
+                <span>𓆣</span>
+                <span>☥</span>
+                <span>𓋹</span>
+                <span>𓅃</span>
+            </div>
+            <h1 class="liquid-title" data-text="AETHER">AETHER</h1>
+            <p class="subtitle">Phygital Experience Reality Platform</p>
+            <div class="hieroglyph-row">
+                <span>◈</span>
+                <span>ALCHEMIST ATELIER</span>
+                <span>◈</span>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs" role="tablist">
+            <button class="nav-tab active" onclick="showSection('partners')" role="tab" aria-selected="true">
+                ☥ Partner Database
+            </button>
+            <button class="nav-tab" onclick="showSection('gallery')" role="tab">
+                ◈ Portfolio Gallery
+            </button>
+            <button class="nav-tab" onclick="showSection('brands')" role="tab">
+                ✦ Brand Assets
+            </button>
+            <button class="nav-tab" onclick="showSection('about')" role="tab">
+                𓂀 About AETHER
+            </button>
+        </nav>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value" id="totalPartners">165+</div>
+                <div class="stat-label">Partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Investors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">75+</div>
+                <div class="stat-label">B2B Partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">40+</div>
+                <div class="stat-label">Vendors</div>
+            </div>
+        </div>
+
+        <!-- Partners Section -->
+        <section id="partners-section" class="content-section active">
+            <div class="ethereal-card">
+                <h2 style="color: white; font-family: var(--font-display); margin-bottom: 20px; font-size: 1.5rem;">
+                    ☥ Partner & Investor Database
+                </h2>
+
+                <div class="filter-bar">
+                    <select class="filter-select" id="typeFilter" onchange="filterPartners()">
+                        <option value="all">All Types</option>
+                        <option value="investor">Investors</option>
+                        <option value="b2b">B2B Partners</option>
+                        <option value="vendor">Vendors</option>
+                    </select>
+                    <select class="filter-select" id="industryFilter" onchange="filterPartners()">
+                        <option value="all">All Industries</option>
+                        <option value="tech">Technology</option>
+                        <option value="fashion">Fashion & Luxury</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="creative">Creative Studios</option>
+                    </select>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search partners..." oninput="filterPartners()">
+                </div>
+
+                <div class="partner-grid" id="partnerGrid">
+                    <!-- Partners will be dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-section" class="content-section">
+            <div class="byte-window">
+                <div class="byte-window-header">
+                    <span class="byte-window-title">PORTFOLIO_GALLERY.exe - AETHER Visual Showcase</span>
+                    <div class="byte-window-controls">
+                        <button class="byte-window-btn">─</button>
+                        <button class="byte-window-btn">□</button>
+                        <button class="byte-window-btn">×</button>
+                    </div>
+                </div>
+                <div class="byte-window-content">
+                    <p style="margin-bottom: 15px;">C:\AETHER\GALLERY> loading visual assets...</p>
+                    <p style="color: #00ff00;">✓ 25+ portfolio items loaded successfully</p>
+                </div>
+            </div>
+
+            <div class="brand-gallery" id="galleryGrid">
+                <!-- Gallery items will be dynamically loaded -->
+            </div>
+        </section>
+
+        <!-- Brand Assets Section -->
+        <section id="brands-section" class="content-section">
+            <div class="ethereal-card">
+                <h2 style="color: white; font-family: var(--font-display); margin-bottom: 20px; font-size: 1.5rem;">
+                    ✦ Brand Assets & Design System
+                </h2>
+                <div class="brand-gallery" id="brandGrid">
+                    <!-- Brand assets will be dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="content-section">
+            <div class="ethereal-card">
+                <h2 style="color: white; font-family: var(--font-display); margin-bottom: 20px; font-size: 1.5rem;">
+                    𓂀 About AETHER PXR
+                </h2>
+                <p style="color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 20px;">
+                    AETHER is a Phygital Experience Reality platform that bridges the gap between physical and digital realms.
+                    Through Kemetic Alchemy principles and cutting-edge technology, we transmute traditional retail and entertainment
+                    experiences into immersive, multi-sensory journeys.
+                </p>
+
+                <div class="crystal-divider">
+                    <span class="crystal-icon">🏺</span>
+                </div>
+
+                <h3 style="color: var(--sacred-gold); font-family: var(--font-display); margin-bottom: 15px;">Our Philosophy</h3>
+                <p style="color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 20px;">
+                    Inspired by ancient wisdom and fueled by modern innovation, AETHER creates experiences that resonate
+                    on multiple levels of consciousness. Our platform serves brands, artists, and creators who seek to
+                    manifest extraordinary experiences.
+                </p>
+
+                <div class="byte-window" style="margin-top: 30px;">
+                    <div class="byte-window-header">
+                        <span class="byte-window-title">SYSTEM_INFO.exe</span>
+                        <div class="byte-window-controls">
+                            <button class="byte-window-btn">─</button>
+                            <button class="byte-window-btn">□</button>
+                            <button class="byte-window-btn">×</button>
+                        </div>
+                    </div>
+                    <div class="byte-window-content">
+                        <p>AETHER PXR Platform v34.0 ETHEREAL ORBITAL</p>
+                        <p>Build: December 2025 | Chrome Edition</p>
+                        <p>Status: <span style="color: #00ff00;">● OPERATIONAL</span></p>
+                        <p style="margin-top: 10px;">Design Inspiration:</p>
+                        <p>• Chrome Orbital Mechanics</p>
+                        <p>• Water Bliss Ethereal</p>
+                        <p>• BYTE Magazine 1977</p>
+                        <p>• Sacred Kemetic Mysticism</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Crystal Divider -->
+        <div class="crystal-divider">
+            <span class="crystal-icon">⚗️</span>
+        </div>
+
+        <!-- Footer -->
+        <footer class="ethereal-footer">
+            <div class="footer-brand">☥ ALCHEMIST ATELIER</div>
+            <p class="footer-text">
+                Transmuting Reality Through Phygital Experiences<br>
+                © 2024-2025 AETHER Phygitaverse | All Rights Reserved
+            </p>
+            <div class="footer-links">
+                <a href="#" class="footer-link" title="Instagram">📸</a>
+                <a href="#" class="footer-link" title="Twitter/X">🐦</a>
+                <a href="#" class="footer-link" title="LinkedIn">💼</a>
+                <a href="#" class="footer-link" title="Website">🌐</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab-btn primary" onclick="scrollToTop()" title="Back to Top">↑</button>
+        <button class="fab-btn secondary" onclick="toggleTheme()" title="Toggle Theme">◐</button>
+    </div>
+
+    <script>
+    // Partner Database
+    const partners = [
+        // INVESTMENT PARTNERS
+        { name: "Andreessen Horowitz (a16z)", type: "investor", industry: "tech", email: "partnerships@a16z.com" },
+        { name: "Sequoia Capital", type: "investor", industry: "tech", email: "info@sequoiacap.com" },
+        { name: "LVMH Luxury Ventures", type: "investor", industry: "fashion", email: "ventures@lvmh.com" },
+        { name: "Kering Ventures", type: "investor", industry: "fashion", email: "ventures@kering.com" },
+        { name: "Google Ventures", type: "investor", industry: "tech", email: "partnerships@gv.com" },
+        { name: "SoftBank Vision Fund", type: "investor", industry: "tech", email: "info@softbank.com" },
+        { name: "Tiger Global", type: "investor", industry: "tech", email: "info@tigerglobal.com" },
+        { name: "Benchmark", type: "investor", industry: "tech", email: "info@benchmark.com" },
+        { name: "Founders Fund", type: "investor", industry: "tech", email: "info@foundersfund.com" },
+        { name: "Lightspeed Venture Partners", type: "investor", industry: "tech", email: "info@lsvp.com" },
+
+        // B2B PARTNERS
+        { name: "Nike Innovation", type: "b2b", industry: "fashion", email: "innovation@nike.com" },
+        { name: "Gucci Digital Lab", type: "b2b", industry: "fashion", email: "digital@gucci.com" },
+        { name: "Louis Vuitton Metaverse", type: "b2b", industry: "fashion", email: "metaverse@louisvuitton.com" },
+        { name: "Apple Retail Experience", type: "b2b", industry: "tech", email: "retail@apple.com" },
+        { name: "Disney Imagineering", type: "b2b", industry: "entertainment", email: "imagineering@disney.com" },
+        { name: "Universal Creative", type: "b2b", industry: "entertainment", email: "creative@universalstudios.com" },
+        { name: "Warner Bros. Discovery", type: "b2b", industry: "entertainment", email: "partnerships@wbd.com" },
+        { name: "Marriott Innovation Lab", type: "b2b", industry: "hospitality", email: "innovation@marriott.com" },
+        { name: "Four Seasons Digital", type: "b2b", industry: "hospitality", email: "digital@fourseasons.com" },
+        { name: "Soho House Global", type: "b2b", industry: "hospitality", email: "partnerships@sohohouse.com" },
+        { name: "Burberry Digital", type: "b2b", industry: "fashion", email: "digital@burberry.com" },
+        { name: "Balenciaga Virtual", type: "b2b", industry: "fashion", email: "virtual@balenciaga.com" },
+        { name: "Meta Reality Labs", type: "b2b", industry: "tech", email: "realitylabs@meta.com" },
+        { name: "Epic Games Unreal", type: "b2b", industry: "tech", email: "partnerships@epicgames.com" },
+        { name: "Unity Technologies", type: "b2b", industry: "tech", email: "partnerships@unity.com" },
+
+        // CREATIVE PARTNERS
+        { name: "Superblue Art Centers", type: "b2b", industry: "creative", email: "partnerships@superblue.com" },
+        { name: "teamLab", type: "b2b", industry: "creative", email: "info@teamlab.art" },
+        { name: "Meow Wolf", type: "b2b", industry: "creative", email: "partnerships@meowwolf.com" },
+        { name: "Random International", type: "b2b", industry: "creative", email: "studio@random-international.com" },
+        { name: "Studio Drift", type: "b2b", industry: "creative", email: "info@studiodrift.com" },
+
+        // VENDOR PARTNERS
+        { name: "Samsung Display", type: "vendor", industry: "tech", email: "display@samsung.com" },
+        { name: "LG Business Solutions", type: "vendor", industry: "tech", email: "business@lg.com" },
+        { name: "Sony Professional", type: "vendor", industry: "tech", email: "professional@sony.com" },
+        { name: "Panasonic Connect", type: "vendor", industry: "tech", email: "connect@panasonic.com" },
+        { name: "Christie Digital", type: "vendor", industry: "tech", email: "info@christiedigital.com" },
+        { name: "Disguise (d3)", type: "vendor", industry: "tech", email: "info@disguise.one" },
+        { name: "Brompton Technology", type: "vendor", industry: "tech", email: "info@bromptontech.com" },
+        { name: "ROE Visual", type: "vendor", industry: "tech", email: "info@roevisual.com" },
+        { name: "Absen LED", type: "vendor", industry: "tech", email: "info@absen.com" },
+        { name: "Blackmagic Design", type: "vendor", industry: "tech", email: "info@blackmagicdesign.com" }
+    ];
+
+    // Gallery Items
+    const galleryItems = [
+        { title: "Ethereal Portal", image: "AETHERKEMETICUI.jpg" },
+        { title: "BYTE Retrospective", image: "AETHERKEMETICUIBYTE111.jpg" },
+        { title: "Bliss Pacific", image: "BLISSETHEREAL.jpg" },
+        { title: "Orbital Chrome", image: "UIORBETHEREAL.jpg" },
+        { title: "Sacred Lamp", image: "AETHERKEMETICUI333.jpg" },
+        { title: "Rainbow Explorer", image: "AETHERKEMETICUIEINTER.jpg" },
+        { title: "Wavy Nervous", image: "AETHERKEMETICUIWAYVY.jpg" },
+        { title: "Macquarium", image: "AETHERUI.jpg" }
+    ];
+
+    // Brand Assets
+    const brandAssets = [
+        { title: "AETHERKEMETIC UI", image: "AETHERKEMETICUI.jpg" },
+        { title: "BYTE Edition", image: "AETHERKEMETICUIBYTE111.jpg" },
+        { title: "BLISS Ethereal", image: "BLISSETHEREAL.jpg" },
+        { title: "Orbital Core", image: "UIORBETHEREAL.jpg" },
+        { title: "Sacred 333", image: "AETHERKEMETICUI333.jpg" },
+        { title: "Internet Explorer", image: "AETHERKEMETICUIEINTER.jpg" },
+        { title: "Wavy", image: "AETHERKEMETICUIWAYVY.jpg" },
+        { title: "AETHER UI", image: "AETHERUI.jpg" }
+    ];
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        renderPartners(partners);
+        renderGallery();
+        renderBrands();
+
+        // Hide loading screen
+        setTimeout(() => {
+            document.getElementById('loadingScreen').classList.add('hidden');
+        }, 1500);
+    });
+
+    // Render Partners
+    function renderPartners(data) {
+        const grid = document.getElementById('partnerGrid');
+        grid.innerHTML = data.map(partner => `
+            <div class="partner-card" data-type="${partner.type}" data-industry="${partner.industry}">
+                <div class="partner-name">${partner.name}</div>
+                <div class="partner-type">${partner.type.toUpperCase()}</div>
+                <div class="partner-email">${partner.email}</div>
+            </div>
+        `).join('');
+    }
+
+    // Filter Partners
+    function filterPartners() {
+        const typeFilter = document.getElementById('typeFilter').value;
+        const industryFilter = document.getElementById('industryFilter').value;
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+        const filtered = partners.filter(partner => {
+            const matchesType = typeFilter === 'all' || partner.type === typeFilter;
+            const matchesIndustry = industryFilter === 'all' || partner.industry === industryFilter;
+            const matchesSearch = partner.name.toLowerCase().includes(searchTerm) ||
+                                  partner.email.toLowerCase().includes(searchTerm);
+            return matchesType && matchesIndustry && matchesSearch;
+        });
+
+        renderPartners(filtered);
+    }
+
+    // Render Gallery
+    function renderGallery() {
+        const grid = document.getElementById('galleryGrid');
+        grid.innerHTML = galleryItems.map(item => `
+            <div class="brand-item" onclick="openImage('${item.image}')">
+                <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.style.display='none'">
+            </div>
+        `).join('');
+    }
+
+    // Render Brands
+    function renderBrands() {
+        const grid = document.getElementById('brandGrid');
+        grid.innerHTML = brandAssets.map(item => `
+            <div class="brand-item" onclick="openImage('${item.image}')">
+                <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.style.display='none'">
+            </div>
+        `).join('');
+    }
+
+    // Show Section
+    function showSection(section) {
+        // Hide all sections
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+        // Remove active from all tabs
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+
+        // Show selected section
+        document.getElementById(section + '-section').classList.add('active');
+        // Set active tab
+        event.target.classList.add('active');
+    }
+
+    // Open Image
+    function openImage(src) {
+        window.open(src, '_blank');
+    }
+
+    // Scroll to Top
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle Theme (placeholder)
+    function toggleTheme() {
+        document.body.style.filter = document.body.style.filter === 'invert(1)' ? '' : 'invert(1)';
+    }
+    </script>
+</body>
+</html>
