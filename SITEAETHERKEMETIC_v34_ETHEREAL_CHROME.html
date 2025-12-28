@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AETHER KEMETIC - Ethereal Chrome Orb Experience v34.0">
+    <title>AETHER KEMETIC | Ethereal Chrome Orb v34.0 | December 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9765;</text></svg>">
+    <style>
+/* ==========================================
+   AETHER KEMETIC v34.0 - ETHEREAL CHROME ORB
+   Design System: Liquid Chrome + Sacred Geometry
+   Inspired by: Orbital Orbs, Water/Liquid Effects
+   ========================================== */
+
+:root {
+    /* ETHEREAL CHROME PALETTE */
+    --chrome-silver: #C0C0C0;
+    --chrome-highlight: #F8F8FF;
+    --chrome-shadow: #808080;
+    --chrome-deep: #4A4A4A;
+
+    /* ETHEREAL BLUE SPECTRUM */
+    --ethereal-sky: #87CEEB;
+    --ethereal-azure: #007FFF;
+    --ethereal-deep: #1E3A5F;
+    --ethereal-abyss: #0A1628;
+    --ethereal-glow: rgba(135, 206, 235, 0.6);
+
+    /* LIQUID WATER TONES */
+    --liquid-surface: #4FC3F7;
+    --liquid-deep: #0288D1;
+    --liquid-droplet: rgba(79, 195, 247, 0.8);
+    --liquid-shine: rgba(255, 255, 255, 0.9);
+
+    /* SACRED KEMETIC ACCENTS */
+    --kemetic-gold: #D4AF37;
+    --kemetic-gold-glow: rgba(212, 175, 55, 0.5);
+    --kemetic-lapis: #1E3A5F;
+    --kemetic-turquoise: #40E0D0;
+
+    /* FROSTED GLASS */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-frost: rgba(135, 206, 235, 0.15);
+
+    /* TYPOGRAPHY */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Space Grotesk', sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: linear-gradient(180deg,
+        var(--ethereal-abyss) 0%,
+        var(--ethereal-deep) 30%,
+        var(--ethereal-azure) 70%,
+        var(--ethereal-sky) 100%);
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ==========================================
+   WATER DROPLETS - Floating Background
+   ========================================== */
+.water-droplets {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.droplet {
+    position: absolute;
+    background: radial-gradient(ellipse at 30% 30%,
+        var(--liquid-shine) 0%,
+        var(--liquid-droplet) 40%,
+        var(--liquid-deep) 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: droplet-float 15s ease-in-out infinite;
+    opacity: 0.7;
+    box-shadow:
+        inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.droplet::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 30%;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+@keyframes droplet-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-30px) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(-3deg); }
+    75% { transform: translateY(-20px) rotate(2deg); }
+}
+
+/* Generate multiple droplets */
+.droplet:nth-child(1) { width: 20px; height: 24px; top: 10%; left: 5%; animation-delay: 0s; animation-duration: 12s; }
+.droplet:nth-child(2) { width: 15px; height: 18px; top: 20%; left: 15%; animation-delay: -2s; animation-duration: 14s; }
+.droplet:nth-child(3) { width: 25px; height: 30px; top: 30%; left: 85%; animation-delay: -4s; animation-duration: 16s; }
+.droplet:nth-child(4) { width: 12px; height: 14px; top: 45%; left: 90%; animation-delay: -6s; animation-duration: 11s; }
+.droplet:nth-child(5) { width: 18px; height: 22px; top: 60%; left: 8%; animation-delay: -8s; animation-duration: 13s; }
+.droplet:nth-child(6) { width: 22px; height: 26px; top: 75%; left: 92%; animation-delay: -3s; animation-duration: 15s; }
+.droplet:nth-child(7) { width: 14px; height: 17px; top: 85%; left: 20%; animation-delay: -5s; animation-duration: 12s; }
+.droplet:nth-child(8) { width: 16px; height: 19px; top: 15%; left: 75%; animation-delay: -7s; animation-duration: 14s; }
+.droplet:nth-child(9) { width: 20px; height: 24px; top: 50%; left: 3%; animation-delay: -1s; animation-duration: 16s; }
+.droplet:nth-child(10) { width: 13px; height: 16px; top: 70%; left: 80%; animation-delay: -9s; animation-duration: 11s; }
+
+/* ==========================================
+   CHROME ORBITAL ORB - Hero Component
+   ========================================== */
+.chrome-orb-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.chrome-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 30% 30%,
+        #E8E8FF 0%,
+        var(--ethereal-azure) 30%,
+        var(--ethereal-deep) 60%,
+        var(--ethereal-abyss) 100%);
+    box-shadow:
+        inset -20px -20px 40px rgba(0, 0, 0, 0.4),
+        inset 10px 10px 30px rgba(255, 255, 255, 0.3),
+        0 0 60px var(--ethereal-glow),
+        0 0 100px rgba(0, 127, 255, 0.3);
+    animation: orb-pulse 4s ease-in-out infinite;
+}
+
+.chrome-orb::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 40%;
+    height: 30%;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.2) 100%);
+    border-radius: 50%;
+    filter: blur(3px);
+}
+
+.chrome-orb::after {
+    content: '☥';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: var(--kemetic-gold);
+    text-shadow: 0 0 20px var(--kemetic-gold-glow);
+    animation: ankh-glow 3s ease-in-out infinite;
+}
+
+@keyframes orb-pulse {
+    0%, 100% {
+        box-shadow:
+            inset -20px -20px 40px rgba(0, 0, 0, 0.4),
+            inset 10px 10px 30px rgba(255, 255, 255, 0.3),
+            0 0 60px var(--ethereal-glow),
+            0 0 100px rgba(0, 127, 255, 0.3);
+    }
+    50% {
+        box-shadow:
+            inset -20px -20px 40px rgba(0, 0, 0, 0.4),
+            inset 10px 10px 30px rgba(255, 255, 255, 0.3),
+            0 0 80px var(--ethereal-glow),
+            0 0 140px rgba(0, 127, 255, 0.5);
+    }
+}
+
+@keyframes ankh-glow {
+    0%, 100% { text-shadow: 0 0 20px var(--kemetic-gold-glow); }
+    50% { text-shadow: 0 0 40px var(--kemetic-gold), 0 0 60px var(--kemetic-gold-glow); }
+}
+
+/* ORBITAL RINGS */
+.orbital-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 3px solid;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+.orbital-ring-1 {
+    width: 220px;
+    height: 220px;
+    margin: -110px 0 0 -110px;
+    border-color: var(--chrome-silver);
+    animation: orbit-rotate-1 8s linear infinite;
+    box-shadow:
+        0 0 10px rgba(192, 192, 192, 0.5),
+        inset 0 0 10px rgba(192, 192, 192, 0.3);
+}
+
+.orbital-ring-2 {
+    width: 260px;
+    height: 260px;
+    margin: -130px 0 0 -130px;
+    border-color: var(--chrome-highlight);
+    animation: orbit-rotate-2 12s linear infinite;
+    opacity: 0.7;
+}
+
+.orbital-ring-3 {
+    width: 290px;
+    height: 290px;
+    margin: -145px 0 0 -145px;
+    border-color: var(--ethereal-sky);
+    animation: orbit-rotate-3 16s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes orbit-rotate-1 {
+    0% { transform: rotateX(70deg) rotateZ(0deg); }
+    100% { transform: rotateX(70deg) rotateZ(360deg); }
+}
+
+@keyframes orbit-rotate-2 {
+    0% { transform: rotateX(60deg) rotateY(30deg) rotateZ(0deg); }
+    100% { transform: rotateX(60deg) rotateY(30deg) rotateZ(-360deg); }
+}
+
+@keyframes orbit-rotate-3 {
+    0% { transform: rotateX(80deg) rotateY(-20deg) rotateZ(0deg); }
+    100% { transform: rotateX(80deg) rotateY(-20deg) rotateZ(360deg); }
+}
+
+/* Orbital particles */
+.orbital-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--kemetic-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--kemetic-gold-glow);
+}
+
+/* ==========================================
+   LIQUID TEXT EFFECT
+   ========================================== */
+.liquid-text {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    background: linear-gradient(180deg,
+        var(--liquid-shine) 0%,
+        var(--liquid-surface) 30%,
+        var(--liquid-deep) 70%,
+        var(--ethereal-deep) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    filter: drop-shadow(0 4px 8px rgba(0, 127, 255, 0.3));
+    animation: liquid-shimmer 3s ease-in-out infinite;
+}
+
+.liquid-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.6;
+}
+
+@keyframes liquid-shimmer {
+    0%, 100% { filter: drop-shadow(0 4px 8px rgba(0, 127, 255, 0.3)); }
+    50% { filter: drop-shadow(0 6px 12px rgba(0, 127, 255, 0.5)); }
+}
+
+/* Water drip effect on text */
+.liquid-text-container {
+    position: relative;
+    display: inline-block;
+}
+
+.text-drip {
+    position: absolute;
+    bottom: -20px;
+    width: 6px;
+    height: 20px;
+    background: linear-gradient(180deg,
+        var(--liquid-surface) 0%,
+        var(--liquid-deep) 100%);
+    border-radius: 0 0 50% 50%;
+    animation: drip-fall 2s ease-in infinite;
+    opacity: 0;
+}
+
+.text-drip::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(ellipse at 30% 30%,
+        var(--liquid-shine) 0%,
+        var(--liquid-surface) 100%);
+    border-radius: 50%;
+}
+
+.text-drip:nth-child(1) { left: 10%; animation-delay: 0s; }
+.text-drip:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.text-drip:nth-child(3) { left: 50%; animation-delay: 1s; }
+.text-drip:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.text-drip:nth-child(5) { left: 90%; animation-delay: 0.3s; }
+
+@keyframes drip-fall {
+    0% { opacity: 0; transform: translateY(0) scaleY(0.5); }
+    20% { opacity: 1; transform: translateY(0) scaleY(1); }
+    80% { opacity: 1; transform: translateY(30px) scaleY(1.2); }
+    100% { opacity: 0; transform: translateY(40px) scaleY(0.8); }
+}
+
+/* ==========================================
+   FROSTED GLASS CARDS
+   ========================================== */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        transparent 100%);
+}
+
+.glass-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center,
+        var(--glass-frost) 0%,
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 40px var(--ethereal-glow);
+}
+
+.glass-card:hover::after {
+    opacity: 1;
+}
+
+/* ==========================================
+   SACRED GEOMETRY PATTERNS
+   ========================================== */
+.sacred-geometry {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.15;
+}
+
+.flower-of-life {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 20%;
+    right: -100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%23D4AF37' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='30' r='20' fill='none' stroke='%23D4AF37' stroke-width='0.5'/%3E%3Ccircle cx='67' cy='40' r='20' fill='none' stroke='%23D4AF37' stroke-width='0.5'/%3E%3Ccircle cx='67' cy='60' r='20' fill='none' stroke='%23D4AF37' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='70' r='20' fill='none' stroke='%23D4AF37' stroke-width='0.5'/%3E%3Ccircle cx='33' cy='60' r='20' fill='none' stroke='%23D4AF37' stroke-width='0.5'/%3E%3Ccircle cx='33' cy='40' r='20' fill='none' stroke='%23D4AF37' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: contain;
+    animation: geometry-rotate 60s linear infinite;
+}
+
+.metatron-cube {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    left: -80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 90,30 90,70 50,90 10,70 10,30' fill='none' stroke='%2340E0D0' stroke-width='0.5'/%3E%3Cline x1='50' y1='10' x2='50' y2='90' stroke='%2340E0D0' stroke-width='0.3'/%3E%3Cline x1='10' y1='30' x2='90' y2='70' stroke='%2340E0D0' stroke-width='0.3'/%3E%3Cline x1='10' y1='70' x2='90' y2='30' stroke='%2340E0D0' stroke-width='0.3'/%3E%3C/svg%3E");
+    background-size: contain;
+    animation: geometry-rotate 80s linear infinite reverse;
+}
+
+@keyframes geometry-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   HIEROGLYPHIC DECORATIONS
+   ========================================== */
+.hieroglyph-strip {
+    position: fixed;
+    font-size: 20px;
+    color: var(--kemetic-gold);
+    opacity: 0.3;
+    white-space: nowrap;
+    letter-spacing: 30px;
+    animation: hieroglyph-scroll 30s linear infinite;
+    z-index: 0;
+}
+
+.hieroglyph-strip-top {
+    top: 20px;
+    left: 0;
+}
+
+.hieroglyph-strip-bottom {
+    bottom: 20px;
+    right: 0;
+    animation-direction: reverse;
+}
+
+@keyframes hieroglyph-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ==========================================
+   NAVIGATION - Chrome Style
+   ========================================== */
+.nav-chrome {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.nav-chrome a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-chrome a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        var(--ethereal-glow) 0%,
+        transparent 100%);
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-chrome a:hover::before {
+    opacity: 1;
+}
+
+.nav-chrome a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--kemetic-gold);
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 30px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================
+   SECTION LAYOUTS
+   ========================================== */
+.section {
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--kemetic-turquoise);
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg,
+        #fff 0%,
+        var(--ethereal-sky) 50%,
+        var(--kemetic-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================
+   CHROME BUTTONS
+   ========================================== */
+.btn-chrome {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(180deg,
+        var(--chrome-highlight) 0%,
+        var(--chrome-silver) 50%,
+        var(--chrome-shadow) 100%);
+    border: none;
+    border-radius: 50px;
+    color: var(--ethereal-deep);
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-chrome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-chrome:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+        0 0 30px var(--ethereal-glow);
+}
+
+.btn-chrome:hover::before {
+    left: 100%;
+}
+
+.btn-liquid {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(180deg,
+        var(--liquid-shine) 0%,
+        var(--liquid-surface) 30%,
+        var(--liquid-deep) 100%);
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow:
+        0 4px 15px rgba(0, 127, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-liquid:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 8px 30px rgba(0, 127, 255, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   FEATURES SECTION - Orbital Grid
+   ========================================== */
+.features-orbital {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+}
+
+.feature-orb {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.feature-orb::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        var(--ethereal-sky),
+        var(--kemetic-gold),
+        var(--kemetic-turquoise),
+        var(--ethereal-sky));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    animation: orb-border-spin 4s linear infinite paused;
+}
+
+.feature-orb:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+.feature-orb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes orb-border-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.feature-orb-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.feature-orb-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* ==========================================
+   SERVICES SECTION
+   ========================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: linear-gradient(135deg,
+        rgba(30, 58, 95, 0.6) 0%,
+        rgba(10, 22, 40, 0.8) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    padding: 35px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        var(--kemetic-gold),
+        var(--kemetic-turquoise),
+        var(--kemetic-gold));
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--kemetic-gold);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.service-number {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg,
+        var(--kemetic-gold) 0%,
+        var(--kemetic-turquoise) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.service-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.service-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================
+   TESTIMONIALS - Glass Carousel
+   ========================================== */
+.testimonials-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.testimonials-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.testimonials-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.testimonials-container::-webkit-scrollbar-thumb {
+    background: var(--kemetic-gold);
+    border-radius: 3px;
+}
+
+.testimonial-card {
+    min-width: 350px;
+    scroll-snap-align: start;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 35px;
+    position: relative;
+}
+
+.testimonial-quote {
+    font-size: 48px;
+    color: var(--kemetic-gold);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+        var(--ethereal-sky) 0%,
+        var(--ethereal-deep) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: #fff;
+}
+
+.testimonial-role {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================
+   CTA SECTION
+   ========================================== */
+.cta-section {
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.1) 50%,
+        transparent 100%);
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    background: var(--ethereal-abyss);
+    padding: 60px 20px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-brand-orb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+        var(--ethereal-sky) 0%,
+        var(--ethereal-deep) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+}
+
+.footer-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--kemetic-gold);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--ethereal-sky);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social:hover {
+    background: var(--kemetic-gold);
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   SCROLL TO TOP BUTTON
+   ========================================== */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+        var(--chrome-silver) 0%,
+        var(--chrome-shadow) 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--ethereal-deep);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+    .nav-chrome {
+        padding: 6px 12px;
+    }
+
+    .nav-chrome a {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .chrome-orb-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .chrome-orb {
+        width: 120px;
+        height: 120px;
+    }
+
+    .orbital-ring-1 {
+        width: 180px;
+        height: 180px;
+        margin: -90px 0 0 -90px;
+    }
+
+    .orbital-ring-2 {
+        width: 210px;
+        height: 210px;
+        margin: -105px 0 0 -105px;
+    }
+
+    .orbital-ring-3 {
+        width: 240px;
+        height: 240px;
+        margin: -120px 0 0 -120px;
+    }
+
+    .feature-orb {
+        width: 160px;
+        height: 160px;
+    }
+
+    .testimonial-card {
+        min-width: 300px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-chrome {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-chrome, .btn-liquid {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   LOADING ANIMATION
+   ========================================== */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--ethereal-abyss);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-orb {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 30% 30%,
+        var(--liquid-shine) 0%,
+        var(--ethereal-azure) 50%,
+        var(--ethereal-deep) 100%);
+    animation: loader-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loader-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-orb"></div>
+    </div>
+
+    <!-- Water Droplets Background -->
+    <div class="water-droplets" aria-hidden="true">
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+    </div>
+
+    <!-- Sacred Geometry Patterns -->
+    <div class="sacred-geometry" aria-hidden="true">
+        <div class="flower-of-life"></div>
+        <div class="metatron-cube"></div>
+    </div>
+
+    <!-- Hieroglyphic Strips -->
+    <div class="hieroglyph-strip hieroglyph-strip-top" aria-hidden="true">
+        &#119048; &#120099; &#9765; &#119097; &#119043; &#119065; &#119101; &#119089; &#119091; &#119053;
+        &#119048; &#120099; &#9765; &#119097; &#119043; &#119065; &#119101; &#119089; &#119091; &#119053;
+    </div>
+    <div class="hieroglyph-strip hieroglyph-strip-bottom" aria-hidden="true">
+        &#119053; &#119091; &#119089; &#119101; &#119065; &#119043; &#119097; &#9765; &#120099; &#119048;
+        &#119053; &#119091; &#119089; &#119101; &#119065; &#119043; &#119097; &#9765; &#120099; &#119048;
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-chrome" role="navigation" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#features">Features</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">&#9765; AETHER KEMETIC v34.0</p>
+
+            <!-- Chrome Orbital Orb -->
+            <div class="chrome-orb-container">
+                <div class="orbital-ring orbital-ring-1"></div>
+                <div class="orbital-ring orbital-ring-2"></div>
+                <div class="orbital-ring orbital-ring-3"></div>
+                <div class="chrome-orb"></div>
+            </div>
+
+            <!-- Liquid Text -->
+            <div class="liquid-text-container">
+                <h1 class="liquid-text" data-text="AETHER">AETHER</h1>
+                <div class="text-drip"></div>
+                <div class="text-drip"></div>
+                <div class="text-drip"></div>
+                <div class="text-drip"></div>
+                <div class="text-drip"></div>
+            </div>
+
+            <p class="hero-tagline">
+                Transmuting Reality Through Phygital Experiences.<br>
+                Where Kemetic Alchemy Meets Ethereal Chrome Design.
+            </p>
+
+            <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn-chrome">
+                    <span>&#9765;</span> Explore Platform
+                </button>
+                <button class="btn-liquid">
+                    <span>&#128167;</span> Start Journey
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section - Orbital -->
+    <section class="section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">&#119048; Sacred Features</p>
+                <h2 class="section-title">Ethereal Capabilities</h2>
+            </div>
+
+            <div class="features-orbital">
+                <div class="feature-orb">
+                    <div class="feature-orb-icon">&#128302;</div>
+                    <div class="feature-orb-title">AR/VR Fusion</div>
+                </div>
+                <div class="feature-orb">
+                    <div class="feature-orb-icon">&#9883;</div>
+                    <div class="feature-orb-title">Sacred Tech</div>
+                </div>
+                <div class="feature-orb">
+                    <div class="feature-orb-icon">&#128142;</div>
+                    <div class="feature-orb-title">Gem Protocol</div>
+                </div>
+                <div class="feature-orb">
+                    <div class="feature-orb-icon">&#127760;</div>
+                    <div class="feature-orb-title">Global Mesh</div>
+                </div>
+                <div class="feature-orb">
+                    <div class="feature-orb-icon">&#9765;</div>
+                    <div class="feature-orb-title">Ankh Energy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">&#119101; Our Offerings</p>
+                <h2 class="section-title">Phygital Services</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3 class="service-title">Immersive Experiences</h3>
+                    <p class="service-desc">Crafting AR/VR environments that blend ancient wisdom with cutting-edge technology for transformative brand experiences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3 class="service-title">Digital Artifacts</h3>
+                    <p class="service-desc">Creating unique digital collectibles infused with Kemetic symbolism and sacred geometry, bridging worlds physical and digital.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3 class="service-title">Brand Transmutation</h3>
+                    <p class="service-desc">Transforming brand identities through the alchemical fusion of ancient aesthetics and modern design principles.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3 class="service-title">Spatial Computing</h3>
+                    <p class="service-desc">Developing spatial applications that create ethereal environments where users can interact with digital elements in physical space.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <h3 class="service-title">Ritual Marketing</h3>
+                    <p class="service-desc">Strategic campaigns that incorporate sacred timing, symbolism, and ceremonial elements for deeper audience connection.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <h3 class="service-title">Chrome UI/UX</h3>
+                    <p class="service-desc">Designing liquid chrome interfaces with orbital navigation and glass morphism for futuristic digital products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">&#120099; Core Pillars</p>
+                <h2 class="section-title">The Triad of Mastery</h2>
+            </div>
+
+            <div class="card-grid">
+                <div class="glass-card">
+                    <div class="card-icon">&#128081;</div>
+                    <h3 class="card-title">ETHOS</h3>
+                    <p class="card-text">The credibility and ethical foundation of our practice. We honor ancient wisdom while pushing technological boundaries with integrity and respect for cultural heritage.</p>
+                </div>
+                <div class="glass-card">
+                    <div class="card-icon">&#10084;</div>
+                    <h3 class="card-title">PATHOS</h3>
+                    <p class="card-text">The emotional resonance of our creations. Every design carries the weight of millennia, evoking deep connections between users and the eternal truths of existence.</p>
+                </div>
+                <div class="glass-card">
+                    <div class="card-icon">&#128218;</div>
+                    <h3 class="card-title">LOGOS</h3>
+                    <p class="card-text">The logical architecture behind beauty. Sacred mathematics, golden ratios, and precise engineering form the backbone of every ethereal experience we craft.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">&#119089; Testimonials</p>
+                <h2 class="section-title">Voices of the Initiated</h2>
+            </div>
+
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The ethereal chrome aesthetic they created for our brand launch was unlike anything we've seen. Truly a fusion of ancient mysticism and futuristic design.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">&#128100;</div>
+                        <div>
+                            <div class="testimonial-name">Sarah Chen</div>
+                            <div class="testimonial-role">Creative Director, Lumina Labs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Working with AETHER transformed our understanding of what phygital experiences can be. The sacred geometry elements resonated deeply with our audience.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">&#128100;</div>
+                        <div>
+                            <div class="testimonial-name">Marcus Webb</div>
+                            <div class="testimonial-role">CEO, Artifact Collective</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The liquid chrome interfaces and orbital navigation patterns they designed increased our user engagement by 340%. Pure digital alchemy.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">&#128100;</div>
+                        <div>
+                            <div class="testimonial-name">Amara Okafor</div>
+                            <div class="testimonial-role">Product Lead, NexGen Studios</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Their understanding of both technology and ancient symbolism creates a unique bridge that speaks to modern souls seeking deeper meaning.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">&#128100;</div>
+                        <div>
+                            <div class="testimonial-name">Dr. James Morrison</div>
+                            <div class="testimonial-role">Professor of Digital Humanities</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2 class="cta-title">Begin Your Transmutation</h2>
+            <p class="cta-text">Ready to transform your brand through the fusion of ancient wisdom and ethereal design? Let's create something that transcends the ordinary.</p>
+            <div class="cta-buttons">
+                <button class="btn-chrome">
+                    <span>&#128172;</span> Start Conversation
+                </button>
+                <button class="btn-liquid">
+                    <span>&#128640;</span> View Portfolio
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="footer-brand-orb">&#9765;</div>
+                        AETHER
+                    </div>
+                    <p class="footer-desc">Transmuting reality through the fusion of Kemetic alchemy and ethereal chrome design. Creating phygital experiences that bridge worlds.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">AR/VR Experiences</a></li>
+                        <li><a href="#">Digital Artifacts</a></li>
+                        <li><a href="#">Brand Transmutation</a></li>
+                        <li><a href="#">Chrome UI Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@aetherkemetic.com">hello@aetherkemetic.com</a></li>
+                        <li><a href="#">Schedule Consultation</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2025 AETHER KEMETIC. All rights reserved. v34.0 Ethereal Chrome Edition</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social" aria-label="Twitter">&#120143;</a>
+                    <a href="#" class="footer-social" aria-label="Instagram">&#128247;</a>
+                    <a href="#" class="footer-social" aria-label="LinkedIn">&#128279;</a>
+                    <a href="#" class="footer-social" aria-label="Discord">&#128172;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
+
+    <script>
+        // Page Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('pageLoader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax effect for droplets
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const droplets = document.querySelectorAll('.droplet');
+            droplets.forEach((droplet, index) => {
+                const speed = 0.1 + (index * 0.02);
+                droplet.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Interactive orbital rings on mouse move
+        const orbContainer = document.querySelector('.chrome-orb-container');
+        if (orbContainer) {
+            document.addEventListener('mousemove', (e) => {
+                const rect = orbContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const angleX = (e.clientY - centerY) / 30;
+                const angleY = (e.clientX - centerX) / 30;
+
+                const rings = document.querySelectorAll('.orbital-ring');
+                rings.forEach((ring, index) => {
+                    const factor = (index + 1) * 0.5;
+                    ring.style.transform = `rotateX(${70 + angleX * factor}deg) rotateY(${angleY * factor}deg)`;
+                });
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.glass-card, .service-card, .feature-orb, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Console Easter Egg
+        console.log('%c☥ AETHER KEMETIC v34.0 ☥', 'color: #D4AF37; font-size: 24px; font-weight: bold;');
+        console.log('%cEthereal Chrome Orb Edition', 'color: #87CEEB; font-size: 14px;');
+        console.log('%c"As above, so below. As within, so without."', 'color: #40E0D0; font-style: italic;');
+    </script>
+</body>
+</html>
